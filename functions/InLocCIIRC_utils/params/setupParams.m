@@ -14,6 +14,8 @@ params = struct();
 env = environment();
 params.mode = mode; 
 
+disp("ENV " + env)
+
 if strcmp(env, 'laptop')
     params.dataset.dir = '/Volumes/GoogleDrive/Můj disk/ARTwin/InLocCIIRC_dataset';
     params.netvlad.dataset.dir = '/Volumes/GoogleDrive/Můj disk/ARTwin/InLocCIIRC_dataset/NetVLAD';
@@ -26,6 +28,8 @@ elseif strcmp(env, 'ciirc')
     params.dataset.dir = '/nfs/projects/artwin/VisLoc/Data/InLocCIIRC_dataset';
     params.netvlad.dataset.dir = '/nfs/projects/artwin/VisLoc/Models/NetVLAD';
     params.multiCameraPoseExe.path = 'TODO';
+    %params.cache.dir = '/local/localization_service/Cache';
+    %params.results.dir = '/local/localization_service/Results';
 elseif strcmp(env, 'localization_service')
     params.dataset.dir = sprintf('/local/localization_service/Maps/SPRING/Broca_dataset');
     params.netvlad.dataset.dir = '/local/localization_service/Models/NetVLAD';

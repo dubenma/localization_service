@@ -1,8 +1,10 @@
 startup;
 
-setenv("INLOC_EXPERIMENT_NAME","hospital_1")
+%setenv("INLOC_EXPERIMENT_NAME","hospital_1")
+setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo")
 setenv("INLOC_HW","GPU")
-[ params ] = setupParams('hospital_1', true); % NOTE: adjust
+%[ params ] = setupParams('hospital_1', true); % NOTE: adjust
+[ params ] = setupParams('SPRING_Demo', true); % NOTE: adjust
 
 inloc_hw = getenv("INLOC_HW");
 if isempty(inloc_hw) || (~strcmp(inloc_hw, "GPU") && ~strcmp(inloc_hw, "CPU"))
@@ -26,7 +28,8 @@ if strcmp(inloc_hw, "CPU")
     saveProfile(c);
     p = parpool('local', nWorkers);
 end
-wks1=true;
+%wks1=true;
+wks1 = false; % Co to kurva je? Kde je vysvetlujici komentar?
 if wks1
     nWorkers = 64;
     c = parcluster;
@@ -44,7 +47,7 @@ ht_top100_densePE_localization;
 ht_top10_densePV_localization;
 
 %4. evaluate
-evaluate;
+evaluate_SPRING;
 
 if ~strcmp(environment(), "laptop")
     exit(0); % avoid "MATLAB: management.cpp:671: find: Assertion `' failed."
