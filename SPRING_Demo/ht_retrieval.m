@@ -1,20 +1,22 @@
 %Note: It loads localization score and output top100 database list for each query. 
 
 %% Load query and database list
-load(params.input.qlist.path);
-load(params.input.dblist.path);
+%load(params.input.qlist.path);
+%load(params.input.dblist.path);
+load(COMPUTED_FEATURES_PATH);
 
 %% top100 retrieval
 shortlist_topN = 100;
-top100_matname = fullfile(params.output.dir, 'original_top100_shortlist.mat');
-if exist(top100_matname, 'file') ~= 2
+%top100_matname = fullfile(params.output.dir, 'original_top100_shortlist.mat');
+%if exist(top100_matname, 'file') ~= 2
     ImgList = struct('queryname', {}, 'topNname', {}, 'topNscore', {}, 'primary', {});
         % primary means the user requested to evaluate InLoc on these poses
         % if a query in ImgList is not primary, it is there because it is part of a k-sequence
     
     %Load score
-    load(params.input.scores.path, 'score');
-    
+    %load(params.input.scores.path, 'score');
+    score = getScores1Query(params, COMPUTED_FEATURES_PATH, QUERY_PATH, cutoutFeatures); % TODO: existuje var cutoutFeatures?
+       
     %shortlist format
     for i=1:size(query_imgnames_all,2)
         queryName = query_imgnames_all{i};
@@ -65,8 +67,8 @@ if exist(top100_matname, 'file') ~= 2
     if exist(params.output.dir, 'dir') ~= 7
         mkdir(params.output.dir);
     end
-    save('-v6', top100_matname, 'ImgList');
-else
-    load(top100_matname, 'ImgList');
-end
+%     save('-v6', top100_matname, 'ImgList');
+% else
+%     load(top100_matname, 'ImgList');
+% end
 ImgList_original = ImgList;

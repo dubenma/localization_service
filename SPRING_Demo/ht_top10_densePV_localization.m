@@ -4,7 +4,7 @@
 
 PV_topN = params.PV.topN; % assuming this is not larger than mCombinations
 densePV_matname = fullfile(params.output.dir, 'densePV_top10_shortlist.mat');
-if exist(densePV_matname, 'file') ~= 2
+% if exist(densePV_matname, 'file') ~= 2
 
     sequentialPV = isfield(params, 'sequence') && strcmp(params.sequence.processing.mode, 'sequentialPV');
     if sequentialPV
@@ -191,8 +191,8 @@ if exist(densePV_matname, 'file') ~= 2
         mkdir(params.output.dir);
     end
     save('-v6', densePV_matname, 'ImgList');
-    
-else
-    load(densePV_matname, 'ImgList');
-end
+     
+% else
+%     load(densePV_matname, 'ImgList');
+% end
 ImgList_densePV = ImgList;

@@ -37,6 +37,10 @@ if wks1
     saveProfile(c);
     p = parpool('local', nWorkers);
 end
+
+QUERY_PATH = "";
+COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize1.mat";
+
 %1. retrieval
 ht_retrieval;
 

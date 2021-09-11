@@ -10,7 +10,7 @@ mCombinations = 10;
 densePE_matname = fullfile(params.output.dir, 'densePE_top100_shortlist.mat');
 
 denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
-if exist(densePE_matname, 'file') ~= 2
+% if exist(densePE_matname, 'file') ~= 2
     if exist(denseGV_matname, 'file') ~= 2
         %dense feature extraction
         net = load(params.netvlad.dataset.pretrained);
@@ -92,6 +92,8 @@ if exist(densePE_matname, 'file') ~= 2
     else
         load(denseGV_matname, 'ImgList');
     end
+    
+    
     ImgList_denseGV = ImgList;
     
     %% for each query, find top-mCombinations sequences of lengths params.sequence.length
@@ -222,10 +224,10 @@ if exist(densePE_matname, 'file') ~= 2
     end
     ImgList = ImgListSequential;
     save('-v6', densePE_matname, 'ImgList');
-else
-    load(denseGV_matname, 'ImgList');
-    ImgList_denseGV = ImgList;
-    
-    load(densePE_matname, 'ImgList');
-end
+% else
+%     load(denseGV_matname, 'ImgList');
+%     ImgList_denseGV = ImgList;
+%     
+%     load(densePE_matname, 'ImgList');
+% end
 ImgList_densePE = ImgList;
