@@ -29,7 +29,8 @@ net = relja_cropToLayer(net, 'postL2'); %original
 %     for i=1:nQueries
         fprintf('Finding features for query #%d/%d\n\n', 1, 1)
 %         queryName = queryImageFilenames{1};
-        queryImage = load_query_image_compatible_with_cutouts(fullfile(queryDirWithSlash, queryPath), cutoutSize);
+        %queryImage = load_query_image_compatible_with_cutouts(fullfile(queryDirWithSlash, queryPath), cutoutSize);
+        queryImage = load_query_image_compatible_with_cutouts(queryPath, cutoutSize);
         cnn = at_serialAllFeats_convfeat(net, queryImage, 'useGPU', true);
         queryFeatures(1).queryname = queryPath;
         queryFeatures(1).features = cnn{6}.x(:);

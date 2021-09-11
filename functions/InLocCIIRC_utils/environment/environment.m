@@ -1,6 +1,7 @@
 function env = environment()
     % Tohle vracim napevno
-    env = 'localization_service';
+    %env = 'localization_service';
+    env = 'ciirc'
     return; 
 
     % Proc to je sakra napsany takhle???? Proc se ma chovani kodu menit podle nazvu slozky, kde bezi? 

@@ -1,4 +1,4 @@
-function [ params ] = setupParams(mode, requireExperimentName)
+function [ params ] = setupParams(mode, requireExperimentName, datasetSize)
     % mode is one of {'s10e', 'holoLens1', 'holoLens2'}
     % NOTE: the number after 'holoLens' is a sequence number, not a version of HoloLens glasses!
 arguments
@@ -25,7 +25,8 @@ elseif strcmp(env, 'cmp')
     params.netvlad.dataset.dir = '/mnt/datagrid/personal/lucivpav/NetVLAD';
     params.multiCameraPoseExe.path = '/mnt/datagrid/personal/lucivpav/MultiCameraPose/build/src/multi_camera_pose';
 elseif strcmp(env, 'ciirc')
-    params.dataset.dir = '/nfs/projects/artwin/VisLoc/Data/InLocCIIRC_dataset';
+    %params.dataset.dir = '/nfs/projects/artwin/VisLoc/Data/InLocCIIRC_dataset';
+    params.dataset.dir = '/home/seberma3/InLocCIIRC_NEWdataset';
     params.netvlad.dataset.dir = '/nfs/projects/artwin/VisLoc/Models/NetVLAD';
     params.multiCameraPoseExe.path = 'TODO';
     %params.cache.dir = '/local/localization_service/Cache';
@@ -111,7 +112,7 @@ params.dataset.db.space_names = {'hospital_1', 'hospital_2','livinglab_1','livin
 params.dataset.db.scan.dir = 'scans';
 params.dataset.db.scan.matformat = '.ptx.mat';
 %%cutouts
-params.dataset.db.cutout.dirname = 'cutouts'; % TODO: rename to ...cutouts...?
+params.dataset.db.cutout.dirname = "cutouts" + datasetSize;
 params.dataset.db.cutout.matDirname = 'matfiles'; % TODO: rename to ...cutouts...?
 params.dataset.db.cutout.dir = fullfile(params.dataset.dir, params.dataset.db.cutout.dirname);
 params.dataset.db.cutout.MatDir = fullfile(params.dataset.dir,params.dataset.db.cutout.matDirname);
@@ -127,11 +128,13 @@ params.dataset.db.trans.dir = fullfile(params.dataset.dir, 'alignments.legacy');
 params.dataset.query.imgformat = '.jpg';
 
 %input
-params.input.dir = fullfile(params.cache.dir, sprintf('inputs%s', experimentSuffix));
+%params.input.dir = fullfile(params.cache.dir, sprintf('inputs%s', experimentSuffix));
+%params.input.dir = '/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus';
+params.input.dir = '/home/seberma3/_InLoc_PROD/SPRING_Demo/inputs';
 
 params.input.dblist.path = fullfile(params.input.dir, 'cutout_imgnames_all.mat');%string cell containing cutout image names
-params.input.qlist.path = fullfile(params.input.dir, 'query_imgnames_all.mat');%string cell containing query image names
-params.input.scores.path = fullfile(params.input.dir, 'scores.mat');%retrieval score matrix
+%params.input.qlist.path = fullfile(params.input.dir, 'query_imgnames_all.mat');%string cell containing query image names
+%params.input.scores.path = fullfile(params.input.dir, 'scores.mat');%retrieval score matrix
 
 params.input.feature.dir = fullfile(params.input.dir, 'features');
 params.input.feature.db_matformat = '.features.dense.mat';
@@ -141,7 +144,9 @@ params.input.feature.q_sps_matformat = '.features.sparse.mat';
 params.input.projectMesh_py_path = fullfile([thisScriptPath, '../projectMesh/projectMesh.py']);
 
 %output
-params.output.dir = fullfile(params.cache.dir, sprintf('outputs%s', experimentSuffix));
+%params.output.dir = fullfile(params.cache.dir, sprintf('outputs%s', experimentSuffix));
+params.output.dir = '/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs';
+
 params.output.gv_dense.dir = fullfile(params.output.dir, 'gv_dense');%dense matching results (directory)
 params.output.gv_dense.matformat = '.gv_dense.mat';%dense matching results (file extention)
 params.output.gv_sparse.dir = fullfile(params.output.dir, 'gv_sparse');%sparse matching results (directory)
@@ -159,7 +164,7 @@ params.output.synth.dir = fullfile(params.output.dir, 'synthesized');%View synth
 params.output.synth.matformat = '.synth.mat';%View synthesis results (file extention)
 
 % evaluation
-params.evaluation.dir = fullfile(params.results.dir, sprintf('evaluation%s', experimentSuffix));
+params.evaluation.dir = '/home/seberma3/_InLoc_PROD/SPRING_Demo/eval'; %fullfile(params.results.dir, sprintf('evaluation%s', experimentSuffix));
 params.evaluation.query_vs_synth.dir = fullfile(params.evaluation.dir, 'queryVsSynth');
 params.evaluation.query_segments_vs_synth_segments.dir = fullfile(params.evaluation.dir, 'querySegmentsVsSynthSegments');
 params.evaluation.errors.path = fullfile(params.evaluation.dir, 'errors.csv');

@@ -1,10 +1,25 @@
 startup;
 
+%TOTO: Tyhle komentare asi uz neplati, tak je odstran
+% Nazev souboru určuje vybraný dataset.
+% Pro 250 snímků:  computed_featuresSize1.mat
+% Pro 500 snímků:  computed_featuresSize2.mat
+% Pro 1000 snímků: computed_featuresSize3.mat
+% Pro 2000 snímků: computed_featuresSize4.mat
+% Matice obahuje extrahovane features pro dany pocet snimku.
+% Databazove snimky jsou pak v teto slozce:
+% /home/seberma3/InLocCIIRC_NEWdataset/cutouts<250, 500, 1000, 2000>
+% MUSITE soucasne s vyberem datasetu prejmenovat prislusnou slozku na
+% "cutouts", tj. odstranit z nazvu cislovku.
+DATASET_SIZE = 1;
+QUERY_PATH = "";
+COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
+
 %setenv("INLOC_EXPERIMENT_NAME","hospital_1")
 setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo")
 setenv("INLOC_HW","GPU")
 %[ params ] = setupParams('hospital_1', true); % NOTE: adjust
-[ params ] = setupParams('SPRING_Demo', true); % NOTE: adjust
+[ params ] = setupParams('SPRING_Demo', true, DATASET_SIZE); % NOTE: adjust
 
 inloc_hw = getenv("INLOC_HW");
 if isempty(inloc_hw) || (~strcmp(inloc_hw, "GPU") && ~strcmp(inloc_hw, "CPU"))
@@ -37,9 +52,6 @@ if wks1
     saveProfile(c);
     p = parpool('local', nWorkers);
 end
-
-QUERY_PATH = "";
-COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize1.mat";
 
 %1. retrieval
 ht_retrieval;
