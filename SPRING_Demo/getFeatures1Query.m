@@ -1,10 +1,10 @@
 function [ queryFeatures ] = getFeatures1Query(params, queryPath)
 
 % queryDirWithSlash = [];
-% x = load(params.input.dblist.path);
-% cutoutImageFilenames = x.cutout_imgnames_all;
-% cutoutSize = size(imread(fullfile(params.dataset.db.cutout.dir, cutoutImageFilenames{1})));
-% cutoutSize = [cutoutSize(2), cutoutSize(1)]; % width, height
+x = load(params.input.dblist.path);
+cutoutImageFilenames = x.cutout_imgnames_all;
+cutoutSize = size(imread(cutoutImageFilenames{1}));
+cutoutSize = [cutoutSize(2), cutoutSize(1)]; % width, height
 % 
 % if exist(params.input.feature.dir, 'dir') ~= 7
 %     mkdir(params.input.feature.dir);

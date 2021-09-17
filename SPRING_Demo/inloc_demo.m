@@ -1,3 +1,7 @@
+% TODO: Pomuze tohle udelat paralelni cluster?:
+clear;
+distcomp.feature( 'LocalUseMpiexec', false )
+
 startup;
 
 %TOTO: Tyhle komentare asi uz neplati, tak je odstran
@@ -12,14 +16,15 @@ startup;
 % MUSITE soucasne s vyberem datasetu prejmenovat prislusnou slozku na
 % "cutouts", tj. odstranit z nazvu cislovku.
 DATASET_SIZE = 1;
-QUERY_PATH = "";
+QUERY_PATH = '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg';
 COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
 
 %setenv("INLOC_EXPERIMENT_NAME","hospital_1")
 setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo")
 setenv("INLOC_HW","GPU")
+%setenv("INLOC_HW","CPU")
 %[ params ] = setupParams('hospital_1', true); % NOTE: adjust
-[ params ] = setupParams('SPRING_Demo', true, DATASET_SIZE); % NOTE: adjust
+[ params ] = setupParams('SPRING_Demo', DATASET_SIZE, true); % NOTE: adjust
 
 inloc_hw = getenv("INLOC_HW");
 if isempty(inloc_hw) || (~strcmp(inloc_hw, "GPU") && ~strcmp(inloc_hw, "CPU"))
@@ -46,12 +51,15 @@ end
 %wks1=true;
 wks1 = false; % Co to kurva je? Kde je vysvetlujici komentar?
 if wks1
-    nWorkers = 64;
+    %nWorkers = 64;
+    nWorkers = 8;
     c = parcluster;
     c.NumWorkers = nWorkers;
     saveProfile(c);
     p = parpool('local', nWorkers);
 end
+
+cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");
 
 %1. retrieval
 ht_retrieval;

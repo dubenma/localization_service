@@ -2,12 +2,21 @@ function parfor_denseGV( cnnq, qname, dbname, params )
 coarselayerlevel = 5;
 finelayerlevel = 3;
 
-this_densegv_matname = fullfile(params.output.gv_dense.dir, qname, buildCutoutName(dbname, params.output.gv_dense.matformat));
+% fprintf("QNAME: %s \n", qname);
+% fprintf("dbname: %s \n", dbname);
+% fprintf("params.output.gv_dense.dir: %s \n", params.output.gv_dense.dir);
+builtName = buildCutoutName(dbname, params.output.gv_dense.matformat);
+% fprintf("built name: %s \n", builtName);
 
+%this_densegv_matname = fullfile(params.output.gv_dense.dir, qname, buildCutoutName(dbname, params.output.gv_dense.matformat));
+this_densegv_matname = fullfile(params.output.gv_dense.dir, builtName)
+disp(this_densegv_matname);
 if exist(this_densegv_matname, 'file') ~= 2
     
     %load input feature
-    dbfname = fullfile(params.input.feature.dir, params.dataset.db.cutout.dirname, [dbname, params.input.feature.db_matformat]);
+    %dbfname = fullfile(params.input.feature.dir, params.dataset.db.cutout.dirname, [dbname, params.input.feature.db_matformat]);
+    %dbfname = fullfile(params.input.feature.dir, params.dataset.db.cutout.dirname, "" + dbname + params.input.feature.db_matformat);
+    dbfname = "" + dbname + params.input.feature.db_matformat;
     cnndb = load(dbfname, 'cnn');cnndb = cnndb.cnn;
     
     %coarse-to-fine matching
@@ -54,4 +63,3 @@ if exist(this_densegv_matname, 'file') ~= 2
 %     end
 end
 end
-

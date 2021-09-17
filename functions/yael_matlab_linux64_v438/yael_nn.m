@@ -36,6 +36,9 @@ case {2,'L2'}
 %  sim = bsxfun (@plus, Q_nr', sim);
 
   if k == 1
+%       if (numel(sim) < 1000000)
+%         save("dists_ori", "sim");
+%       end
     [dis, idx] = min (sim, [], 2);
   else  
     [dis, idx] = sort (sim, 2);

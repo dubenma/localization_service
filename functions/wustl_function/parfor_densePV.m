@@ -1,6 +1,13 @@
 function parfor_densePV(qname, dbnames, dbnamesId, Ps, params)
 
-this_densePV_matname = fullfile(params.output.synth.dir, qname, sprintf('%d%s', dbnamesId, params.output.synth.matformat));
+this_densePV_matname = fullfile(params.output.synth.dir, getFileNameFromPath(qname), sprintf('%d%s', dbnamesId, params.output.synth.matformat));
+
+disp("Casti");
+disp(params.output.synth.dir);
+disp(qname);
+disp(getFileNameFromPath(qname));
+disp(sprintf('%d%s', dbnamesId, params.output.synth.matformat));
+
 sequenceLength = length(Ps);
 Iqs = cell(1,sequenceLength);
 RGBpersps = cell(1,sequenceLength);
@@ -9,7 +16,7 @@ scores = cell(1,sequenceLength);
 errmaps = cell(1,sequenceLength);
 firstQueryId = queryNameToQueryId(qname) - sequenceLength + 1;
 
-if exist(this_densePV_matname, 'file') ~= 2
+if 1==1 %exist(this_densePV_matname, 'file') ~= 2
     sequentialPV = isfield(params, 'sequence') && strcmp(params.sequence.processing.mode, 'sequentialPV');
     firstDbname = dbnames{1};
     for i=1:sequenceLength
@@ -24,28 +31,24 @@ if exist(this_densePV_matname, 'file') ~= 2
         if all(~isnan(P(:)))
 
             %load downsampled images
-            thisQueryName = qname;%sprintf('%d.jpg', firstQueryId + i - 1);
-            Iq = imresize(imread(fullfile(params.dataset.query.mainDir, thisQueryName)), params.dataset.query.dslevel);
+            thisQueryName = getFileNameFromPath(qname); %sprintf('%d.jpg', firstQueryId + i - 1);
+            %Iq = imresize(imread(fullfile(params.dataset.query.dir, thisQueryName)), params.dataset.query.dslevel);
+            Iq = imresize(imread(fullfile('/home/seberma3/InLocCIIRC_dataset/query', thisQueryName)), params.dataset.query.dslevel);
             fl = params.camera.fl * params.dataset.query.dslevel;
             R = P(1:3,1:3);
             t = P(1:3,4);
 
             spaceName = strsplit(dbname, '/');
             spaceName = spaceName{1};
-            meshPath = fullfile(params.dataset.models.dir, spaceName, 'model_rotated.obj');
-%             meshPath = fullfile(params.dataset.models.dir, 'model_rotated.obj');
-%             t = -inv(R)*t;
-             rFix = [0.0, 180.0, 180.0];
-             Rfix = rotationMatrix(deg2rad(rFix), 'XYZ');
+            % meshPath = fullfile(params.dataset.models.dir, spaceName, 'mesh_rotated.obj');
+            meshPath = fullfile(params.dataset.models.dir, spaceName, 'mesh_rotated.obj');
+            t = -inv(R)*t;
+            rFix = [180.0, 0.0, 0.0];
+            Rfix = rotationMatrix(deg2rad(rFix), 'XYZ');
             sensorSize = [size(Iq,2), size(Iq,1)];
             headless = ~strcmp(environment(), 'laptop');
-            
-            rot = inv(R)*Rfix';
-            trans = -inv(R)*t;
-            [RGBpersp, XYZpersp, depth] = projectMesh(meshPath, fl, rot, trans, sensorSize, false, -1, params.input.projectMesh_py_path, headless);
-%             [RGBpersp, XYZpersp, depth] = projectMesh(meshPath, fl, R, t, sensorSize, false, -1, params.input.projectMesh_py_path, headless);
-            
-%             imshow(RGBpersp)
+            % TODO: Proc se vola tohle, kdyz jeste neexistuje soubor s modelem??
+            [RGBpersp, XYZpersp, depth] = projectMesh(meshPath, fl, inv(R)*Rfix, t, sensorSize, false, -1, params.input.projectMesh_py_path, headless);
             RGB_flag = all(~isnan(XYZpersp), 3);
 
             %compute DSIFT error
@@ -90,6 +93,7 @@ if exist(this_densePV_matname, 'file') ~= 2
             RGB_flag = [];
             score = single(0);
             errmap = 0;
+            disp("I AM SORRY - projectMesh Skipped");
         end
         Iqs{i} = Iq;
         RGBpersps{i} = RGBpersp;

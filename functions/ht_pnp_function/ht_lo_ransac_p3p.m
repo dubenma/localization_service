@@ -9,7 +9,7 @@ if nargin < 4
     max_iter = 1000;
 end
 
-
+uPrev = u;
 %initialization
 u = bsxfun(@rdivide, u, sqrt(sum(u.^2, 1)));
 Npts = size(u, 2);

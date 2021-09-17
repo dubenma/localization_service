@@ -1,10 +1,11 @@
-function [ params ] = setupParams(mode, requireExperimentName, datasetSize)
+function [ params ] = setupParams(mode, datasetSize, requireExperimentName)
     % mode is one of {'s10e', 'holoLens1', 'holoLens2'}
     % NOTE: the number after 'holoLens' is a sequence number, not a version of HoloLens glasses!
-arguments
-    mode char
-    requireExperimentName logical = false
-end
+% arguments
+%     mode char
+%     datasetSize int
+%     requireExperimentName logical = false
+% end
 
 thisScriptPath = [fileparts(mfilename('fullpath')), '/'];
 addpath([thisScriptPath, '../environment']);
@@ -132,7 +133,7 @@ params.dataset.query.imgformat = '.jpg';
 %params.input.dir = '/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus';
 params.input.dir = '/home/seberma3/_InLoc_PROD/SPRING_Demo/inputs';
 
-params.input.dblist.path = fullfile(params.input.dir, 'cutout_imgnames_all.mat');%string cell containing cutout image names
+params.input.dblist.path = fullfile(params.input.dir, "cutout_imgnames_all"+datasetSize+".mat");%string cell containing cutout image names
 %params.input.qlist.path = fullfile(params.input.dir, 'query_imgnames_all.mat');%string cell containing query image names
 %params.input.scores.path = fullfile(params.input.dir, 'scores.mat');%retrieval score matrix
 
@@ -177,7 +178,8 @@ if ~exist(params.input.dblist.path, 'file')
     warning('params.input.dblist.path "%s" does not exists. Some params.dataset.db.cutout params will not be set.', params.input.dir);
 else
     load(params.input.dblist.path);
-    params.dataset.db.cutout.size = size(imread(fullfile(params.dataset.db.cutout.dir, cutout_imgnames_all{1})));
+    %params.dataset.db.cutout.size = size(imread(fullfile(params.dataset.db.cutout.dir, cutout_imgnames_all{1})));
+    params.dataset.db.cutout.size = size(imread(cutout_imgnames_all{1}));
     params.dataset.db.cutout.size = [params.dataset.db.cutout.size(2), params.dataset.db.cutout.size(1)]; % width, height
     params.dataset.db.cutout.fl = 600.0000; % TODO: this must match the params in buildCutouts (see _dataset repo)!
     params.dataset.db.cutout.K = buildK(params.dataset.db.cutout.fl, params.dataset.db.cutout.size(1), params.dataset.db.cutout.size(2));

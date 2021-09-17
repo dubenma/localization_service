@@ -19,7 +19,7 @@ allTentatives3D = cell(1,sequenceLength);
 allInls = cell(1,sequenceLength);
 Ps = cell(1,sequenceLength);
 
-if exist(this_densepe_matname, 'file') ~= 2
+if 1==1 %exist(this_densepe_matname, 'file') ~= 2
 
     skipPoseEstimation = false;
     if any(isnan(posesFromHoloLens(:))) % exceptional situation 2.
@@ -30,26 +30,27 @@ if exist(this_densepe_matname, 'file') ~= 2
     for j=1:sequenceLength
         i = ind(j);
         dbname = dbnames{i};
-        thisQueryName = qname;
+        thisQueryName = getFileNameFromPath(qname); %sprintf('%d.jpg', firstQueryId + j - 1);
         %geometric verification results
         this_densegv_matname = fullfile(params.output.gv_dense.dir, thisQueryName, buildCutoutName(dbname, params.output.gv_dense.matformat));
         if exist(this_densegv_matname, 'file') ~= 2
             % TODO: possible race condition?
             % this function is executed in parfor and two different workers may be working on the same dbname at a time
-            warning('Executing parfor_denseGV within parfor_densePE. This is suspicious!');
-            fprintf('this_densegv_matname: %s\n', this_densegv_matname);
-            assert(false);
+%             warning('Executing parfor_denseGV within parfor_densePE. This is suspicious!');
+%             fprintf('this_densegv_matname: %s\n', this_densegv_matname);
+%             assert(false);
             qfname = fullfile(params.input.feature.dir, params.dataset.query.dirname, [thisQueryName, params.input.feature.q_matformat]);
             cnnq = load(qfname, 'cnn');cnnq = cnnq.cnn;
-            parfor_denseGV( cnnq, thisQueryName, dbname, params );
+            %cnnq = QUERY_CNN;
+            ZALOHA_parfor_denseGV( cnnq, thisQueryName, dbname, params );  % parfor_denseGV( cnnq, thisQueryName, {dbname}, params ); % 
         end
-        this_gvresults = load(this_densegv_matname);
+        this_gvresults = load(this_densegv_matname); % Tady nejsou inlieri (inls12), tak nemam nakonec nic
         tent_xq2d = this_gvresults.f1(:, this_gvresults.inls12(1, :));
         tent_xdb2d = this_gvresults.f2(:, this_gvresults.inls12(2, :));
 
     
         %depth information
-        this_db_matname = fullfile(params.dataset.db.cutout.MatDir, [dbname, params.dataset.db.cutout.matformat]);
+        this_db_matname = fullfile(params.dataset.db.cutouts.dir, [dbname, params.dataset.db.cutout.matformat]);
         load(this_db_matname, 'XYZcut');
 
         %Feature upsampling
@@ -108,8 +109,7 @@ if exist(this_densepe_matname, 'file') ~= 2
     if ~skipPoseEstimation
         if useP3P
             %solver
-%             [ P, inls ] = ht_lo_ransac_p3p( tent_ray2d, tent_xdb3d, 5.0*pi/180,max(10000,numel(tent_ray2d))); %1.0*pi/180);
-             [ P, inls ] = ht_lo_ransac_p3p( tent_ray2d, tent_xdb3d, deg2rad(2.5),max(10000,numel(tent_ray2d))); %1.0*pi/180);
+            [ P, inls ] = ht_lo_ransac_p3p( tent_ray2d, tent_xdb3d, 1.0*pi/180);
             if isempty(P)
                 P = nan(3, 4);
             end
@@ -138,6 +138,8 @@ if exist(this_densepe_matname, 'file') ~= 2
             %fprintf('Not deleting MCP working dir: %s\n', workingDir);
             rmdir(workingDir, 's');
         end
+    else
+        disp("!!!!POSE ESTIM SKIPPED!!!!");
     end
     
     
