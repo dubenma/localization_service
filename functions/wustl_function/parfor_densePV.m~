@@ -5,8 +5,7 @@ end
 
 [~,QFname,~] = fileparts(qname);
 [~,DBFname,~] = fileparts(dbCutoutname);
-mkdirIfNonExistent(fullfile(params.output.synth.dir, QFname));
-this_densePV_matname = fullfile(params.output.synth.dir, QFname, sprintf('%s%s', DBFname, params.output.synth.matformat));
+this_densePV_matname = fullfile(params.output.synth.dir, QFname, sprintf('%s%s', DBFname, params.output.synth.matformat))
 
 sequenceLength = length(Ps);
 Iqs = cell(1,sequenceLength);
@@ -49,6 +48,7 @@ if 1==1 %exist(this_densePV_matname, 'file') ~= 2
             Rfix = rotationMatrix(deg2rad(rFix), 'XYZ');
             sensorSize = [size(Iq,2), size(Iq,1)];
             headless = ~strcmp(environment(), 'laptop');
+            % TODO: Proc se vola tohle, kdyz jeste neexistuje soubor s modelem??
             [RGBpersp, XYZpersp, depth] = projectMesh(meshPath, fl, inv(R)*Rfix, t, sensorSize, false, -1, params.input.projectMesh_py_path, headless);
             RGB_flag = all(~isnan(XYZpersp), 3);
 
@@ -103,9 +103,9 @@ if 1==1 %exist(this_densePV_matname, 'file') ~= 2
         errmaps{i} = errmap;
     end
     
-%     if exist(fullfile(params.output.synth.dir, qname), 'dir') ~= 7
-%         mkdir(fullfile(params.output.synth.dir, qname));
-%     end
+    if exist(fullfile(params.output.synth.dir, qname), 'dir') ~= 7
+        mkdir(fullfile(params.output.synth.dir, qname));
+    end
     save(this_densePV_matname, 'Iqs', 'RGBpersps', 'RGB_flags', 'scores', 'errmaps');
 end
 

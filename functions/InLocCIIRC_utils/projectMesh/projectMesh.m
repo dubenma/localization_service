@@ -4,22 +4,26 @@ function [RGBcut, XYZcut, depth] = projectMesh(meshPath, f, R, t, sensorSize, or
 % camera points to -z direction, having x on its right, y going up (right-handed CS)
 % TODO: support outputSize param. Then interpolation may be necessary for the XYZcut
 
-inputPath = strcat(tempname, '.mat');
-outputPath = strcat(tempname, '.mat');
+inputPath = strcat(tempname(), '.mat');
+outputPath = strcat(tempname(), '.mat');
 save(inputPath, 'meshPath', 'f', 'R', 't', 'sensorSize', 'ortho', 'mag');
 
 
 %os.environ['LD_LIBRARY_PATH'] 
-b = '/usr/local/cuda-9.0/lib64:';
+b = '/usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib:';
 
 
-if headless
-    %command = sprintf('python "%s" %s %s', projectMeshPyPath, inputPath, outputPath);
+%command = sprintf('PATH=/usr/local/bin:$PATH python3 "%s" %s %s', projectMeshPyPath, inputPath, outputPath);
+system(sprintf('PATH=%s', b));
+command = sprintf('LD_LIBRARY_PATH=%s PYOPENGL_PLATFORM=egl python3 "%s" %s %s', b, projectMeshPyPath, inputPath, outputPath);
 
-    command = sprintf('LD_LIBRARY_PATH=%s PYOPENGL_PLATFORM=egl python3 "%s" %s %s', b, projectMeshPyPath, inputPath, outputPath);
-else
-    command = sprintf('PATH=/usr/local/bin:$PATH python3 "%s" %s %s', projectMeshPyPath, inputPath, outputPath);
-end
+% if headless
+%     %command = sprintf('python "%s" %s %s', projectMeshPyPath, inputPath, outputPath);
+% 
+%     command = sprintf('LD_LIBRARY_PATH=%s PYOPENGL_PLATFORM=egl python3 "%s" %s %s', b, projectMeshPyPath, inputPath, outputPath);
+% else
+%     command = sprintf('PATH=/usr/local/bin:$PATH python3 "%s" %s %s', projectMeshPyPath, inputPath, outputPath);
+% end
 
 
 

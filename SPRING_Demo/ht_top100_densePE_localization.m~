@@ -10,52 +10,55 @@ mCombinations = 10;
 densePE_matname = fullfile(params.output.dir, 'densePE_top100_shortlist.mat');
 
 denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
-% if exist(densePE_matname, 'file') ~= 2
-    disp("# Starting top100");
+if exist(densePE_matname, 'file') ~= 2
+    disp("# Starting top100 because " + densePE_matname + " does not exist");
     if exist(denseGV_matname, 'file') ~= 2
+        disp("# Starting top100 No2 because " + denseGV_matname + " does not exist");
         %dense feature extraction
         net = load(params.netvlad.dataset.pretrained);
         net = net.net;
         net= relja_simplenn_tidy(net);
         net= relja_cropToLayer(net, 'postL2');
-        for ii = 1:1:length(ImgList_original)
-            %q_densefeat_matname = fullfile(params.input.feature.dir, params.dataset.query.dirname, [ImgList_original(ii).queryname, params.input.feature.q_matformat]);
-            q_densefeat_matname = "" + ImgList_original(ii).queryname + params.input.feature.q_matformat;
-            fprintf("Existuje-li feature file %s ? %d", q_densefeat_matname, exist(q_densefeat_matname));
-            if exist(q_densefeat_matname, 'file') ~= 2 % TODO: Tohle tady nebude, protoze query je predem neznamy
-                % this is necessary because of denseGV:
-                queryImage = load_query_image_compatible_with_cutouts(ImgList_original(ii).queryname, ...
-                    params.dataset.db.cutout.size);
-                cnn = at_serialAllFeats_convfeat(net, queryImage, 'useGPU', true);
+        %for ii = 1:1:length(ImgList_original)
+        %q_densefeat_matname = fullfile(params.input.feature.dir, params.dataset.query.dirname, [ImgList_original(ii).queryname, params.input.feature.q_matformat]);
+        % Extrahuje to lokální deskriptory na 3. a 5. vrstve cnn
+        q_densefeat_matname = "" + ImgList_original(1).queryname + params.input.feature.q_matformat;
+        fprintf("Existuje-li feature file %s ? %d", q_densefeat_matname, exist(q_densefeat_matname));
+        %if exist(q_densefeat_matname, 'file') ~= 2 % TODO: Tohle tady nebude, protoze query je predem neznamy
+        % this is necessary because of denseGV:
+        queryImage = load_query_image_compatible_with_cutouts(ImgList_original(1).queryname, ...
+            params.dataset.db.cutout.size);
+        cnn = at_serialAllFeats_convfeat(net, queryImage, 'useGPU', true);
+        cnn{1} = [];
+        cnn{2} = [];
+        cnn{4} = [];
+        cnn{6} = [];
+        [feat_path, ~, ~] = fileparts(q_densefeat_matname);
+        if exist(feat_path, 'dir')~=7; mkdir(feat_path); end
+        save('-v6', q_densefeat_matname, 'cnn'); % TODO: Tohle tady nebude, protoze query je predem neznamy
+        fprintf('Dense feature extraction: %s done. \n', ImgList_original(1).queryname);
+        %end
+        
+        % Extrahuje to lokální deskriptory databazovych snimku na 3. a 5. vrstve cnn
+        for jj = 1:1:shortlist_topN
+            %db_densefeat_matname = fullfile(params.input.feature.dir, params.dataset.db.cutout.dirname, ...
+            %    [ImgList_original(ii).topNname{jj}, params.input.feature.db_matformat]);
+            db_densefeat_matname = ImgList_original(1).topNname{jj} + params.input.feature.db_matformat;
+            if exist(db_densefeat_matname, 'file') ~= 2
+                %cutoutImage = imread(fullfile(params.dataset.db.cutout.dir, ImgList_original(ii).topNname{jj}));
+                cutoutImage = imread(ImgList_original(1).topNname{jj});
+                cnn = at_serialAllFeats_convfeat(net, cutoutImage, 'useGPU', true);
                 cnn{1} = [];
                 cnn{2} = [];
                 cnn{4} = [];
                 cnn{6} = [];
-                [feat_path, ~, ~] = fileparts(q_densefeat_matname);
+                [feat_path, ~, ~] = fileparts(db_densefeat_matname);
                 if exist(feat_path, 'dir')~=7; mkdir(feat_path); end
-                save('-v6', q_densefeat_matname, 'cnn');
-                fprintf('Dense feature extraction: %s done. \n', ImgList_original(ii).queryname);
-            end
-            
-            for jj = 1:1:shortlist_topN
-                %db_densefeat_matname = fullfile(params.input.feature.dir, params.dataset.db.cutout.dirname, ...
-                %    [ImgList_original(ii).topNname{jj}, params.input.feature.db_matformat]);
-                db_densefeat_matname = ImgList_original(ii).topNname{jj} + params.input.feature.db_matformat;
-                if exist(db_densefeat_matname, 'file') ~= 2
-                    %cutoutImage = imread(fullfile(params.dataset.db.cutout.dir, ImgList_original(ii).topNname{jj}));
-                    cutoutImage = imread(ImgList_original(ii).topNname{jj});
-                    cnn = at_serialAllFeats_convfeat(net, cutoutImage, 'useGPU', true);
-                    cnn{1} = [];
-                    cnn{2} = [];
-                    cnn{4} = [];
-                    cnn{6} = [];
-                    [feat_path, ~, ~] = fileparts(db_densefeat_matname);
-                    if exist(feat_path, 'dir')~=7; mkdir(feat_path); end
-                    save('-v6', db_densefeat_matname, 'cnn');
-                    fprintf('Dense feature extraction: %s done. \n', ImgList_original(ii).topNname{jj});
-                end
+                save('-v6', db_densefeat_matname, 'cnn');
+                fprintf('Dense feature extraction: %s done. \n', ImgList_original(1).topNname{jj});
             end
         end
+        %end
         
         inloc_hw = getenv("INLOC_HW");
         if strcmp(inloc_hw, "GPU")
@@ -64,35 +67,46 @@ denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
         
         %shortlist reranking
         ImgList = struct('queryname', {}, 'topNname', {}, 'topNscore', {}, 'primary', {}, 'Ps', {});
-        for ii = 1:1:length(ImgList_original)
-            ImgList(ii).queryname = ImgList_original(ii).queryname;
-            ImgList(ii).topNname = ImgList_original(ii).topNname(1:shortlist_topN);
-            ImgList(ii).primary = ImgList_original(ii).primary;
-            
-            %preload query feature
-            %qfname = fullfile(params.input.feature.dir, params.dataset.query.dirname, [ImgList(ii).queryname, params.input.feature.q_matformat]);
-            qfname = "" + ImgList(ii).queryname + params.input.feature.q_matformat;
-            cnnq = load(qfname, 'cnn');cnnq = cnnq.cnn;
-            f = dir(fullfile(params.output.gv_dense.dir, ImgList(ii).queryname)); %skip-recomputation
-            if numel(f) ~= (shortlist_topN+2)
-                % TODO: Vratit sem parfor!
-                for kk = 1:1:shortlist_topN
-                    parfor_denseGV( cnnq, ImgList(ii).queryname, ImgList(ii).topNname{kk}, params );
-                    fprintf('dense matching: %s vs %s DONE. \n', ImgList(ii).queryname, ImgList(ii).topNname{kk});
-                end
+        %for ii = 1:1:length(ImgList_original)
+        ImgList(1).queryname = ImgList_original(1).queryname;
+        ImgList(1).topNname = ImgList_original(1).topNname(1:shortlist_topN);
+        ImgList(1).primary = ImgList_original(1).primary;
+        
+        %preload query feature
+        %qfname = fullfile(params.input.feature.dir, params.dataset.query.dirname, [ImgList(ii).queryname, params.input.feature.q_matformat]);
+        qfname = "" + ImgList(1).queryname + params.input.feature.q_matformat;
+        cnnq = load(qfname, 'cnn');cnnq = cnnq.cnn;
+        f = dir(fullfile(params.output.gv_dense.dir, ImgList(1).queryname)); %skip-recomputation
+        if numel(f) ~= (shortlist_topN+2)
+            % TODO: Vratit sem parfor!
+            for kk = 1:1:shortlist_topN
+                parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname{kk}, params );
+                fprintf('dense matching: %s vs %s DONE. \n', ImgList(1).queryname, ImgList(1).topNname{kk});
             end
-            for jj = 1:1:shortlist_topN
-                cutoutPath = ImgList(ii).topNname{jj};
-                this_gvresults = load(fullfile(params.output.gv_dense.dir, ImgList(ii).queryname, buildCutoutName(cutoutPath, params.output.gv_dense.matformat)));
-                ImgList(ii).topNscore(jj) = ImgList_original(ii).topNscore(jj) + size(this_gvresults.inls12, 2);
-            end
-            
-            [sorted_score, idx] = sort(ImgList(ii).topNscore, 'descend');
-            ImgList(ii).topNname = ImgList(ii).topNname(idx);
-            ImgList(ii).topNscore = ImgList(ii).topNscore(idx);
-            
-            fprintf('%s done. \n', ImgList(ii).queryname);
         end
+        for jj = 1:1:shortlist_topN
+            cutoutPath = ImgList(1).topNname{jj};
+            %                 %this_gvresults = load(fullfile(params.output.gv_dense.dir, ImgList(1).queryname, buildCutoutName(cutoutPath, params.output.gv_dense.matformat)));
+            %                 fprintf("ImgList(1).queryname : %s", ImgList(1).queryname);
+            %                 fprintf("built : %s", buildCutoutName(cutoutPath, params.output.gv_dense.matformat));
+            %                 fprintf("FULL : %s", fullfile(ImgList(1).queryname, buildCutoutName(cutoutPath, params.output.gv_dense.matformat)));
+            %                 fprintf("exist : %d", exist(fullfile(ImgList(1).queryname, buildCutoutName(cutoutPath, params.output.gv_dense.matformat)) ));
+            %                 this_gvresults = load(fullfile(ImgList(1).queryname,
+            %                 buildCutoutName(cutoutPath, params.output.gv_dense.matformat)));
+            [~,QFname,~] = fileparts(ImgList(1).queryname);
+            [~,DBFname,~] = fileparts(cutoutPath);
+            %mkdirIfNonExistent(fullfile(params.output.gv_dense.dir, QFname));
+            this_densegv_matname = fullfile(params.output.gv_dense.dir, QFname, ""+DBFname+params.output.gv_dense.matformat)
+            this_gvresults = load(this_densegv_matname);
+            ImgList(1).topNscore(jj) = ImgList_original(1).topNscore(jj) + size(this_gvresults.inls12, 2);
+        end
+        
+        [sorted_score, idx] = sort(ImgList(1).topNscore, 'descend');
+        ImgList(1).topNname = ImgList(1).topNname(idx);
+        ImgList(1).topNscore = ImgList(1).topNscore(idx);
+        
+        fprintf('%s done. \n', ImgList(1).queryname);
+        %end
         %     save('DenseGV.mat');
         save('-v6', denseGV_matname, 'ImgList');
         
@@ -105,12 +119,12 @@ denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
     
     %% for each query, find top-mCombinations sequences of lengths params.sequence.length
     treatQueriesSequentially = isfield(params, 'sequence') && isfield(params.sequence, 'length');
-    if treatQueriesSequentially && params.sequence.length == 1
-        treatQueriesSequentially = false; % to avoid NaN pose estimates for queries that don't have HoloLens data
-    end
-    if treatQueriesSequentially && strcmp(params.sequence.processing.mode, 'sequentialPV')
-        treatQueriesSequentially = false;
-    end
+%     if treatQueriesSequentially && params.sequence.length == 1
+%         treatQueriesSequentially = false; % to avoid NaN pose estimates for queries that don't have HoloLens data
+%     end
+%     if treatQueriesSequentially && strcmp(params.sequence.processing.mode, 'sequentialPV')
+%         treatQueriesSequentially = false;
+%     end
     if ~treatQueriesSequentially
         desiredSequenceLength = 1;
     else
@@ -119,20 +133,20 @@ denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
     ImgListSequential = ImgList;
     ImgListSequential = ImgList(find([ImgList.primary] == true));
     ImgListSequential = rmfield(ImgListSequential, 'primary');
-
+    
     % build queryInd (i-th query in ImgList does not mean i-th query in the whole sequence)
     queryInd = zeros(length(ImgList),1);
     for i=1:length(ImgList)
         queryIdx = queryNameToQueryId(ImgList(i).queryname);
         queryInd(i) = i;%queryIdx;
     end
-   
-
+    
+    
     for i=1:length(ImgListSequential)
         parentQueryName = ImgListSequential(i).queryname;
         parentQueryId = i;%queryNameToQueryId(parentQueryName);
         % compute cumulative score for each combination
-
+        
         % generate all combination indices
         if parentQueryId-desiredSequenceLength+1 < 1
             actualSequenceLength = parentQueryId;
@@ -140,7 +154,7 @@ denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
             actualSequenceLength = desiredSequenceLength;
         end
         permInd = permn([1:topN_with_GV], actualSequenceLength);
-
+        
         permScores = zeros(size(permInd,1),1);
         for j=1:size(permInd)
             score = 0.0;
@@ -153,11 +167,11 @@ denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
             end
             permScores(j) = score;
         end
-
+        
         % find indices of m sequences with the highest cumulative score
         [sorted_score, idx] = sort(permScores, 'descend');
         ImgListSequential(i).topNscore = sorted_score(1:mCombinations)';
-
+        
         topInd = permInd(idx(1:mCombinations),:);
         ImgListSequential(i).topNname = cell(actualSequenceLength,mCombinations);
         for j=1:size(topInd,1)
@@ -170,14 +184,14 @@ denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
             end
         end
     end
-
+    
     if treatQueriesSequentially
         posesFromHoloLens = getPosesFromHoloLens(params.HoloLensOrientationDelay, params.HoloLensTranslationDelay, ...
-                                                    queryInd, params);
+            queryInd, params);
         nQueries = length(ImgList);
         assert(size(posesFromHoloLens,1) == nQueries);
     end
-
+    
     qlist = cell(1, length(ImgListSequential)*mCombinations);
     dblist = cell(1, length(ImgListSequential)*mCombinations);
     dbind = cell(1, length(ImgListSequential)*mCombinations);
@@ -206,10 +220,10 @@ denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
             lastQueryInd{idx} = lastQueryId;
         end
     end
-
+    
     %dense pnp
     for ii = 1:length(qlist)
-    %for ii = 1:length(qlist)
+        %for ii = 1:length(qlist)
         parfor_densePE(qlist{ii}, dblist{ii}, dbind{ii}, posesFromHoloLensList{ii}, firstQueryInd{ii}, lastQueryInd{ii}, params);
         fprintf('densePE: %s vs a cutout sequence DONE. \n', qlist{ii});
         fprintf('%d/%d done.\n', ii, length(qlist));
@@ -219,8 +233,11 @@ denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
     for ii = 1:1:length(ImgListSequential)
         ImgListSequential(ii).Ps = cell(1, mCombinations);
         for jj = 1:1:mCombinations
-            this_densepe_matname = fullfile(params.output.pnp_dense_inlier.dir, ImgListSequential(ii).queryname, ...
-                                            sprintf('%d%s', jj, params.output.pnp_dense.matformat));
+            [~,QFname,~] = fileparts(ImgListSequential(ii).queryname);
+            [~,DBFname,DBFsuffix] = fileparts(ImgListSequential(ii).topNname{jj});
+            this_densepe_matname = fullfile(params.output.pnp_dense_inlier.dir, QFname, sprintf('%s%s', DBFname, params.output.pnp_dense.matformat));
+%             this_densepe_matname = fullfile(params.output.pnp_dense_inlier.dir, ImgListSequential(ii).queryname, ...
+%                 sprintf('%d%s', jj, params.output.pnp_dense.matformat));
             load(this_densepe_matname, 'Ps');
             ImgListSequential(ii).Ps{jj} = Ps;
         end
@@ -231,10 +248,11 @@ denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
     end
     ImgList = ImgListSequential;
     save('-v6', densePE_matname, 'ImgList');
-% else
-%     load(denseGV_matname, 'ImgList');
-%     ImgList_denseGV = ImgList;
-%     
-%     load(densePE_matname, 'ImgList');
-% end
+    %
+else
+    load(denseGV_matname, 'ImgList');
+    ImgList_denseGV = ImgList;
+    
+    load(densePE_matname, 'ImgList');
+end
 ImgList_densePE = ImgList;

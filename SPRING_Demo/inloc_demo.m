@@ -20,8 +20,8 @@ QUERY_PATH = '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg';
 COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
 
 %setenv("INLOC_EXPERIMENT_NAME","hospital_1")
-setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo")
-setenv("INLOC_HW","GPU")
+setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo");
+setenv("INLOC_HW","GPU");
 %setenv("INLOC_HW","CPU")
 %[ params ] = setupParams('hospital_1', true); % NOTE: adjust
 [ params ] = setupParams('SPRING_Demo', DATASET_SIZE, true); % NOTE: adjust

@@ -55,8 +55,7 @@ if exist(this_densepe_matname, 'file') ~= 2 % TODO: tohle tu nebude, protoze que
 
     
         %depth information
-        %this_db_matname = fullfile(params.dataset.db.cutout.MatDir, DBFname+DBFsuffix+ params.dataset.db.cutout.matformat);
-        this_db_matname = dbCutoutname + ".mat";
+        this_db_matname = fullfile(params.dataset.db.cutout.MatDir, DBFname+DBFsuffix+ params.dataset.db.cutout.matformat);
         load(this_db_matname, 'XYZcut');
 
         %Feature upsampling

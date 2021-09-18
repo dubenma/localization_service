@@ -72,7 +72,11 @@ def buildXYZcut(sensorWidth, sensorHeight, t, cameraDirection, scaling, sensorXA
 
 def projectMeshCachedDebug(scene, f, R, t, sensorSize, ortho, mag, debug):
     a = os.environ['PATH'] 
-    b =os.environ['LD_LIBRARY_PATH']  
+    b = os.environ['LD_LIBRARY_PATH']  
+
+    print('a: ', a)
+    print('b: ', b)
+
     # In OpenGL, camera points toward -z by default, hence we don't need rFix like in the MATLAB code
     sensorWidth = sensorSize[0]
     sensorHeight = sensorSize[1]
