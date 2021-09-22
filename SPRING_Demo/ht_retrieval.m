@@ -7,7 +7,7 @@ load(params.input.dblist.path);
 %% top100 retrieval
 shortlist_topN = 100;   
 top100_matname = fullfile(params.output.dir, 'original_top100_shortlist.mat');
-if exist(top100_matname, 'file') ~= 2
+if ~USE_CACHE_FILES || exist(top100_matname, 'file') ~= 2
     disp("# Starting retrieval");
     ImgList = struct('queryname', {}, 'topNname', {}, 'topNscore', {}, 'primary', {});
         % primary means the user requested to evaluate InLoc on these poses
@@ -69,7 +69,10 @@ if exist(top100_matname, 'file') ~= 2
     if exist(params.output.dir, 'dir') ~= 7
         mkdir(params.output.dir);
     end
-save('-v6', top100_matname, 'ImgList');
+
+    if USE_CACHE_FILES
+        save('-v6', top100_matname, 'ImgList');
+    end
 else
     load(top100_matname, 'ImgList');
 end

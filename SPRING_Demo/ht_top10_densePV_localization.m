@@ -5,7 +5,7 @@
 
 PV_topN = params.PV.topN; % assuming this is not larger than mCombinations
 densePV_matname = fullfile(params.output.dir, 'densePV_top10_shortlist.mat');
-if exist(densePV_matname, 'file') ~= 2
+if ~USE_CACHE_FILES || exist(densePV_matname, 'file') ~= 2
     disp("# Starting top10");
 %     sequentialPV = isfield(params, 'sequence') && strcmp(params.sequence.processing.mode, 'sequentialPV');
 %     if sequentialPV
@@ -147,8 +147,10 @@ if exist(densePV_matname, 'file') ~= 2
     c.NumWorkers = nWorkers;
     saveProfile(c);
     
-    % TODO: uncomment
-    %p = parpool('local', nWorkers);
+    if USE_PAR
+        p = parpool('local', nWorkers);
+    end
+    
 
     for ii = 1:1:length(dbscanlist_uniq)
         this_dbscan = dbscanlist_uniq{ii};
@@ -159,12 +161,18 @@ if exist(densePV_matname, 'file') ~= 2
         
         %compute synthesized images and similarity scores
         % TODO: Vratit sem parfor
-        for jj = 1:1:length(this_qlist)
-%         for jj = 1:1:length(this_qlist)
-%assert(false);
-            parfor_densePV( this_qlist{jj}, this_dblist{jj}, this_dbind{jj}, this_PsList{jj}, params );
-            fprintf('densePV: %d / %d done. \n', jj, length(this_qlist));
+        if USE_PAR
+            parfor jj = 1:1:length(this_qlist)
+                parfor_densePV( this_qlist{jj}, this_dblist{jj}, this_dbind{jj}, this_PsList{jj}, params );
+                fprintf('densePV: %d / %d done. \n', jj, length(this_qlist));
+            end
+        else
+            for jj = 1:1:length(this_qlist)
+                parfor_densePV( this_qlist{jj}, this_dblist{jj}, this_dbind{jj}, this_PsList{jj}, params );
+                fprintf('densePV: %d / %d done. \n', jj, length(this_qlist));
+            end
         end
+       
         fprintf('densePV: scan %s (%d / %d) done. \n', this_dbscan, ii, length(dbscanlist_uniq));
     end
     
@@ -197,7 +205,10 @@ if exist(densePV_matname, 'file') ~= 2
     if exist(params.output.dir, 'dir') ~= 7
         mkdir(params.output.dir);
     end
-    save('-v6', densePV_matname, 'ImgList');
+    
+    if USE_CACHE_FILES
+        save('-v6', densePV_matname, 'ImgList');
+    end
      
 else
      load(densePV_matname, 'ImgList');

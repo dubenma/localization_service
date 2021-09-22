@@ -25,7 +25,7 @@ allTentatives3D = cell(1,sequenceLength);
 allInls = cell(1,sequenceLength);
 Ps = cell(1,sequenceLength);
 
-if exist(this_densepe_matname, 'file') ~= 2 % TODO: tohle tu nebude, protoze query je neznamy
+%if exist(this_densepe_matname, 'file') ~= 2 % TODO: tohle tu nebude, protoze query je neznamy
 
     skipPoseEstimation = false;
     if any(isnan(posesFromHoloLens(:))) % exceptional situation 2.
@@ -195,7 +195,12 @@ if exist(this_densepe_matname, 'file') ~= 2 % TODO: tohle tu nebude, protoze que
 %      show_matches2_vertical( Iq, Idb, points );
 %      
 %      keyboard;    
-end
+
+
+
+
+
+%end
 
 end
 

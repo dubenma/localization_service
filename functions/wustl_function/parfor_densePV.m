@@ -16,7 +16,7 @@ scores = cell(1,sequenceLength);
 errmaps = cell(1,sequenceLength);
 firstQueryId = queryNameToQueryId(qname) - sequenceLength + 1;
 
-if 1==1 %exist(this_densePV_matname, 'file') ~= 2
+%if 1==1 %exist(this_densePV_matname, 'file') ~= 2
     sequentialPV = isfield(params, 'sequence') && strcmp(params.sequence.processing.mode, 'sequentialPV');
     firstDbname = dbCutoutname{1};
     for i=1:sequenceLength
@@ -107,7 +107,7 @@ if 1==1 %exist(this_densePV_matname, 'file') ~= 2
 %         mkdir(fullfile(params.output.synth.dir, qname));
 %     end
     save(this_densePV_matname, 'Iqs', 'RGBpersps', 'RGB_flags', 'scores', 'errmaps');
-end
+%end
 
 
 end

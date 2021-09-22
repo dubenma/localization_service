@@ -4,18 +4,43 @@ distcomp.feature( 'LocalUseMpiexec', false )
 
 startup;
 
-%TOTO: Tyhle komentare asi uz neplati, tak je odstran
-% Nazev souboru určuje vybraný dataset.
-% Pro 250 snímků:  computed_featuresSize1.mat
-% Pro 500 snímků:  computed_featuresSize2.mat
-% Pro 1000 snímků: computed_featuresSize3.mat
-% Pro 2000 snímků: computed_featuresSize4.mat
-% Matice obahuje extrahovane features pro dany pocet snimku.
-% Databazove snimky jsou pak v teto slozce:
-% /home/seberma3/InLocCIIRC_NEWdataset/cutouts<250, 500, 1000, 2000>
-% MUSITE soucasne s vyberem datasetu prejmenovat prislusnou slozku na
-% "cutouts", tj. odstranit z nazvu cislovku.
+USE_CACHE_FILES = 0;
+USE_PAR = 0;
+USE_PROFIL = 1;
 DATASET_SIZE = 1;
+QUERIES = {
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg' ,
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg' ,
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg' ,
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/4.jpg' ,
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/5.jpg' ,
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/6.jpg' ,
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/7.jpg' ,
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/8.jpg' ,
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/9.jpg' ,
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/10.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/11.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/12.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/13.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/14.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/15.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/16.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/17.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/18.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/19.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/20.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/21.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/22.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/23.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/24.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/25.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/26.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/27.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/28.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/29.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/30.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/31.jpg'
+};
 QUERY_PATH = '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg';
 COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
 
@@ -61,6 +86,12 @@ end
 
 cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");
 
+if USE_PROFIL
+   profile off; profile on;  
+end
+
+for CYCPROF=12:numel(QUERIES)
+QUERY_PATH = QUERIES{CYCPROF};
 %1. retrieval
 ht_retrieval;
 
@@ -70,6 +101,14 @@ ht_top100_densePE_localization;
 %3. pose verification
 ht_top10_densePV_localization;
 
+if USE_PROFIL
+    prof_dir_name = "outputs/PROFILACE/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_"+CYCPROF;
+    profile off; 
+    % profsave(profile('info'), prof_dir_name);
+    saveProfileResult(profile('info'), prof_dir_name);
+end
+
+end
 %4. evaluate
 evaluate_SPRING;
 

@@ -12,10 +12,12 @@ save(inputPath, 'meshPath', 'f', 'R', 't', 'sensorSize', 'ortho', 'mag');
 %os.environ['LD_LIBRARY_PATH'] 
 b = '/usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib:';
 
-
-%command = sprintf('PATH=/usr/local/bin:$PATH python3 "%s" %s %s', projectMeshPyPath, inputPath, outputPath);
-system(sprintf('PATH=%s', b));
+system("echo $LD_LIBRARY_PATH");
 command = sprintf('LD_LIBRARY_PATH=%s PYOPENGL_PLATFORM=egl python3 "%s" %s %s', b, projectMeshPyPath, inputPath, outputPath);
+%command = sprintf('PATH=/usr/local/bin:$PATH python3 "%s" %s %s', projectMeshPyPath, inputPath, outputPath);
+%system(sprintf('PATH=%s', b));
+%command = sprintf('LD_LIBRARY_PATH=%s PYOPENGL_PLATFORM=egl python3 "%s" %s %s', b, b, projectMeshPyPath, inputPath, outputPath);
+%command = sprintf('PATH=%s PYOPENGL_PLATFORM=egl python3 "%s" %s %s', b, projectMeshPyPath, inputPath, outputPath);
 
 % if headless
 %     %command = sprintf('python "%s" %s %s', projectMeshPyPath, inputPath, outputPath);
