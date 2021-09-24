@@ -10,9 +10,9 @@ mCombinations = 10;
 densePE_matname = fullfile(params.output.dir, 'densePE_top100_shortlist.mat');
 
 denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
-if exist(densePE_matname, 'file') ~= 2
+if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
     disp("# Starting top100 because " + densePE_matname + " does not exist");
-    if exist(denseGV_matname, 'file') ~= 2
+    if ~USE_CACHE_FILES || exist(denseGV_matname, 'file') ~= 2
         disp("# Starting top100 No2 because " + denseGV_matname + " does not exist");
         %dense feature extraction
         net = load(params.netvlad.dataset.pretrained);
@@ -78,10 +78,17 @@ if exist(densePE_matname, 'file') ~= 2
         cnnq = load(qfname, 'cnn');cnnq = cnnq.cnn;
         f = dir(fullfile(params.output.gv_dense.dir, ImgList(1).queryname)); %skip-recomputation
         if numel(f) ~= (shortlist_topN+2)
-            % TODO: Vratit sem parfor!
-            for kk = 1:1:shortlist_topN
-                parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname{kk}, params );
-                fprintf('dense matching: %s vs %s DONE. \n', ImgList(1).queryname, ImgList(1).topNname{kk});
+            
+            if USE_PAR
+                parfor kk = 1:1:shortlist_topN
+                    parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname{kk}, params );
+                    fprintf('dense matching: %s vs %s DONE. \n', ImgList(1).queryname, ImgList(1).topNname{kk});
+                end
+            else
+                for kk = 1:1:shortlist_topN
+                    parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname{kk}, params );
+                    fprintf('dense matching: %s vs %s DONE. \n', ImgList(1).queryname, ImgList(1).topNname{kk});
+                end
             end
         end
         for jj = 1:1:shortlist_topN
@@ -108,7 +115,9 @@ if exist(densePE_matname, 'file') ~= 2
         fprintf('%s done. \n', ImgList(1).queryname);
         %end
         %     save('DenseGV.mat');
-        save('-v6', denseGV_matname, 'ImgList');
+        if USE_CACHE_FILES
+            save('-v6', denseGV_matname, 'ImgList');
+        end
         
     else
         load(denseGV_matname, 'ImgList');
@@ -247,8 +256,10 @@ if exist(densePE_matname, 'file') ~= 2
         mkdir(params.output.dir);
     end
     ImgList = ImgListSequential;
-    save('-v6', densePE_matname, 'ImgList');
-    %
+    
+    if USE_CACHE_FILES
+        save('-v6', densePE_matname, 'ImgList');
+    end
 else
     load(denseGV_matname, 'ImgList');
     ImgList_denseGV = ImgList;

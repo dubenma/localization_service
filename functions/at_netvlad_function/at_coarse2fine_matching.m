@@ -1,49 +1,97 @@
-function [newmatch, feat1fine, feat2fine, cnnfeat1fine, cnnfeat2fine] = ...
+function [newmatch_all, feat1fine, feat2fines, cnnfeat1fine, cnnfeat2fine] = ...
     at_coarse2fine_matching(cnn1,cnn2,coarselayerlevel,finelayerlevel)
 
+num_imgdbs = numel(cnn2);
+% disp("num_imgdbs:")
+% disp(num_imgdbs);
+
 cnnfeat1 = cnn1{coarselayerlevel}.x;
-cnnfeat2 = cnn2{coarselayerlevel}.x;
+cnnfeat2 = cell(1, num_imgdbs);
+for i=1:num_imgdbs
+%     disp(cnn2);
+%     disp(cnn2{i});
+%     disp(cnn2{i}{coarselayerlevel});
+    cnnfeat2{i} = cnn2{i}{coarselayerlevel}.x;
+end
 
 cnnfeat1fine = cnn1{finelayerlevel}.x;
-cnnfeat2fine = cnn2{finelayerlevel}.x;
+cnnfeat2fine = cell(1, num_imgdbs);
+for i=1:num_imgdbs
+    cnnfeat2fine{i} = cnn2{i}{finelayerlevel}.x;
+end
+%cnnfeat2fine = cnn2{finelayerlevel}.x;
 
 cnnfinesize1 = size(cnnfeat1fine(:,:,1));
-cnnfinesize2 = size(cnnfeat2fine(:,:,1));
+%cnnfinesize2 = size(cnnfeat2fine(:,:,1));
+cnnfinesize2 = cell(1, num_imgdbs);
+for i=1:num_imgdbs
+    cnnfinesize2{i} = size(cnnfeat2fine{i}(:,:,1));
+end
 
 [desc1, feat1] = at_cnnfeat2vlfeat(cnnfeat1);
-[desc2, feat2] = at_cnnfeat2vlfeat(cnnfeat2);
+descs2 = cell(1, num_imgdbs);
+feats2 = cell(1, num_imgdbs);
+for i=1:num_imgdbs
+    [xdesc2, xfeat2] = at_cnnfeat2vlfeat(cnnfeat2{i});
+    descs2{i} = xdesc2;
+    feats2{i} = xfeat2;
+end
 
 [desc1fine, feat1fine] = at_cnnfeat2vlfeat(cnnfeat1fine);
-[desc2fine, feat2fine] = at_cnnfeat2vlfeat(cnnfeat2fine);
+desc2fines = cell(1, num_imgdbs);
+feat2fines = cell(1, num_imgdbs);
+for i=1:num_imgdbs
+    [xdesc2fine, xfeat2fine] = at_cnnfeat2vlfeat(cnnfeat2fine{i});
+    desc2fines{i} = xdesc2fine;
+    feat2fines{i} = xfeat2fine;
+end
 
-AA = 2048;
-AB = 40000;
 % desc1 = single(rand(AA, AB));
 % desc2 = single(rand(AA, AB));
 
+% tic;
+% match12OBS = cell(1,num_imgdbs);
+% for i=1:num_imgdbs
+%     match12OBS{i} = at_dense_tc(desc1,descs2{i});
+% end
+% toc
 tic;
-match12 = at_dense_tc(desc1,desc2);
+match12 = get_tcs(desc1,descs2);
 toc
-%tic;
-%match12NEW = get_tcs(desc1,desc2);
-%toc
+
+% for i=1:num_imgdbs
+%    if size(match12OBS{i}, 2) ~= size(match12{i}, 2)
+%       disp("Odchykla v kodu!"); 
+%    end
+% end
 
 % fine level position is
+%save("TESTUSKA.mat", "match12", "match12NEW");
 
-[hash_table1, hash_coarse1] = at_dense_hashtable(cnnfeat1,cnnfeat1fine);
-[hash_table2, hash_coarse2] = at_dense_hashtable(cnnfeat2,cnnfeat2fine);
 
-newmatch = cell(1,size(match12,2));
-for ii=1:size(match12,2)
-  [d1,f1,ind1] = at_retrieve_fineposition(hash_coarse1,hash_table1,feat1(:,match12(1,ii)),desc1fine,feat1fine,cnnfinesize1);
-  [d2,f2,ind2] = at_retrieve_fineposition(hash_coarse2,hash_table2,feat2(:,match12(2,ii)),desc2fine,feat2fine,cnnfinesize2);  
-  thismatch12 = at_dense_tc(d1,d2);  
-  newmatch{ii} = [ind1(thismatch12(1,:)); ind2(thismatch12(2,:))];  
-end 
-disp("SM2");
-disp(size(match12,2));
-newmatch = [newmatch{:}];
-
+newmatch_all = cell(1, num_imgdbs);
+for i=1:num_imgdbs
+    [hash_table1, hash_coarse1] = at_dense_hashtable(cnnfeat1,cnnfeat1fine);
+    [hash_table2, hash_coarse2] = at_dense_hashtable(cnnfeat2{i},cnnfeat2fine{i});
+    
+    newmatch = cell(1,size(match12{i},2));
+    for ii=1:size(match12{i},2)
+        [d1,f1,ind1] = at_retrieve_fineposition(hash_coarse1,hash_table1,feat1(:,match12{i}(1,ii)),desc1fine,feat1fine,cnnfinesize1);
+        [d2,f2,ind2] = at_retrieve_fineposition(hash_coarse2,hash_table2,feats2{i}(:,match12{i}(2,ii)),desc2fines{i},feat2fines{i},cnnfinesize2{i});
+%         tic;
+%           thismatch12OBS = at_dense_tc(d1,d2);
+%         toc        
+        thismatch12 = get_tcs(d1,{d2});
+%         if size(thismatch12OBS, 2) ~= size(thismatch12{1}, 2)
+%             disp("Odchykla v kodu!"); 
+%         end        
+        newmatch{ii} = [ind1(thismatch12{1}(1,:)); ind2(thismatch12{1}(2,:))];        
+    end
+    %disp("SM2");
+    %disp(size(match12,2));
+    newmatch = [newmatch{:}];
+    newmatch_all{i} = newmatch;
+end
 
 % %--- compute similarity (matching NN score)
 % % [match12,inls12] = at_denseransac(desc1,f1,desc2,f2);
@@ -62,7 +110,7 @@ ymin = max(1,y-1);
 ymax = min(size(hash_coarse1,2),y+1);
 
 [x_nb,y_nb] = meshgrid(xmin:xmax,ymin:ymax);
-x_nb = x_nb(:); y_nb = y_nb(:); 
+x_nb = x_nb(:); y_nb = y_nb(:);
 
 pos1 = hash_coarse1(x_nb,y_nb);
 sub1 = [hash_table1{pos1}];

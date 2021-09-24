@@ -78,18 +78,19 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         cnnq = load(qfname, 'cnn');cnnq = cnnq.cnn;
         f = dir(fullfile(params.output.gv_dense.dir, ImgList(1).queryname)); %skip-recomputation
         if numel(f) ~= (shortlist_topN+2)
-            % TODO: Vratit sem parfor!
-            if USE_PAR
-                parfor kk = 1:1:shortlist_topN
-                    parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname{kk}, params );
-                    fprintf('dense matching: %s vs %s DONE. \n', ImgList(1).queryname, ImgList(1).topNname{kk});
-                end
-            else
-                for kk = 1:1:shortlist_topN
-                    parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname{kk}, params );
-                    fprintf('dense matching: %s vs %s DONE. \n', ImgList(1).queryname, ImgList(1).topNname{kk});
-                end
-            end
+            parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname, params ); % New version of GV accepts all db data for batch processing (20 GB RAM)
+            
+%             if USE_PAR
+%                 parfor kk = 1:1:shortlist_topN
+%                     parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname{kk}, params );
+%                     fprintf('dense matching: %s vs %s DONE. \n', ImgList(1).queryname, ImgList(1).topNname{kk});
+%                 end
+%             else
+%                 for kk = 1:1:shortlist_topN
+%                     parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname{kk}, params );
+%                     fprintf('dense matching: %s vs %s DONE. \n', ImgList(1).queryname, ImgList(1).topNname{kk});
+%                 end
+%             end
         end
         for jj = 1:1:shortlist_topN
             cutoutPath = ImgList(1).topNname{jj};
@@ -103,7 +104,7 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
             [~,QFname,~] = fileparts(ImgList(1).queryname);
             [~,DBFname,~] = fileparts(cutoutPath);
             %mkdirIfNonExistent(fullfile(params.output.gv_dense.dir, QFname));
-            this_densegv_matname = fullfile(params.output.gv_dense.dir, QFname, ""+DBFname+params.output.gv_dense.matformat)
+            this_densegv_matname = fullfile(params.output.gv_dense.dir, QFname, ""+DBFname+params.output.gv_dense.matformat);
             this_gvresults = load(this_densegv_matname);
             ImgList(1).topNscore(jj) = ImgList_original(1).topNscore(jj) + size(this_gvresults.inls12, 2);
         end

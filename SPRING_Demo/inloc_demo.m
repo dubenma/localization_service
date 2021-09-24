@@ -7,7 +7,7 @@ startup;
 USE_CACHE_FILES = 0;
 USE_PAR = 0;
 USE_PROFIL = 1;
-DATASET_SIZE = 1;
+%DATASET_SIZE = 1;
 QUERIES = {
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg' ,
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg' ,
@@ -40,9 +40,9 @@ QUERIES = {
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/29.jpg',
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/30.jpg',
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/31.jpg'
-};
-QUERY_PATH = '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg';
-COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
+    };
+%QUERY_PATH = '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg';
+%COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
 
 %setenv("INLOC_EXPERIMENT_NAME","hospital_1")
 setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo");
@@ -84,33 +84,39 @@ if wks1
     p = parpool('local', nWorkers);
 end
 
-cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");
-
-if USE_PROFIL
-   profile off; profile on;  
-end
-
-for CYCPROF=12:numel(QUERIES)
-QUERY_PATH = QUERIES{CYCPROF};
-%1. retrieval
-ht_retrieval;
-
-%2. geometric verification
-ht_top100_densePE_localization;
-
-%3. pose verification
-ht_top10_densePV_localization;
-
-if USE_PROFIL
-    prof_dir_name = "outputs/PROFILACE/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_"+CYCPROF;
-    profile off; 
-    % profsave(profile('info'), prof_dir_name);
-    saveProfileResult(profile('info'), prof_dir_name);
-end
-
+for DATASET_SIZE=1:4
+    cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");
+    
+    if USE_PROFIL
+        profile off; profile on;
+    end
+    for CYCPROF=1:numel(QUERIES)
+        QUERY_PATH = QUERIES{CYCPROF};
+        %1. retrieval
+        ht_retrieval;
+        
+        %2. geometric verification
+        ht_top100_densePE_localization;
+        
+        %3. pose verification
+        ht_top10_densePV_localization;
+        
+%         if USE_PROFIL
+%             prof_dir_name = "outputs/PROFILACE/speedup1/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_"+CYCPROF;
+%             profile off;
+%             % profsave(profile('info'), prof_dir_name);
+%             saveProfileResult(profile('info'), prof_dir_name);
+%         end
+    end
+    if USE_PROFIL
+        prof_dir_name = "outputs/PROFILACE/speedup1/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_ALL";
+        profile off;
+        % profsave(profile('info'), prof_dir_name);
+        saveProfileResult(profile('info'), prof_dir_name);
+    end
 end
 %4. evaluate
-evaluate_SPRING;
+%evaluate_SPRING;
 
 if ~strcmp(environment(), "laptop")
     exit(0); % avoid "MATLAB: management.cpp:671: find: Assertion `' failed."
