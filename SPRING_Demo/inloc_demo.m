@@ -7,7 +7,7 @@ startup;
 USE_CACHE_FILES = 0;
 USE_PAR = 0;
 USE_PROFIL = 1;
-DATASET_SIZE = 1;
+DATASET_SIZE = 3
 QUERIES = {
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg' ,
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg' ,
@@ -90,7 +90,7 @@ if USE_PROFIL
    profile off; profile on;  
 end
 
-for CYCPROF=12:numel(QUERIES)
+for CYCPROF=1:numel(QUERIES)
 QUERY_PATH = QUERIES{CYCPROF};
 %1. retrieval
 ht_retrieval;
