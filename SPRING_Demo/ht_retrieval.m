@@ -1,12 +1,20 @@
 %Note: It loads localization score and output top100 database list for each query. 
+[~,QFname,~] = fileparts(QUERY_PATH);
 
 %% Load query and database list
 load(COMPUTED_FEATURES_PATH);
 load(params.input.dblist.path);
 
 %% top100 retrieval
-shortlist_topN = 100;   
-top100_matname = fullfile(params.output.dir, 'original_top100_shortlist.mat');
+shortlist_topN = 100;
+%dirname = fullfile(params.output.dir,'queries', QFname);
+dirname = fullfile(params.output.dir, string(DATASET_SIZE), 'queries', QFname);
+top100_matname = fullfile(dirname, 'original_top100_shortlist.mat');
+
+if exist(dirname, 'dir') ~= 7
+        mkdir(dirname);
+end
+
 if ~USE_CACHE_FILES || exist(top100_matname, 'file') ~= 2
     disp("# Starting retrieval");
     ImgList = struct('queryname', {}, 'topNname', {}, 'topNscore', {}, 'primary', {});
@@ -70,7 +78,7 @@ if ~USE_CACHE_FILES || exist(top100_matname, 'file') ~= 2
         mkdir(params.output.dir);
     end
 
-    if USE_CACHE_FILES
+    if SAVE_SUBRESULT_FILES
         save('-v6', top100_matname, 'ImgList');
     end
 else

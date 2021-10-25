@@ -138,7 +138,8 @@ params.input.dblist.path = fullfile(params.input.dir, "cutout_imgnames_all"+data
 %params.input.qlist.path = fullfile(params.input.dir, 'query_imgnames_all.mat');%string cell containing query image names
 %params.input.scores.path = fullfile(params.input.dir, 'scores.mat');%retrieval score matrix
 
-params.input.feature.dir = fullfile(params.input.dir, 'features');
+params.input.feature.dir = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/";
+
 params.input.feature.db_matformat = '.features.dense.mat';
 params.input.feature.q_matformat = '.features.dense.mat';
 params.input.feature.db_sps_matformat = '.features.sparse.mat';
@@ -149,20 +150,26 @@ params.input.projectMesh_py_path = fullfile([thisScriptPath, '../projectMesh/pro
 %params.output.dir = fullfile(params.cache.dir, sprintf('outputs%s', experimentSuffix));
 params.output.dir = '/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs';
 
-params.output.gv_dense.dir = fullfile(params.output.dir, 'gv_dense');%dense matching results (directory)
+%params.output.gv_dense.dir = fullfile(params.output.dir, 'gv_dense');%dense matching results (directory)
+params.output.gv_dense.dir = fullfile(params.output.dir, string(datasetSize), 'gv_dense');%dense matching results (directory)
+
 params.output.gv_dense.matformat = '.gv_dense.mat';%dense matching results (file extention)
-params.output.gv_sparse.dir = fullfile(params.output.dir, 'gv_sparse');%sparse matching results (directory)
+%params.output.gv_sparse.dir = fullfile(params.output.dir, 'gv_sparse');%sparse matching results (directory)
+params.output.gv_sparse.dir = fullfile(params.output.dir, string(datasetSize), 'gv_sparse');%sparse matching results (directory)
 params.output.gv_sparse.matformat = '.gv_sparse.mat';%sparse matching results (file extention)
 
-params.output.pnp_dense_inlier.dir = fullfile(params.output.dir, 'PnP_dense_inlier');%PnP results (directory)
+%params.output.pnp_dense_inlier.dir = fullfile(params.output.dir, 'PnP_dense_inlier');%PnP results (directory)
+params.output.pnp_dense_inlier.dir = fullfile(params.output.dir, string(datasetSize), 'PnP_dense_inlier');%PnP results (directory)
 params.output.pnp_dense.matformat = '.pnp_dense_inlier.mat';%PnP results (file extention)
 params.output.pnp_sparse_inlier.dir = fullfile(params.output.dir, 'PnP_sparse_inlier');%PnP results (directory)
 params.output.pnp_sparse_inlier.matformat = '.pnp_sparse_inlier.mat';%PnP results (file extention)
 
-params.output.pnp_sparse_origin.dir = fullfile(params.output.dir, 'PnP_sparse_origin');%PnP results (directory)
+%params.output.pnp_sparse_origin.dir = fullfile(params.output.dir, 'PnP_sparse_origin');%PnP results (directory)
+params.output.pnp_sparse_origin.dir = fullfile(params.output.dir, string(datasetSize), 'PnP_sparse_origin');%PnP results (directory)
 params.output.pnp_sparse_origin.matformat = '.pnp_sparse_origin.mat';%PnP results (file extention)
 
-params.output.synth.dir = fullfile(params.output.dir, 'synthesized');%View synthesis results (directory)
+%params.output.synth.dir = fullfile(params.output.dir, 'synthesized');%View synthesis results (directory)
+params.output.synth.dir = fullfile(params.output.dir, string(datasetSize), 'synthesized');%View synthesis results (directory)
 params.output.synth.matformat = '.synth.mat';%View synthesis results (file extention)
 
 % evaluation
@@ -185,6 +192,11 @@ else
     params.dataset.db.cutout.fl = 600.0000; % TODO: this must match the params in buildCutouts (see _dataset repo)!
     params.dataset.db.cutout.K = buildK(params.dataset.db.cutout.fl, params.dataset.db.cutout.size(1), params.dataset.db.cutout.size(2));
 end
+
+%% Create directories
+mkdirIfNonExistent(params.output.synth.dir);
+mkdirIfNonExistent(params.output.gv_dense.dir);
+mkdirIfNonExistent(params.output.pnp_dense_inlier.dir);
 
 %% topN constants; TODO: set it up for ht_retrieval, dense_PE and rename the script names
 params.PV.topN = 10;

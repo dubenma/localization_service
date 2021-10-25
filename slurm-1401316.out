@@ -1,0 +1,450 @@
+Sat Oct 23 13:14:21 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.67       Driver Version: 460.67       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 108...  Off  | 00000000:3B:00.0 Off |                  N/A |
+| 11%   46C    P0    58W / 250W |      0MiB / 11178MiB |      0%   E. Process |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+python is /home/seberma3/.conda/envs/inlocul/bin/python
+python is /usr/bin/python
+/home/seberma3/.conda/envs/inlocul/bin/python
+
+The following have been reloaded with a version change:
+  1) GCC/7.3.0-2.30 => GCC/10.2.0
+  2) GCCcore/7.3.0 => GCCcore/10.2.0
+  3) binutils/2.30-GCCcore-7.3.0 => binutils/2.35-GCCcore-10.2.0
+  4) zlib/1.2.11-GCCcore-7.3.0 => zlib/1.2.11-GCCcore-10.2.0
+
+
+The following have been reloaded with a version change:
+  1) CUDA/11.1.1-GCC-10.2.0 => CUDA/9.1.85
+
+MATLAB is selecting SOFTWARE OPENGL rendering.
+RND: 1
+Random body ve 3D
+Projekce
+normalizace
+RND: 2
+Random body ve 3D
+Projekce
+normalizace
+RND: 3
+Random body ve 3D
+Projekce
+normalizace
+RND: 4
+Random body ve 3D
+Projekce
+normalizace
+RND: 5
+Random body ve 3D
+Projekce
+normalizace
+RND: 6
+Random body ve 3D
+Projekce
+normalizace
+RND: 7
+Random body ve 3D
+Projekce
+normalizace
+RND: 8
+Random body ve 3D
+Projekce
+normalizace
+RND: 9
+Random body ve 3D
+Projekce
+normalizace
+RND: 10
+Random body ve 3D
+Projekce
+normalizace
+RND: 11
+Random body ve 3D
+Projekce
+normalizace
+RND: 12
+Random body ve 3D
+Projekce
+normalizace
+RND: 13
+Random body ve 3D
+Projekce
+normalizace
+RND: 14
+Random body ve 3D
+Projekce
+normalizace
+RND: 15
+Random body ve 3D
+Projekce
+normalizace
+RND: 16
+Random body ve 3D
+Projekce
+normalizace
+RND: 17
+Random body ve 3D
+Projekce
+normalizace
+RND: 18
+Random body ve 3D
+Projekce
+normalizace
+RND: 19
+Random body ve 3D
+Projekce
+normalizace
+RND: 20
+Random body ve 3D
+Projekce
+normalizace
+RND: 21
+Random body ve 3D
+Projekce
+normalizace
+RND: 22
+Random body ve 3D
+Projekce
+normalizace
+RND: 23
+Random body ve 3D
+Projekce
+normalizace
+RND: 24
+Random body ve 3D
+Projekce
+normalizace
+RND: 25
+Random body ve 3D
+Projekce
+normalizace
+RND: 26
+Random body ve 3D
+Projekce
+normalizace
+RND: 27
+Random body ve 3D
+Projekce
+normalizace
+RND: 28
+Random body ve 3D
+Projekce
+normalizace
+RND: 29
+Random body ve 3D
+Projekce
+normalizace
+RND: 30
+Random body ve 3D
+Projekce
+normalizace
+RND: 31
+Random body ve 3D
+Projekce
+normalizace
+RND: 32
+Random body ve 3D
+Projekce
+normalizace
+RND: 33
+Random body ve 3D
+Projekce
+normalizace
+RND: 34
+Random body ve 3D
+Projekce
+normalizace
+RND: 35
+Random body ve 3D
+Projekce
+normalizace
+RND: 36
+Random body ve 3D
+Projekce
+normalizace
+RND: 37
+Random body ve 3D
+Projekce
+normalizace
+RND: 38
+Random body ve 3D
+Projekce
+normalizace
+RND: 39
+Random body ve 3D
+Projekce
+normalizace
+RND: 40
+Random body ve 3D
+Projekce
+normalizace
+RND: 41
+Random body ve 3D
+Projekce
+normalizace
+RND: 42
+Random body ve 3D
+Projekce
+normalizace
+RND: 43
+Random body ve 3D
+Projekce
+normalizace
+RND: 44
+Random body ve 3D
+Projekce
+normalizace
+RND: 45
+Random body ve 3D
+Projekce
+normalizace
+RND: 46
+Random body ve 3D
+Projekce
+normalizace
+RND: 47
+Random body ve 3D
+Projekce
+normalizace
+RND: 48
+Random body ve 3D
+Projekce
+normalizace
+RND: 49
+Random body ve 3D
+Projekce
+normalizace
+RND: 50
+Random body ve 3D
+Projekce
+normalizace
+RND: 51
+Random body ve 3D
+Projekce
+normalizace
+RND: 52
+Random body ve 3D
+Projekce
+normalizace
+RND: 53
+Random body ve 3D
+Projekce
+normalizace
+RND: 54
+Random body ve 3D
+Projekce
+normalizace
+RND: 55
+Random body ve 3D
+Projekce
+normalizace
+RND: 56
+Random body ve 3D
+Projekce
+normalizace
+RND: 57
+Random body ve 3D
+Projekce
+normalizace
+RND: 58
+Random body ve 3D
+Projekce
+normalizace
+RND: 59
+Random body ve 3D
+Projekce
+normalizace
+RND: 60
+Random body ve 3D
+Projekce
+normalizace
+RND: 61
+Random body ve 3D
+Projekce
+normalizace
+RND: 62
+Random body ve 3D
+Projekce
+normalizace
+RND: 63
+Random body ve 3D
+Projekce
+normalizace
+RND: 64
+Random body ve 3D
+Projekce
+normalizace
+RND: 65
+Random body ve 3D
+Projekce
+normalizace
+RND: 66
+Random body ve 3D
+Projekce
+normalizace
+RND: 67
+Random body ve 3D
+Projekce
+normalizace
+RND: 68
+Random body ve 3D
+Projekce
+normalizace
+RND: 69
+Random body ve 3D
+Projekce
+normalizace
+RND: 70
+Random body ve 3D
+Projekce
+normalizace
+RND: 71
+Random body ve 3D
+Projekce
+normalizace
+RND: 72
+Random body ve 3D
+Projekce
+normalizace
+RND: 73
+Random body ve 3D
+Projekce
+normalizace
+RND: 74
+Random body ve 3D
+Projekce
+normalizace
+RND: 75
+Random body ve 3D
+Projekce
+normalizace
+RND: 76
+Random body ve 3D
+Projekce
+normalizace
+RND: 77
+Random body ve 3D
+Projekce
+normalizace
+RND: 78
+Random body ve 3D
+Projekce
+normalizace
+RND: 79
+Random body ve 3D
+Projekce
+normalizace
+RND: 80
+Random body ve 3D
+Projekce
+normalizace
+RND: 81
+Random body ve 3D
+Projekce
+normalizace
+RND: 82
+Random body ve 3D
+Projekce
+normalizace
+RND: 83
+Random body ve 3D
+Projekce
+normalizace
+RND: 84
+Random body ve 3D
+Projekce
+normalizace
+RND: 85
+Random body ve 3D
+Projekce
+normalizace
+RND: 86
+Random body ve 3D
+Projekce
+normalizace
+RND: 87
+Random body ve 3D
+Projekce
+normalizace
+RND: 88
+Random body ve 3D
+Projekce
+normalizace
+RND: 89
+Random body ve 3D
+Projekce
+normalizace
+RND: 90
+Random body ve 3D
+Projekce
+normalizace
+RND: 91
+Random body ve 3D
+Projekce
+normalizace
+RND: 92
+Random body ve 3D
+Projekce
+normalizace
+RND: 93
+Random body ve 3D
+Projekce
+normalizace
+RND: 94
+Random body ve 3D
+Projekce
+normalizace
+RND: 95
+Random body ve 3D
+Projekce
+normalizace
+RND: 96
+Random body ve 3D
+Projekce
+normalizace
+RND: 97
+Random body ve 3D
+Projekce
+normalizace
+RND: 98
+Random body ve 3D
+Projekce
+normalizace
+RND: 99
+Random body ve 3D
+Projekce
+normalizace
+RND: 100
+Random body ve 3D
+Projekce
+normalizace
+Vytvoreni nahodnych bodu [bez for / s for]:
+    0.2359
+
+    0.8706
+
+Projekce bodu [bez for / s for]:
+    0.1710
+
+   20.7462
+
+Normalizace bodu [bez for / s for]:
+    0.0584
+
+    6.1084
+

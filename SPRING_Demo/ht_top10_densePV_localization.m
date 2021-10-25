@@ -4,7 +4,14 @@
 [~,QFname,~] = fileparts(QUERY_PATH);
 
 PV_topN = params.PV.topN; % assuming this is not larger than mCombinations
-densePV_matname = fullfile(params.output.dir, 'densePV_top10_shortlist.mat');
+% densePV_matname = fullfile(params.output.dir, 'densePV_top10_shortlist.mat');
+%dirname = fullfile(params.output.dir, 'queries', QFname);
+dirname = fullfile(params.output.dir, string(DATASET_SIZE), 'queries', QFname);
+if exist(dirname, 'dir') ~= 7
+   mkdir(dirname); 
+end
+densePV_matname = fullfile(dirname, 'densePV_top10_shortlist.mat');
+
 if ~USE_CACHE_FILES || exist(densePV_matname, 'file') ~= 2
     disp("# Starting top10");
 %     sequentialPV = isfield(params, 'sequence') && strcmp(params.sequence.processing.mode, 'sequentialPV');
@@ -206,7 +213,7 @@ if ~USE_CACHE_FILES || exist(densePV_matname, 'file') ~= 2
         mkdir(params.output.dir);
     end
     
-    if USE_CACHE_FILES
+    if SAVE_SUBRESULT_FILES
         save('-v6', densePV_matname, 'ImgList');
     end
      

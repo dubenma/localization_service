@@ -7,12 +7,26 @@ mCombinations = 10;
 
 %% densePE (top100 reranking -> top10 pose candidate)
 
-densePE_matname = fullfile(params.output.dir, 'densePE_top100_shortlist.mat');
+% dirname = fullfile(params.output.dir, 'queries', QFname);
+dirname = fullfile(params.output.dir, string(DATASET_SIZE), 'queries', QFname);
 
-denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
+if exist(dirname, 'dir') ~= 7
+   mkdir(dirname); 
+end
+    
+densePE_matname = fullfile(dirname, 'densePE_top100_shortlist.mat');
+denseGV_matname = fullfile(dirname, 'denseGV_top100_shortlist.mat');
+
+<<<<<<< Updated upstream
 if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
     disp("# Starting top100 because " + densePE_matname + " does not exist");
     if ~USE_CACHE_FILES || exist(denseGV_matname, 'file') ~= 2
+=======
+
+if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2 %1 == 1
+    disp("# Starting top100 because " + densePE_matname + " does not exist");
+    if ~USE_CACHE_FILES || exist(denseGV_matname, 'file') ~= 2 %1 == 1 
+>>>>>>> Stashed changes
         disp("# Starting top100 No2 because " + denseGV_matname + " does not exist");
         %dense feature extraction
         net = load(params.netvlad.dataset.pretrained);
@@ -43,19 +57,23 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         for jj = 1:1:shortlist_topN
             %db_densefeat_matname = fullfile(params.input.feature.dir, params.dataset.db.cutout.dirname, ...
             %    [ImgList_original(ii).topNname{jj}, params.input.feature.db_matformat]);
-            db_densefeat_matname = ImgList_original(1).topNname{jj} + params.input.feature.db_matformat;
+            %db_densefeat_matname = ImgList_original(1).topNname{jj} + params.input.feature.db_matformat;
+            db_densefeat_matname = getFeaturesPath(ImgList_original(1).topNname{jj}, params);
             if exist(db_densefeat_matname, 'file') ~= 2
-                %cutoutImage = imread(fullfile(params.dataset.db.cutout.dir, ImgList_original(ii).topNname{jj}));
-                cutoutImage = imread(ImgList_original(1).topNname{jj});
-                cnn = at_serialAllFeats_convfeat(net, cutoutImage, 'useGPU', true);
-                cnn{1} = [];
-                cnn{2} = [];
-                cnn{4} = [];
-                cnn{6} = [];
-                [feat_path, ~, ~] = fileparts(db_densefeat_matname);
-                if exist(feat_path, 'dir')~=7; mkdir(feat_path); end
-                save('-v6', db_densefeat_matname, 'cnn');
-                fprintf('Dense feature extraction: %s done. \n', ImgList_original(1).topNname{jj});
+                   assert(false);
+%                 Zakomentovano, protozue nechci dovolit buildovat features
+%                 pri lokalizuaci! Uz ma bejt vse hotovo!
+%                 %cutoutImage = imread(fullfile(params.dataset.db.cutout.dir, ImgList_original(ii).topNname{jj}));
+%                 cutoutImage = imread(ImgList_original(1).topNname{jj});
+%                 cnn = at_serialAllFeats_convfeat(net, cutoutImage, 'useGPU', true);
+%                 cnn{1} = [];
+%                 cnn{2} = [];
+%                 cnn{4} = [];
+%                 cnn{6} = [];
+%                 [feat_path, ~, ~] = fileparts(db_densefeat_matname);
+%                 if exist(feat_path, 'dir')~=7; mkdir(feat_path); end
+%                 save('-v6', db_densefeat_matname, 'cnn');
+%                 fprintf('Dense feature extraction: %s done. \n', ImgList_original(1).topNname{jj});
             end
         end
         %end
@@ -79,7 +97,22 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         f = dir(fullfile(params.output.gv_dense.dir, ImgList(1).queryname)); %skip-recomputation
         if numel(f) ~= (shortlist_topN+2)
             parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname, params ); % New version of GV accepts all db data for batch processing (20 GB RAM)
+<<<<<<< Updated upstream
             %%% return
+=======
+            %%%return;
+%             if USE_PAR
+%                 parfor kk = 1:1:shortlist_topN
+%                     parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname{kk}, params );
+%                     fprintf('dense matching: %s vs %s DONE. \n', ImgList(1).queryname, ImgList(1).topNname{kk});
+%                 end
+%             else
+%                 for kk = 1:1:shortlist_topN
+%                     parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname{kk}, params );
+%                     fprintf('dense matching: %s vs %s DONE. \n', ImgList(1).queryname, ImgList(1).topNname{kk});
+%                 end
+%             end
+>>>>>>> Stashed changes
         end
         for jj = 1:1:shortlist_topN
             cutoutPath = ImgList(1).topNname{jj};
@@ -94,6 +127,10 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
             [~,DBFname,~] = fileparts(cutoutPath);
             %mkdirIfNonExistent(fullfile(params.output.gv_dense.dir, QFname));
             this_densegv_matname = fullfile(params.output.gv_dense.dir, QFname, ""+DBFname+params.output.gv_dense.matformat);
+<<<<<<< HEAD
+=======
+            fprintf("THSLOAD: %s \n", this_densegv_matname);
+>>>>>>> d3788b04951a8d1fceb00825391fc727f095766c
             this_gvresults = load(this_densegv_matname);
             ImgList(1).topNscore(jj) = ImgList_original(1).topNscore(jj) + size(this_gvresults.inls12, 2);
         end
@@ -105,7 +142,7 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         fprintf('%s done. \n', ImgList(1).queryname);
         %end
         %     save('DenseGV.mat');
-        if USE_CACHE_FILES
+        if SAVE_SUBRESULT_FILES
             save('-v6', denseGV_matname, 'ImgList');
         end
         
@@ -247,7 +284,7 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
     end
     ImgList = ImgListSequential;
     
-    if USE_CACHE_FILES
+    if SAVE_SUBRESULT_FILES
         save('-v6', densePE_matname, 'ImgList');
     end
 else

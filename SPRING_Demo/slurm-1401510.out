@@ -1,0 +1,1047 @@
+Sun Oct 24 00:06:13 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.67       Driver Version: 460.67       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla K40m          Off  | 00000000:04:00.0 Off |                    0 |
+| N/A   40C    P0    72W / 235W |      0MiB / 11441MiB |     97%   E. Process |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+python is /home/seberma3/.conda/envs/inlocul/bin/python
+python is /usr/bin/python
+/home/seberma3/.conda/envs/inlocul/bin/python
+
+The following have been reloaded with a version change:
+  1) GCC/7.3.0-2.30 => GCC/10.2.0
+  2) GCCcore/7.3.0 => GCCcore/10.2.0
+  3) binutils/2.30-GCCcore-7.3.0 => binutils/2.35-GCCcore-10.2.0
+  4) zlib/1.2.11-GCCcore-7.3.0 => zlib/1.2.11-GCCcore-10.2.0
+
+
+The following have been reloaded with a version change:
+  1) CUDA/11.1.1-GCC-10.2.0 => CUDA/9.1.85
+
+MATLAB is selecting SOFTWARE OPENGL rendering.
+[Warning: Name is nonexistent or not a directory:
+/home/seberma3/_InLoc_PROD/SPRING_Demo/functions/denseGV_F10e] 
+[> In path (line 109)
+  In addpath (line 86)
+  In startup (line 26)] 
+
+env =
+
+    'ciirc'
+
+[Warning: Name is nonexistent or not a directory:
+/local/localization_service/Data/NetVLAD] 
+[> In path (line 109)
+  In addpath (line 86)
+  In startup (line 29)] 
+
+ans =
+
+  logical
+
+   1
+
+[Warning: Name is nonexistent or not a directory:
+/home/seberma3/_InLoc_PROD/SPRING_Demo/functions/denseGV_F10e] 
+[> In path (line 109)
+  In addpath (line 86)
+  In startup (line 26)
+  In inloc_demo (line 5)] 
+
+env =
+
+    'ciirc'
+
+[Warning: Name is nonexistent or not a directory:
+/local/localization_service/Data/NetVLAD] 
+[> In path (line 109)
+  In addpath (line 86)
+  In startup (line 29)
+  In inloc_demo (line 5)] 
+
+env =
+
+    'ciirc'
+
+ENV ciirc
+InLocCIIRC is running experiment "SPRING_Demo".
+InLocCIIRC is running in GPU mode.
+# Starting retrieval
+Finding features for query #1/1
+
+cnn description: Start
+cnn description: End
+processing query 1/1
+# Starting top100 because /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/queries/1/densePE_top100_shortlist.mat does not exist
+# Starting top100 No2 because /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/queries/1/denseGV_top100_shortlist.mat does not exist
+Existuje-li feature file /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg.features.dense.mat ? 2cnn description: Start
+cnn description: End
+Dense feature extraction: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg done. 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 8).
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-90_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-60_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-90_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-60_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-120_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-30_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-30_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-180_0.gv_dense.mat
+Elapsed time is 2.381223 seconds.
+Elapsed time is 2.440709 seconds.
+Elapsed time is 2.430260 seconds.
+Elapsed time is 2.384605 seconds.
+Elapsed time is 2.449539 seconds.
+Elapsed time is 2.390644 seconds.
+Elapsed time is 2.424614 seconds.
+Elapsed time is 2.389291 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+   467
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-120_0.jpg DONE. 
+SM2
+   722
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-90_0.jpg DONE. 
+   402
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-30_0.jpg DONE. 
+   724
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-30_0.jpg DONE. 
+   870
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-60_0.jpg DONE. 
+   386
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-60_0.jpg DONE. 
+   402
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-180_0.jpg DONE. 
+   492
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-90_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-60_-30.gv_dense.mat
+Elapsed time is 2.106150 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_0_0.gv_dense.mat
+Elapsed time is 2.191629 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_-180_0.gv_dense.mat
+Elapsed time is 2.057251 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-120_0.gv_dense.mat
+Elapsed time is 2.080866 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-120_0.gv_dense.mat
+Elapsed time is 2.149894 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_150_0.gv_dense.mat
+Elapsed time is 2.070415 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_120_0.gv_dense.mat
+Elapsed time is 2.195270 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_150_0.gv_dense.mat
+Elapsed time is 2.081676 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+   320
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-120_0.jpg DONE. 
+   418
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-120_0.jpg DONE. 
+   358
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_150_0.jpg DONE. 
+   305
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_120_0.jpg DONE. 
+   284
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_-180_0.jpg DONE. 
+   270
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_150_0.jpg DONE. 
+   453
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_0_0.jpg DONE. 
+   829
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-60_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-30_-30.gv_dense.mat
+Elapsed time is 2.071083 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_90_0.gv_dense.mat
+Elapsed time is 2.067574 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-60_0.gv_dense.mat
+Elapsed time is 2.055193 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_0_0.gv_dense.mat
+Elapsed time is 2.065061 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-90_0.gv_dense.mat
+Elapsed time is 2.076089 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-60_0.gv_dense.mat
+Elapsed time is 2.061705 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-120_-30.gv_dense.mat
+Elapsed time is 2.141015 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-150_-30.gv_dense.mat
+Elapsed time is 2.065626 seconds.
+SM2
+SM2
+SM2
+SM2
+   343
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-90_0.jpg DONE. 
+SM2
+SM2
+   334
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-60_0.jpg DONE. 
+SM2
+SM2
+   358
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-60_0.jpg DONE. 
+   395
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_90_0.jpg DONE. 
+   393
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-150_-30.jpg DONE. 
+   638
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_0_0.jpg DONE. 
+   375
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-120_-30.jpg DONE. 
+   692
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-30_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-60_-30.gv_dense.mat
+Elapsed time is 2.044552 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_120_0.gv_dense.mat
+Elapsed time is 2.260009 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_150_0.gv_dense.mat
+Elapsed time is 2.119471 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_30_0.gv_dense.mat
+Elapsed time is 2.083400 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-30_0.gv_dense.mat
+Elapsed time is 2.057046 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_0_0.gv_dense.mat
+Elapsed time is 2.055237 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-180_0.gv_dense.mat
+Elapsed time is 2.053824 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_-180_0.gv_dense.mat
+Elapsed time is 2.091797 seconds.
+SM2
+SM2
+SM2
+SM2
+   338
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-60_-30.jpg DONE. 
+SM2
+   340
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-30_0.jpg DONE. 
+SM2
+SM2
+   304
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_-180_0.jpg DONE. 
+   424
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_0_0.jpg DONE. 
+   362
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_120_0.jpg DONE. 
+   382
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_150_0.jpg DONE. 
+   339
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_30_0.jpg DONE. 
+   500
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-180_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_0_-30.gv_dense.mat
+Elapsed time is 2.031886 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_0_-30.gv_dense.mat
+Elapsed time is 2.035794 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-90_-30.gv_dense.mat
+Elapsed time is 2.126066 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_30_-30.gv_dense.mat
+Elapsed time is 2.054473 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_30_0.gv_dense.mat
+Elapsed time is 2.057177 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_60_0.gv_dense.mat
+Elapsed time is 2.065473 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-150_-30.gv_dense.mat
+Elapsed time is 2.049926 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-150_0.gv_dense.mat
+Elapsed time is 2.084443 seconds.
+SM2
+   356
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_0_-30.jpg DONE. 
+SM2
+SM2
+SM2
+SM2
+SM2
+   346
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_30_-30.jpg DONE. 
+   490
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_30_0.jpg DONE. 
+   363
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-90_-30.jpg DONE. 
+   333
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_60_0.jpg DONE. 
+   306
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-150_-30.jpg DONE. 
+   343
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_150_0.gv_dense.mat
+Elapsed time is 2.033209 seconds.
+   488
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_0_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-120_-30.gv_dense.mat
+Elapsed time is 2.037590 seconds.
+SM2
+SM2
+   357
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-120_-30.jpg DONE. 
+   345
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-30_-30.gv_dense.mat
+Elapsed time is 2.045751 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-150_0.gv_dense.mat
+Elapsed time is 2.058769 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-90_-30.gv_dense.mat
+Elapsed time is 2.273141 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-180_-30.gv_dense.mat
+Elapsed time is 2.057061 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_60_0.gv_dense.mat
+Elapsed time is 2.079398 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-150_0.gv_dense.mat
+Elapsed time is 2.055138 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+   323
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-180_-30.jpg DONE. 
+   391
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_60_0.jpg DONE. 
+   336
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-30_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_90_-30.gv_dense.mat
+Elapsed time is 2.047559 seconds.
+   424
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-150_0.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_90_0.gv_dense.mat
+Elapsed time is 2.027078 seconds.
+   291
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_90_-30.jpg DONE. 
+SM2
+   322
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_90_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_30_0.gv_dense.mat
+Elapsed time is 2.045223 seconds.
+   399
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_60_0.gv_dense.mat
+Elapsed time is 2.057788 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-30_0.gv_dense.mat
+Elapsed time is 2.447575 seconds.
+   548
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-90_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_0_0.gv_dense.mat
+Elapsed time is 2.092154 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-180_0.gv_dense.mat
+Elapsed time is 2.051577 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_90_0.gv_dense.mat
+Elapsed time is 2.073757 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+   341
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_30_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_120_0.gv_dense.mat
+Elapsed time is 2.038287 seconds.
+   353
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-30_0.jpg DONE. 
+   334
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-180_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_60_0.gv_dense.mat
+Elapsed time is 2.034302 seconds.
+   283
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_60_0.jpg DONE. 
+   379
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_90_0.jpg DONE. 
+SM2
+   340
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_0_0.jpg DONE. 
+SM2
+   350
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_120_0.jpg DONE. 
+   275
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_60_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_150_0.gv_dense.mat
+Elapsed time is 2.035190 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-60_-30.gv_dense.mat
+Elapsed time is 2.063075 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-90_30.gv_dense.mat
+Elapsed time is 2.017226 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-180_-30.gv_dense.mat
+Elapsed time is 2.257954 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_60_-30.gv_dense.mat
+Elapsed time is 2.079306 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-90_30.gv_dense.mat
+Elapsed time is 2.037078 seconds.
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_120_-30.gv_dense.mat
+Elapsed time is 2.069628 seconds.
+   297
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_150_0.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-30_30.gv_dense.mat
+Elapsed time is 2.040152 seconds.
+SM2
+SM2
+   265
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-60_-30.jpg DONE. 
+   265
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-90_30.jpg DONE. 
+SM2
+   280
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-180_-30.jpg DONE. 
+SM2
+   328
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_60_-30.jpg DONE. 
+   256
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_120_-30.jpg DONE. 
+   423
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-30_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_15_-180_0.gv_dense.mat
+Elapsed time is 2.016807 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_150_30.gv_dense.mat
+Elapsed time is 2.023217 seconds.
+   330
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-90_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-180_-30.gv_dense.mat
+Elapsed time is 2.082593 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_30_0.gv_dense.mat
+Elapsed time is 2.082470 seconds.
+   215
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_-180_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-60_30.gv_dense.mat
+Elapsed time is 2.209311 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_120_0.gv_dense.mat
+Elapsed time is 2.087661 seconds.
+SM2
+   245
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_150_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_0_-30.gv_dense.mat
+Elapsed time is 2.027160 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_150_0.gv_dense.mat
+Elapsed time is 2.038958 seconds.
+SM2
+SM2
+   365
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-180_-30.jpg DONE. 
+SM2
+   271
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_30_0.jpg DONE. 
+SM2
+   307
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_120_0.jpg DONE. 
+   328
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_0_-30.jpg DONE. 
+   347
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_150_-30.gv_dense.mat
+Elapsed time is 2.011204 seconds.
+SM2
+   273
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_150_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-90_0.gv_dense.mat
+Elapsed time is 2.009695 seconds.
+SM2
+   515
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-60_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-180_30.gv_dense.mat
+Elapsed time is 2.076782 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_0_0.gv_dense.mat
+Elapsed time is 2.045292 seconds.
+   366
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-90_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_90_0.gv_dense.mat
+Elapsed time is 2.045557 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_30_-30.gv_dense.mat
+Elapsed time is 2.027201 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_60_-30.gv_dense.mat
+Elapsed time is 2.030339 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_90_0.gv_dense.mat
+Elapsed time is 2.255474 seconds.
+SM2
+SM2
+   248
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_0_0.jpg DONE. 
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_30_30.gv_dense.mat
+Elapsed time is 2.010875 seconds.
+   276
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-180_30.jpg DONE. 
+   251
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_90_0.jpg DONE. 
+   343
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_30_-30.jpg DONE. 
+   313
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_60_-30.jpg DONE. 
+   261
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_90_0.jpg DONE. 
+SM2
+   297
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_30_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_-150_0.gv_dense.mat
+Elapsed time is 2.004642 seconds.
+SM2
+   270
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_-150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_90_0.gv_dense.mat
+Elapsed time is 2.022893 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_90_-30.gv_dense.mat
+Elapsed time is 2.026540 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_30_0.gv_dense.mat
+Elapsed time is 2.366553 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_120_0.gv_dense.mat
+Elapsed time is 2.040738 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_60_0.gv_dense.mat
+Elapsed time is 2.034444 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_60_0.gv_dense.mat
+Elapsed time is 2.026892 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_0_30.gv_dense.mat
+Elapsed time is 2.034099 seconds.
+   314
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_90_0.jpg DONE. 
+SM2
+SM2
+SM2
+   261
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_90_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_30_30.gv_dense.mat
+Elapsed time is 2.016714 seconds.
+SM2
+SM2
+   300
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_120_0.jpg DONE. 
+   359
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_30_0.jpg DONE. 
+   299
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_0_30.jpg DONE. 
+SM2
+   281
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_60_0.jpg DONE. 
+   243
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_60_0.jpg DONE. 
+   260
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_30_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-90_-30.gv_dense.mat
+Elapsed time is 2.019597 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-30_-30.gv_dense.mat
+Elapsed time is 2.079827 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-60_-30.gv_dense.mat
+Elapsed time is 2.015604 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_120_0.gv_dense.mat
+Elapsed time is 2.003656 seconds.
+SM2
+   294
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-90_-30.jpg DONE. 
+   291
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-30_-30.jpg DONE. 
+SM2
+   256
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-60_-30.jpg DONE. 
+   302
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_120_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-180_0.gv_dense.mat
+Elapsed time is 2.008284 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-120_30.gv_dense.mat
+Elapsed time is 2.084318 seconds.
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_15_60_0.gv_dense.mat
+Elapsed time is 2.008274 seconds.
+   255
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-180_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_15_-90_0.gv_dense.mat
+Elapsed time is 2.001818 seconds.
+   238
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-120_30.jpg DONE. 
+SM2
+SM2
+   278
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_60_0.jpg DONE. 
+   287
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_-90_0.jpg DONE. 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-180_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_0_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_0_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_0_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-30_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-180_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-60_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-90_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-180_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-90_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-180_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_15_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_150_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_30_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_0_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_30_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_15_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-120_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_15_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_120_0.gv_dense.mat 
+/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg done. 
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+1/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+2/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+3/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+4/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+5/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+6/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+7/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+8/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+9/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+10/10 done.
+# Starting top10
+Parallel pool using the 'local' profile is shutting down.
+
+env =
+
+    'ciirc'
+
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 8).
+
+env =
+
+    'ciirc'
+
+
+env =
+
+    'ciirc'
+
+
+env =
+
+    'ciirc'
+
+
+env =
+
+    'ciirc'
+
+
+env =
+
+    'ciirc'
+
+
+env =
+
+    'ciirc'
+
+
+env =
+
+    'ciirc'
+
+
+env =
+
+    'ciirc'
+
+/opt/apps/software/MATLAB/R2019b/sys/opengl/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/os/glnxa64:/opt/apps/software/MATLAB/R2019b/bin/glnxa64:/opt/apps/software/MATLAB/R2019b/extern/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/server:/opt/apps/software/cuDNN/7.0.5-CUDA-9.1.85/lib64:/opt/apps/software/CUDA/9.1.85/extras/CUPTI/lib64:/opt/apps/software/CUDA/9.1.85/lib64:/opt/apps/software/CUDAcore/11.1.1/nvvm/lib64:/opt/apps/software/CUDAcore/11.1.1/extras/CUPTI/lib64:/opt/apps/software/CUDAcore/11.1.1/lib64:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/lib:/opt/apps/software/zlib/1.2.11-GCCcore-10.2.0/lib:/opt/apps/software/GCCcore/10.2.0/lib64:/opt/apps/software/GCCcore/10.2.0/lib:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/lib:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/lib:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/lib:/opt/apps/software/METIS/5.1.0-foss-2018b/lib:/opt/apps/software/ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1/lib:/opt/apps/software/FFTW/3.3.8-gompi-2018b/lib:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/lib:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/lib:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/lib:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/lib::/home/seberma3/gflags-2.2.2/build/lib:/home/seberma3/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib:/home/lucivpav/gflags-2.2.2/build/lib:/home/lucivpav/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib
+LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib: PYOPENGL_PLATFORM=egl python3 "/home/seberma3/_InLoc_PROD/functions/InLocCIIRC_utils/params/../projectMesh/projectMesh.py" /tmp/tp3d80d723_0e28_40bf_99de_4ae1000e8b01.mat /tmp/tp31aa8ac9_07c0_440b_b8f7_2da511f48b4e.mat
+a:  /opt/apps/software/CUDA/9.1.85:/opt/apps/software/CUDA/9.1.85/bin:/opt/apps/software/CUDAcore/11.1.1:/opt/apps/software/CUDAcore/11.1.1/nvvm/bin:/opt/apps/software/CUDAcore/11.1.1/bin:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/bin:/opt/apps/software/GCCcore/10.2.0/bin:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/bin:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/bin:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/bin:/opt/apps/software/METIS/5.1.0-foss-2018b/bin:/opt/apps/software/FFTW/3.3.8-gompi-2018b/bin:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/bin:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/bin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/sbin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/bin:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/bin:/opt/apps/software/MATLAB/R2019b:/opt/apps/software/MATLAB/R2019b/bin:/home/seberma3/.conda/envs/inlocul/bin:/opt/apps/software/Anaconda3/2020.02/condabin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/seberma3/.local/bin:/home/seberma3/bin
+b:  /usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib:
+done!
+
+/opt/apps/software/MATLAB/R2019b/sys/opengl/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/os/glnxa64:/opt/apps/software/MATLAB/R2019b/bin/glnxa64:/opt/apps/software/MATLAB/R2019b/extern/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/server:/opt/apps/software/cuDNN/7.0.5-CUDA-9.1.85/lib64:/opt/apps/software/CUDA/9.1.85/extras/CUPTI/lib64:/opt/apps/software/CUDA/9.1.85/lib64:/opt/apps/software/CUDAcore/11.1.1/nvvm/lib64:/opt/apps/software/CUDAcore/11.1.1/extras/CUPTI/lib64:/opt/apps/software/CUDAcore/11.1.1/lib64:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/lib:/opt/apps/software/zlib/1.2.11-GCCcore-10.2.0/lib:/opt/apps/software/GCCcore/10.2.0/lib64:/opt/apps/software/GCCcore/10.2.0/lib:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/lib:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/lib:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/lib:/opt/apps/software/METIS/5.1.0-foss-2018b/lib:/opt/apps/software/ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1/lib:/opt/apps/software/FFTW/3.3.8-gompi-2018b/lib:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/lib:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/lib:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/lib:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/lib::/home/seberma3/gflags-2.2.2/build/lib:/home/seberma3/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib:/home/lucivpav/gflags-2.2.2/build/lib:/home/lucivpav/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib
+LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib: PYOPENGL_PLATFORM=egl python3 "/home/seberma3/_InLoc_PROD/functions/InLocCIIRC_utils/params/../projectMesh/projectMesh.py" /tmp/tpe37ebf65_da58_4095_9e22_a41eed3518b4.mat /tmp/tp2022a3cb_bd22_4daa_91f8_46201e87c2f8.mat
+a:  /opt/apps/software/CUDA/9.1.85:/opt/apps/software/CUDA/9.1.85/bin:/opt/apps/software/CUDAcore/11.1.1:/opt/apps/software/CUDAcore/11.1.1/nvvm/bin:/opt/apps/software/CUDAcore/11.1.1/bin:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/bin:/opt/apps/software/GCCcore/10.2.0/bin:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/bin:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/bin:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/bin:/opt/apps/software/METIS/5.1.0-foss-2018b/bin:/opt/apps/software/FFTW/3.3.8-gompi-2018b/bin:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/bin:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/bin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/sbin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/bin:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/bin:/opt/apps/software/MATLAB/R2019b:/opt/apps/software/MATLAB/R2019b/bin:/home/seberma3/.conda/envs/inlocul/bin:/opt/apps/software/Anaconda3/2020.02/condabin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/seberma3/.local/bin:/home/seberma3/bin
+b:  /usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib:
+done!
+
+/opt/apps/software/MATLAB/R2019b/sys/opengl/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/os/glnxa64:/opt/apps/software/MATLAB/R2019b/bin/glnxa64:/opt/apps/software/MATLAB/R2019b/extern/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/server:/opt/apps/software/cuDNN/7.0.5-CUDA-9.1.85/lib64:/opt/apps/software/CUDA/9.1.85/extras/CUPTI/lib64:/opt/apps/software/CUDA/9.1.85/lib64:/opt/apps/software/CUDAcore/11.1.1/nvvm/lib64:/opt/apps/software/CUDAcore/11.1.1/extras/CUPTI/lib64:/opt/apps/software/CUDAcore/11.1.1/lib64:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/lib:/opt/apps/software/zlib/1.2.11-GCCcore-10.2.0/lib:/opt/apps/software/GCCcore/10.2.0/lib64:/opt/apps/software/GCCcore/10.2.0/lib:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/lib:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/lib:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/lib:/opt/apps/software/METIS/5.1.0-foss-2018b/lib:/opt/apps/software/ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1/lib:/opt/apps/software/FFTW/3.3.8-gompi-2018b/lib:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/lib:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/lib:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/lib:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/lib::/home/seberma3/gflags-2.2.2/build/lib:/home/seberma3/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib:/home/lucivpav/gflags-2.2.2/build/lib:/home/lucivpav/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib
+LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib: PYOPENGL_PLATFORM=egl python3 "/home/seberma3/_InLoc_PROD/functions/InLocCIIRC_utils/params/../projectMesh/projectMesh.py" /tmp/tp8783dbb2_2e84_4f4f_bd4c_7979ae791657.mat /tmp/tp6acc7595_d04c_44f6_bd20_612a490aac4e.mat
+a:  /opt/apps/software/CUDA/9.1.85:/opt/apps/software/CUDA/9.1.85/bin:/opt/apps/software/CUDAcore/11.1.1:/opt/apps/software/CUDAcore/11.1.1/nvvm/bin:/opt/apps/software/CUDAcore/11.1.1/bin:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/bin:/opt/apps/software/GCCcore/10.2.0/bin:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/bin:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/bin:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/bin:/opt/apps/software/METIS/5.1.0-foss-2018b/bin:/opt/apps/software/FFTW/3.3.8-gompi-2018b/bin:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/bin:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/bin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/sbin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/bin:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/bin:/opt/apps/software/MATLAB/R2019b:/opt/apps/software/MATLAB/R2019b/bin:/home/seberma3/.conda/envs/inlocul/bin:/opt/apps/software/Anaconda3/2020.02/condabin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/seberma3/.local/bin:/home/seberma3/bin
+b:  /usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib:
+done!
+
+/opt/apps/software/MATLAB/R2019b/sys/opengl/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/os/glnxa64:/opt/apps/software/MATLAB/R2019b/bin/glnxa64:/opt/apps/software/MATLAB/R2019b/extern/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/server:/opt/apps/software/cuDNN/7.0.5-CUDA-9.1.85/lib64:/opt/apps/software/CUDA/9.1.85/extras/CUPTI/lib64:/opt/apps/software/CUDA/9.1.85/lib64:/opt/apps/software/CUDAcore/11.1.1/nvvm/lib64:/opt/apps/software/CUDAcore/11.1.1/extras/CUPTI/lib64:/opt/apps/software/CUDAcore/11.1.1/lib64:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/lib:/opt/apps/software/zlib/1.2.11-GCCcore-10.2.0/lib:/opt/apps/software/GCCcore/10.2.0/lib64:/opt/apps/software/GCCcore/10.2.0/lib:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/lib:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/lib:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/lib:/opt/apps/software/METIS/5.1.0-foss-2018b/lib:/opt/apps/software/ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1/lib:/opt/apps/software/FFTW/3.3.8-gompi-2018b/lib:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/lib:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/lib:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/lib:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/lib::/home/seberma3/gflags-2.2.2/build/lib:/home/seberma3/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib:/home/lucivpav/gflags-2.2.2/build/lib:/home/lucivpav/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib
+LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib: PYOPENGL_PLATFORM=egl python3 "/home/seberma3/_InLoc_PROD/functions/InLocCIIRC_utils/params/../projectMesh/projectMesh.py" /tmp/tp7406b7b0_8821_45a6_830d_39dbd730262c.mat /tmp/tp3dbc5fc6_148c_4c14_8174_b42d0a937a07.mat
+a:  /opt/apps/software/CUDA/9.1.85:/opt/apps/software/CUDA/9.1.85/bin:/opt/apps/software/CUDAcore/11.1.1:/opt/apps/software/CUDAcore/11.1.1/nvvm/bin:/opt/apps/software/CUDAcore/11.1.1/bin:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/bin:/opt/apps/software/GCCcore/10.2.0/bin:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/bin:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/bin:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/bin:/opt/apps/software/METIS/5.1.0-foss-2018b/bin:/opt/apps/software/FFTW/3.3.8-gompi-2018b/bin:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/bin:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/bin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/sbin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/bin:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/bin:/opt/apps/software/MATLAB/R2019b:/opt/apps/software/MATLAB/R2019b/bin:/home/seberma3/.conda/envs/inlocul/bin:/opt/apps/software/Anaconda3/2020.02/condabin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/seberma3/.local/bin:/home/seberma3/bin
+b:  /usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib:
+done!
+
+/opt/apps/software/MATLAB/R2019b/sys/opengl/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/os/glnxa64:/opt/apps/software/MATLAB/R2019b/bin/glnxa64:/opt/apps/software/MATLAB/R2019b/extern/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/server:/opt/apps/software/cuDNN/7.0.5-CUDA-9.1.85/lib64:/opt/apps/software/CUDA/9.1.85/extras/CUPTI/lib64:/opt/apps/software/CUDA/9.1.85/lib64:/opt/apps/software/CUDAcore/11.1.1/nvvm/lib64:/opt/apps/software/CUDAcore/11.1.1/extras/CUPTI/lib64:/opt/apps/software/CUDAcore/11.1.1/lib64:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/lib:/opt/apps/software/zlib/1.2.11-GCCcore-10.2.0/lib:/opt/apps/software/GCCcore/10.2.0/lib64:/opt/apps/software/GCCcore/10.2.0/lib:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/lib:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/lib:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/lib:/opt/apps/software/METIS/5.1.0-foss-2018b/lib:/opt/apps/software/ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1/lib:/opt/apps/software/FFTW/3.3.8-gompi-2018b/lib:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/lib:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/lib:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/lib:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/lib::/home/seberma3/gflags-2.2.2/build/lib:/home/seberma3/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib:/home/lucivpav/gflags-2.2.2/build/lib:/home/lucivpav/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib
+LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib: PYOPENGL_PLATFORM=egl python3 "/home/seberma3/_InLoc_PROD/functions/InLocCIIRC_utils/params/../projectMesh/projectMesh.py" /tmp/tp1533c89f_7d1d_4399_a760_b45e0cd8e5fb.mat /tmp/tp8b90c28d_833c_4a7b_a766_7d3ca7021df5.mat
+a:  /opt/apps/software/CUDA/9.1.85:/opt/apps/software/CUDA/9.1.85/bin:/opt/apps/software/CUDAcore/11.1.1:/opt/apps/software/CUDAcore/11.1.1/nvvm/bin:/opt/apps/software/CUDAcore/11.1.1/bin:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/bin:/opt/apps/software/GCCcore/10.2.0/bin:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/bin:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/bin:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/bin:/opt/apps/software/METIS/5.1.0-foss-2018b/bin:/opt/apps/software/FFTW/3.3.8-gompi-2018b/bin:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/bin:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/bin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/sbin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/bin:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/bin:/opt/apps/software/MATLAB/R2019b:/opt/apps/software/MATLAB/R2019b/bin:/home/seberma3/.conda/envs/inlocul/bin:/opt/apps/software/Anaconda3/2020.02/condabin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/seberma3/.local/bin:/home/seberma3/bin
+b:  /usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib:
+done!
+
+/opt/apps/software/MATLAB/R2019b/sys/opengl/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/os/glnxa64:/opt/apps/software/MATLAB/R2019b/bin/glnxa64:/opt/apps/software/MATLAB/R2019b/extern/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/server:/opt/apps/software/cuDNN/7.0.5-CUDA-9.1.85/lib64:/opt/apps/software/CUDA/9.1.85/extras/CUPTI/lib64:/opt/apps/software/CUDA/9.1.85/lib64:/opt/apps/software/CUDAcore/11.1.1/nvvm/lib64:/opt/apps/software/CUDAcore/11.1.1/extras/CUPTI/lib64:/opt/apps/software/CUDAcore/11.1.1/lib64:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/lib:/opt/apps/software/zlib/1.2.11-GCCcore-10.2.0/lib:/opt/apps/software/GCCcore/10.2.0/lib64:/opt/apps/software/GCCcore/10.2.0/lib:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/lib:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/lib:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/lib:/opt/apps/software/METIS/5.1.0-foss-2018b/lib:/opt/apps/software/ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1/lib:/opt/apps/software/FFTW/3.3.8-gompi-2018b/lib:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/lib:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/lib:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/lib:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/lib::/home/seberma3/gflags-2.2.2/build/lib:/home/seberma3/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib:/home/lucivpav/gflags-2.2.2/build/lib:/home/lucivpav/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib
+LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib: PYOPENGL_PLATFORM=egl python3 "/home/seberma3/_InLoc_PROD/functions/InLocCIIRC_utils/params/../projectMesh/projectMesh.py" /tmp/tpa6a94569_f6ef_4e6c_9eb5_0d7733dd996c.mat /tmp/tp945a3dbb_c7f2_4aad_b12d_3175de2830e2.mat
+a:  /opt/apps/software/CUDA/9.1.85:/opt/apps/software/CUDA/9.1.85/bin:/opt/apps/software/CUDAcore/11.1.1:/opt/apps/software/CUDAcore/11.1.1/nvvm/bin:/opt/apps/software/CUDAcore/11.1.1/bin:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/bin:/opt/apps/software/GCCcore/10.2.0/bin:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/bin:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/bin:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/bin:/opt/apps/software/METIS/5.1.0-foss-2018b/bin:/opt/apps/software/FFTW/3.3.8-gompi-2018b/bin:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/bin:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/bin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/sbin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/bin:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/bin:/opt/apps/software/MATLAB/R2019b:/opt/apps/software/MATLAB/R2019b/bin:/home/seberma3/.conda/envs/inlocul/bin:/opt/apps/software/Anaconda3/2020.02/condabin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/seberma3/.local/bin:/home/seberma3/bin
+b:  /usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib:
+done!
+
+/opt/apps/software/MATLAB/R2019b/sys/opengl/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/os/glnxa64:/opt/apps/software/MATLAB/R2019b/bin/glnxa64:/opt/apps/software/MATLAB/R2019b/extern/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/server:/opt/apps/software/cuDNN/7.0.5-CUDA-9.1.85/lib64:/opt/apps/software/CUDA/9.1.85/extras/CUPTI/lib64:/opt/apps/software/CUDA/9.1.85/lib64:/opt/apps/software/CUDAcore/11.1.1/nvvm/lib64:/opt/apps/software/CUDAcore/11.1.1/extras/CUPTI/lib64:/opt/apps/software/CUDAcore/11.1.1/lib64:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/lib:/opt/apps/software/zlib/1.2.11-GCCcore-10.2.0/lib:/opt/apps/software/GCCcore/10.2.0/lib64:/opt/apps/software/GCCcore/10.2.0/lib:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/lib:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/lib:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/lib:/opt/apps/software/METIS/5.1.0-foss-2018b/lib:/opt/apps/software/ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1/lib:/opt/apps/software/FFTW/3.3.8-gompi-2018b/lib:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/lib:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/lib:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/lib:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/lib::/home/seberma3/gflags-2.2.2/build/lib:/home/seberma3/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib:/home/lucivpav/gflags-2.2.2/build/lib:/home/lucivpav/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib
+LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib: PYOPENGL_PLATFORM=egl python3 "/home/seberma3/_InLoc_PROD/functions/InLocCIIRC_utils/params/../projectMesh/projectMesh.py" /tmp/tp6ec27d63_9d29_43ee_b817_cd43663ca30f.mat /tmp/tpd2b3bb44_2504_4979_8725_e25d329c19f6.mat
+a:  /opt/apps/software/CUDA/9.1.85:/opt/apps/software/CUDA/9.1.85/bin:/opt/apps/software/CUDAcore/11.1.1:/opt/apps/software/CUDAcore/11.1.1/nvvm/bin:/opt/apps/software/CUDAcore/11.1.1/bin:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/bin:/opt/apps/software/GCCcore/10.2.0/bin:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/bin:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/bin:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/bin:/opt/apps/software/METIS/5.1.0-foss-2018b/bin:/opt/apps/software/FFTW/3.3.8-gompi-2018b/bin:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/bin:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/bin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/sbin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/bin:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/bin:/opt/apps/software/MATLAB/R2019b:/opt/apps/software/MATLAB/R2019b/bin:/home/seberma3/.conda/envs/inlocul/bin:/opt/apps/software/Anaconda3/2020.02/condabin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/seberma3/.local/bin:/home/seberma3/bin
+b:  /usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib:
+done!
+
+/opt/apps/software/MATLAB/R2019b/sys/opengl/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/os/glnxa64:/opt/apps/software/MATLAB/R2019b/bin/glnxa64:/opt/apps/software/MATLAB/R2019b/extern/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/server:/opt/apps/software/cuDNN/7.0.5-CUDA-9.1.85/lib64:/opt/apps/software/CUDA/9.1.85/extras/CUPTI/lib64:/opt/apps/software/CUDA/9.1.85/lib64:/opt/apps/software/CUDAcore/11.1.1/nvvm/lib64:/opt/apps/software/CUDAcore/11.1.1/extras/CUPTI/lib64:/opt/apps/software/CUDAcore/11.1.1/lib64:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/lib:/opt/apps/software/zlib/1.2.11-GCCcore-10.2.0/lib:/opt/apps/software/GCCcore/10.2.0/lib64:/opt/apps/software/GCCcore/10.2.0/lib:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/lib:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/lib:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/lib:/opt/apps/software/METIS/5.1.0-foss-2018b/lib:/opt/apps/software/ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1/lib:/opt/apps/software/FFTW/3.3.8-gompi-2018b/lib:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/lib:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/lib:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/lib:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/lib::/home/seberma3/gflags-2.2.2/build/lib:/home/seberma3/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib:/home/lucivpav/gflags-2.2.2/build/lib:/home/lucivpav/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib
+LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib: PYOPENGL_PLATFORM=egl python3 "/home/seberma3/_InLoc_PROD/functions/InLocCIIRC_utils/params/../projectMesh/projectMesh.py" /tmp/tp89a617bc_c3b7_460f_8fa5_a4a3df2db48e.mat /tmp/tp625e6f3c_a709_4852_b239_038d8a5d3b41.mat
+a:  /opt/apps/software/CUDA/9.1.85:/opt/apps/software/CUDA/9.1.85/bin:/opt/apps/software/CUDAcore/11.1.1:/opt/apps/software/CUDAcore/11.1.1/nvvm/bin:/opt/apps/software/CUDAcore/11.1.1/bin:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/bin:/opt/apps/software/GCCcore/10.2.0/bin:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/bin:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/bin:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/bin:/opt/apps/software/METIS/5.1.0-foss-2018b/bin:/opt/apps/software/FFTW/3.3.8-gompi-2018b/bin:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/bin:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/bin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/sbin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/bin:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/bin:/opt/apps/software/MATLAB/R2019b:/opt/apps/software/MATLAB/R2019b/bin:/home/seberma3/.conda/envs/inlocul/bin:/opt/apps/software/Anaconda3/2020.02/condabin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/seberma3/.local/bin:/home/seberma3/bin
+b:  /usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib:
+done!
+
+densePV: 3 / 10 done. 
+densePV: 4 / 10 done. 
+densePV: 5 / 10 done. 
+densePV: 6 / 10 done. 
+densePV: 1 / 10 done. 
+densePV: 2 / 10 done. 
+densePV: 8 / 10 done. 
+
+env =
+
+    'ciirc'
+
+densePV: 10 / 10 done. 
+
+env =
+
+    'ciirc'
+
+/opt/apps/software/MATLAB/R2019b/sys/opengl/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/os/glnxa64:/opt/apps/software/MATLAB/R2019b/bin/glnxa64:/opt/apps/software/MATLAB/R2019b/extern/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/server:/opt/apps/software/cuDNN/7.0.5-CUDA-9.1.85/lib64:/opt/apps/software/CUDA/9.1.85/extras/CUPTI/lib64:/opt/apps/software/CUDA/9.1.85/lib64:/opt/apps/software/CUDAcore/11.1.1/nvvm/lib64:/opt/apps/software/CUDAcore/11.1.1/extras/CUPTI/lib64:/opt/apps/software/CUDAcore/11.1.1/lib64:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/lib:/opt/apps/software/zlib/1.2.11-GCCcore-10.2.0/lib:/opt/apps/software/GCCcore/10.2.0/lib64:/opt/apps/software/GCCcore/10.2.0/lib:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/lib:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/lib:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/lib:/opt/apps/software/METIS/5.1.0-foss-2018b/lib:/opt/apps/software/ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1/lib:/opt/apps/software/FFTW/3.3.8-gompi-2018b/lib:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/lib:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/lib:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/lib:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/lib::/home/seberma3/gflags-2.2.2/build/lib:/home/seberma3/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib:/home/lucivpav/gflags-2.2.2/build/lib:/home/lucivpav/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib
+LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib: PYOPENGL_PLATFORM=egl python3 "/home/seberma3/_InLoc_PROD/functions/InLocCIIRC_utils/params/../projectMesh/projectMesh.py" /tmp/tpb7418a5a_62c1_4567_9994_3117a39f3503.mat /tmp/tp69cea324_ce5e_4ffc_87e1_b91799cf8a3c.mat
+a:  /opt/apps/software/CUDA/9.1.85:/opt/apps/software/CUDA/9.1.85/bin:/opt/apps/software/CUDAcore/11.1.1:/opt/apps/software/CUDAcore/11.1.1/nvvm/bin:/opt/apps/software/CUDAcore/11.1.1/bin:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/bin:/opt/apps/software/GCCcore/10.2.0/bin:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/bin:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/bin:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/bin:/opt/apps/software/METIS/5.1.0-foss-2018b/bin:/opt/apps/software/FFTW/3.3.8-gompi-2018b/bin:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/bin:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/bin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/sbin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/bin:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/bin:/opt/apps/software/MATLAB/R2019b:/opt/apps/software/MATLAB/R2019b/bin:/home/seberma3/.conda/envs/inlocul/bin:/opt/apps/software/Anaconda3/2020.02/condabin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/seberma3/.local/bin:/home/seberma3/bin
+b:  /usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib:
+done!
+
+/opt/apps/software/MATLAB/R2019b/sys/opengl/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/os/glnxa64:/opt/apps/software/MATLAB/R2019b/bin/glnxa64:/opt/apps/software/MATLAB/R2019b/extern/lib/glnxa64:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/native_threads:/opt/apps/software/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/server:/opt/apps/software/cuDNN/7.0.5-CUDA-9.1.85/lib64:/opt/apps/software/CUDA/9.1.85/extras/CUPTI/lib64:/opt/apps/software/CUDA/9.1.85/lib64:/opt/apps/software/CUDAcore/11.1.1/nvvm/lib64:/opt/apps/software/CUDAcore/11.1.1/extras/CUPTI/lib64:/opt/apps/software/CUDAcore/11.1.1/lib64:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/lib:/opt/apps/software/zlib/1.2.11-GCCcore-10.2.0/lib:/opt/apps/software/GCCcore/10.2.0/lib64:/opt/apps/software/GCCcore/10.2.0/lib:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/lib:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/lib:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/lib:/opt/apps/software/METIS/5.1.0-foss-2018b/lib:/opt/apps/software/ScaLAPACK/2.0.2-gompi-2018b-OpenBLAS-0.3.1/lib:/opt/apps/software/FFTW/3.3.8-gompi-2018b/lib:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/lib:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/lib:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/lib:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/lib::/home/seberma3/gflags-2.2.2/build/lib:/home/seberma3/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib:/home/lucivpav/gflags-2.2.2/build/lib:/home/lucivpav/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib
+LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib: PYOPENGL_PLATFORM=egl python3 "/home/seberma3/_InLoc_PROD/functions/InLocCIIRC_utils/params/../projectMesh/projectMesh.py" /tmp/tp31d0495a_a483_4b86_9158_58706b87f226.mat /tmp/tp1c6e910b_7b97_43a6_ac86_f0c525c8648a.mat
+a:  /opt/apps/software/CUDA/9.1.85:/opt/apps/software/CUDA/9.1.85/bin:/opt/apps/software/CUDAcore/11.1.1:/opt/apps/software/CUDAcore/11.1.1/nvvm/bin:/opt/apps/software/CUDAcore/11.1.1/bin:/opt/apps/software/binutils/2.35-GCCcore-10.2.0/bin:/opt/apps/software/GCCcore/10.2.0/bin:/opt/apps/software/LLVM/6.0.0-GCCcore-7.3.0/bin:/opt/apps/software/ncurses/6.1-GCCcore-7.3.0/bin:/opt/apps/software/SuiteSparse/5.1.2-foss-2018b-METIS-5.1.0/bin:/opt/apps/software/METIS/5.1.0-foss-2018b/bin:/opt/apps/software/FFTW/3.3.8-gompi-2018b/bin:/opt/apps/software/OpenBLAS/0.3.1-GCC-7.3.0-2.30/bin:/opt/apps/software/OpenMPI/3.1.1-GCC-7.3.0-2.30/bin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/sbin:/opt/apps/software/hwloc/1.11.10-GCCcore-7.3.0/bin:/opt/apps/software/numactl/2.0.11-GCCcore-7.3.0/bin:/opt/apps/software/MATLAB/R2019b:/opt/apps/software/MATLAB/R2019b/bin:/home/seberma3/.conda/envs/inlocul/bin:/opt/apps/software/Anaconda3/2020.02/condabin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/seberma3/.local/bin:/home/seberma3/bin
+b:  /usr/local/cuda-9.0/lib64:/home/seberma3/.conda/envs/inlocul/lib:
+done!
+
+densePV: 7 / 10 done. 
+densePV: 9 / 10 done. 
+densePV: scan .ptx.mat (1 / 1) done. 
+# Starting retrieval
+Finding features for query #1/1
+
+cnn description: Start
+cnn description: End
+processing query 1/1
+# Starting top100 because /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/queries/2/densePE_top100_shortlist.mat does not exist
+# Starting top100 No2 because /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/queries/2/denseGV_top100_shortlist.mat does not exist
+Existuje-li feature file /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg.features.dense.mat ? 2cnn description: Start
+cnn description: End
+Dense feature extraction: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg done. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_30_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_90_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_60_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-60_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_120_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-30_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_0_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-90_0.gv_dense.mat
+Elapsed time is 2.232975 seconds.
+Elapsed time is 2.237736 seconds.
+Elapsed time is 2.219525 seconds.
+Elapsed time is 2.206634 seconds.
+Elapsed time is 2.246947 seconds.
+Elapsed time is 2.202430 seconds.
+Elapsed time is 2.244005 seconds.
+Elapsed time is 2.266017 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+   698
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_90_0.jpg DONE. 
+   586
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_60_0.jpg DONE. 
+   394
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-60_0.jpg DONE. 
+   565
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_30_0.jpg DONE. 
+   733
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_120_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_0_0.gv_dense.mat
+Elapsed time is 2.099968 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_150_0.gv_dense.mat
+Elapsed time is 2.110063 seconds.
+   454
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-30_0.jpg DONE. 
+   417
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_0_0.jpg DONE. 
+   428
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-90_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-120_0.gv_dense.mat
+Elapsed time is 2.088646 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_-90_0.gv_dense.mat
+Elapsed time is 2.059055 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_90_0.gv_dense.mat
+Elapsed time is 2.059350 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_30_0.gv_dense.mat
+Elapsed time is 2.095467 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_90_0.gv_dense.mat
+Elapsed time is 2.090128 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_-180_0.gv_dense.mat
+Elapsed time is 2.056209 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+   457
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_0_0.jpg DONE. 
+SM2
+SM2
+SM2
+   358
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_90_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_120_-30.gv_dense.mat
+{Error using parfor_denseGV (line 26)
+Unable to read file
+'/home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_120_-30.jpg.features.dense.mat'.
+No such file or directory.
+
+Error in ht_top100_densePE_localization (line 94)
+                parfor kk = 1:1:shortlist_topN
+
+Error in inloc_demo (line 117)
+        ht_top100_densePE_localization;
+} 

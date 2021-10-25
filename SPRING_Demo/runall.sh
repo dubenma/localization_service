@@ -1,6 +1,14 @@
 #!/bin/bash
 #SBATCH  --mem=128G
+<<<<<<< Updated upstream
+<<<<<<< HEAD
 #SBATCH --time=0-35:00:00
+=======
+#SBATCH --time=0-45:00:00
+>>>>>>> d3788b04951a8d1fceb00825391fc727f095766c
+=======
+#SBATCH --time=0-35:00:00
+>>>>>>> Stashed changes
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-gpu=16
