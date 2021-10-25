@@ -9,16 +9,10 @@ mCombinations = 10;
 
 densePE_matname = fullfile(params.output.dir, 'densePE_top100_shortlist.mat');
 
-<<<<<<< Updated upstream
 denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
 if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
     disp("# Starting top100 because " + densePE_matname + " does not exist");
     if ~USE_CACHE_FILES || exist(denseGV_matname, 'file') ~= 2
-=======
-if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2 %1 == 1
-    disp("# Starting top100 because " + densePE_matname + " does not exist");
-    if ~USE_CACHE_FILES || exist(denseGV_matname, 'file') ~= 2 %1 == 1 
->>>>>>> Stashed changes
         disp("# Starting top100 No2 because " + denseGV_matname + " does not exist");
         %dense feature extraction
         net = load(params.netvlad.dataset.pretrained);
@@ -85,22 +79,7 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2 %1 == 1
         f = dir(fullfile(params.output.gv_dense.dir, ImgList(1).queryname)); %skip-recomputation
         if numel(f) ~= (shortlist_topN+2)
             parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname, params ); % New version of GV accepts all db data for batch processing (20 GB RAM)
-<<<<<<< Updated upstream
-            
-=======
-            %%%return;
->>>>>>> Stashed changes
-%             if USE_PAR
-%                 parfor kk = 1:1:shortlist_topN
-%                     parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname{kk}, params );
-%                     fprintf('dense matching: %s vs %s DONE. \n', ImgList(1).queryname, ImgList(1).topNname{kk});
-%                 end
-%             else
-%                 for kk = 1:1:shortlist_topN
-%                     parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname{kk}, params );
-%                     fprintf('dense matching: %s vs %s DONE. \n', ImgList(1).queryname, ImgList(1).topNname{kk});
-%                 end
-%             end
+            %%% return
         end
         for jj = 1:1:shortlist_topN
             cutoutPath = ImgList(1).topNname{jj};
