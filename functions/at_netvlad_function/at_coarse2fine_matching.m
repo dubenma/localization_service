@@ -55,19 +55,12 @@ end
 %     match12OBS{i} = at_dense_tc(desc1,descs2{i});
 % end
 % toc
-<<<<<<< Updated upstream
-tic;
-match12 = get_tcs(desc1,descs2);
-toc
-=======
 
 % savepath = "../get_tcs_tests/GTCS_VS_ADT"+datestr(now(), 'yy_mm_dd_hh_MM')+".mat";
 % save(savepath, 'desc1', 'descs2');
-match12 = get_tcs_eig(desc1,descs2);
+match12 = get_tcs_mkl(desc1,descs2);
 % newmatch_all = []; feat1fine = []; feat2fines = []; cnnfeat1fine = []; cnnfeat2fine = [];
 % return;
-
->>>>>>> Stashed changes
 
 % for i=1:num_imgdbs
 %    if size(match12OBS{i}, 2) ~= size(match12{i}, 2)
@@ -91,7 +84,7 @@ for i=1:num_imgdbs
 %         tic;
 %           thismatch12OBS = at_dense_tc(d1,d2);
 %         toc        
-        thismatch12 = get_tcs_eig(d1,{d2});
+        thismatch12 = get_tcs_mkl(d1,{d2});
 %         disp("DEBUG msg 2");
 %         save("KontrolaNavratu.mat", 'thismatch12');
 %         disp("DEBUG msg 3");
