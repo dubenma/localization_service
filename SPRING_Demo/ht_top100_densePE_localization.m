@@ -7,9 +7,16 @@ mCombinations = 10;
 
 %% densePE (top100 reranking -> top10 pose candidate)
 
-densePE_matname = fullfile(params.output.dir, 'densePE_top100_shortlist.mat');
+% dirname = fullfile(params.output.dir, 'queries', QFname);
+dirname = fullfile(params.output.dir, string(DATASET_SIZE), 'queries', QFname);
 
-denseGV_matname = fullfile(params.output.dir, 'denseGV_top100_shortlist.mat');
+if exist(dirname, 'dir') ~= 7
+   mkdir(dirname); 
+end
+    
+densePE_matname = fullfile(dirname, 'densePE_top100_shortlist.mat');
+denseGV_matname = fullfile(dirname, 'denseGV_top100_shortlist.mat');
+
 if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
     disp("# Starting top100 because " + densePE_matname + " does not exist");
     if ~USE_CACHE_FILES || exist(denseGV_matname, 'file') ~= 2
@@ -43,19 +50,23 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         for jj = 1:1:shortlist_topN
             %db_densefeat_matname = fullfile(params.input.feature.dir, params.dataset.db.cutout.dirname, ...
             %    [ImgList_original(ii).topNname{jj}, params.input.feature.db_matformat]);
-            db_densefeat_matname = ImgList_original(1).topNname{jj} + params.input.feature.db_matformat;
+            %db_densefeat_matname = ImgList_original(1).topNname{jj} + params.input.feature.db_matformat;
+            db_densefeat_matname = getFeaturesPath(ImgList_original(1).topNname{jj}, params);
             if exist(db_densefeat_matname, 'file') ~= 2
-                %cutoutImage = imread(fullfile(params.dataset.db.cutout.dir, ImgList_original(ii).topNname{jj}));
-                cutoutImage = imread(ImgList_original(1).topNname{jj});
-                cnn = at_serialAllFeats_convfeat(net, cutoutImage, 'useGPU', true);
-                cnn{1} = [];
-                cnn{2} = [];
-                cnn{4} = [];
-                cnn{6} = [];
-                [feat_path, ~, ~] = fileparts(db_densefeat_matname);
-                if exist(feat_path, 'dir')~=7; mkdir(feat_path); end
-                save('-v6', db_densefeat_matname, 'cnn');
-                fprintf('Dense feature extraction: %s done. \n', ImgList_original(1).topNname{jj});
+                   assert(false);
+%                 Zakomentovano, protozue nechci dovolit buildovat features
+%                 pri lokalizuaci! Uz ma bejt vse hotovo!
+%                 %cutoutImage = imread(fullfile(params.dataset.db.cutout.dir, ImgList_original(ii).topNname{jj}));
+%                 cutoutImage = imread(ImgList_original(1).topNname{jj});
+%                 cnn = at_serialAllFeats_convfeat(net, cutoutImage, 'useGPU', true);
+%                 cnn{1} = [];
+%                 cnn{2} = [];
+%                 cnn{4} = [];
+%                 cnn{6} = [];
+%                 [feat_path, ~, ~] = fileparts(db_densefeat_matname);
+%                 if exist(feat_path, 'dir')~=7; mkdir(feat_path); end
+%                 save('-v6', db_densefeat_matname, 'cnn');
+%                 fprintf('Dense feature extraction: %s done. \n', ImgList_original(1).topNname{jj});
             end
         end
         %end
@@ -103,7 +114,8 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
             [~,QFname,~] = fileparts(ImgList(1).queryname);
             [~,DBFname,~] = fileparts(cutoutPath);
             %mkdirIfNonExistent(fullfile(params.output.gv_dense.dir, QFname));
-            this_densegv_matname = fullfile(params.output.gv_dense.dir, QFname, ""+DBFname+params.output.gv_dense.matformat)
+            this_densegv_matname = fullfile(params.output.gv_dense.dir, QFname, ""+DBFname+params.output.gv_dense.matformat);
+            fprintf("THSLOAD: %s \n", this_densegv_matname);
             this_gvresults = load(this_densegv_matname);
             ImgList(1).topNscore(jj) = ImgList_original(1).topNscore(jj) + size(this_gvresults.inls12, 2);
         end
@@ -115,7 +127,7 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         fprintf('%s done. \n', ImgList(1).queryname);
         %end
         %     save('DenseGV.mat');
-        if USE_CACHE_FILES
+        if SAVE_SUBRESULT_FILES
             save('-v6', denseGV_matname, 'ImgList');
         end
         
@@ -257,7 +269,7 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
     end
     ImgList = ImgListSequential;
     
-    if USE_CACHE_FILES
+    if SAVE_SUBRESULT_FILES
         save('-v6', densePE_matname, 'ImgList');
     end
 else

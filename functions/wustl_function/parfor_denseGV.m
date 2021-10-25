@@ -23,6 +23,7 @@ disp(this_densegv_matname);
     %dbfname = fullfile(params.input.feature.dir, params.dataset.db.cutout.dirname, [dbname, params.input.feature.db_matformat]);
     %dbfname = fullfile(params.input.feature.dir, params.dataset.db.cutout.dirname, "" + dbname + params.input.feature.db_matformat);
     dbfname = "" + dbname + params.input.feature.db_matformat;
+    dbfname = getFeaturesPath(dbname, params);
     cnndb = load(dbfname, 'cnn');cnndb = cnndb.cnn;
     
     %coarse-to-fine matching
