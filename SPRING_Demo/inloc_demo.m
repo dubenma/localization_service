@@ -4,10 +4,18 @@ distcomp.feature( 'LocalUseMpiexec', false )
 
 startup;
 
+<<<<<<< Updated upstream
 USE_CACHE_FILES = 0;
 USE_PAR = 0;
 USE_PROFIL = 1;
 %DATASET_SIZE = 1;
+=======
+SAVE_SUBRESULT_FILES = 1; %0
+USE_CACHE_FILES = 0; %1
+USE_PAR = 1; %0
+USE_PROFIL = 1; %0
+
+>>>>>>> Stashed changes
 QUERIES = {
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg' ,
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg' ,

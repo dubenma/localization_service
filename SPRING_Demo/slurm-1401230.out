@@ -1,0 +1,190 @@
+
+The following have been reloaded with a version change:
+  1) GCC/7.3.0-2.30 => GCC/10.2.0
+  2) GCCcore/7.3.0 => GCCcore/10.2.0
+  3) binutils/2.30-GCCcore-7.3.0 => binutils/2.35-GCCcore-10.2.0
+  4) zlib/1.2.11-GCCcore-7.3.0 => zlib/1.2.11-GCCcore-10.2.0
+
+
+The following have been reloaded with a version change:
+  1) CUDA/11.1.1-GCC-10.2.0 => CUDA/9.1.85
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+MATLAB is selecting SOFTWARE OPENGL rendering.
+[Warning: Name is nonexistent or not a directory:
+/home/seberma3/_InLoc_PROD_Speedup/SPRING_Demo/functions/denseGV_F10e] 
+[> In path (line 109)
+  In addpath (line 86)
+  In startup (line 26)] 
+
+env =
+
+    'ciirc'
+
+[Warning: Name is nonexistent or not a directory:
+/local/localization_service/Data/NetVLAD] 
+[> In path (line 109)
+  In addpath (line 86)
+  In startup (line 29)] 
+
+ans =
+
+  logical
+
+   1
+
+[Warning: Name is nonexistent or not a directory:
+/home/seberma3/_InLoc_PROD_Speedup/SPRING_Demo/functions/denseGV_F10e] 
+[> In path (line 109)
+  In addpath (line 86)
+  In startup (line 26)
+  In inloc_demo (line 4)] 
+
+env =
+
+    'ciirc'
+
+[Warning: Name is nonexistent or not a directory:
+/local/localization_service/Data/NetVLAD] 
+[> In path (line 109)
+  In addpath (line 86)
+  In startup (line 29)
+  In inloc_demo (line 4)] 
+
+env =
+
+    'ciirc'
+
+ENV ciirc
+InLocCIIRC is running experiment "SPRING_Demo".
+InLocCIIRC is running in GPU mode.
+# Starting retrieval
+Finding features for query #1/1
+
+cnn description: Start
+cnn description: End
+processing query 1/1
+# Starting top100 because /home/seberma3/_InLoc_PROD_Speedup/SPRING_Demo/outputs/1/queries/1/densePE_top100_shortlist.mat does not exist
+# Starting top100 No2 because /home/seberma3/_InLoc_PROD_Speedup/SPRING_Demo/outputs/1/queries/1/denseGV_top100_shortlist.mat does not exist
+Existuje-li feature file /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg.features.dense.mat ? 2cnn description: Start
+cnn description: End
+Dense feature extraction: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg done. 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-90_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-60_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_-90_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_-60_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-120_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_-30_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-30_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-180_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_90_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-150_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_30_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_0_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_0_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_0_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/12/cutout_12_0_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-90_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_-90_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_120_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/12/cutout_12_-90_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_-120_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_30_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-180_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_60_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_150_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/12/cutout_12_-60_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_150_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_-180_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_60_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-150_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_-180_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-120_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_120_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/12/cutout_12_90_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_150_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_0_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_-60_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-30_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-60_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/12/cutout_12_60_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_-150_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_-150_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/12/cutout_12_30_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_90_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/14/cutout_14_-180_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_90_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_-120_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_0_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/12/cutout_12_-30_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_-60_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_-120_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_-30_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_-30_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_30_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/13/cutout_13_-180_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_-150_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/14/cutout_14_150_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_0_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-30_30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_60_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/13/cutout_13_150_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_120_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/12/cutout_12_120_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_-180_30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-60_30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_60_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_30_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/13/cutout_13_30_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_-90_30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/14/cutout_14_0_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_-180_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-90_30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/13/cutout_13_90_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/14/cutout_14_120_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_-180_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_150_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/15/cutout_15_-180_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/12/cutout_12_150_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_-90_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_150_30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/12/cutout_12_-60_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/14/cutout_14_90_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_60_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_30_30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/13/cutout_13_-150_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_30_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/13/cutout_13_120_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_90_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_90_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/14/cutout_14_60_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/13/cutout_13_60_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_0_30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_30_30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/12/cutout_12_-180_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_-30_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/15/cutout_15_60_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/11/cutout_11_-60_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/1/cutout_1_-120_30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/12/cutout_12_-90_-30.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/15/cutout_15_-90_0.jpg.features.dense.mat 
+FIL: /home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/cutouts/B-315/10/cutout_10_120_0.jpg.features.dense.mat 
+slurmstepd: error: *** JOB 1401230 ON node-12 CANCELLED AT 2021-10-22T15:11:37 ***
