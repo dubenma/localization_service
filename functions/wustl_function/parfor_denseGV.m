@@ -23,10 +23,6 @@ end
 
 cnnfeat1size = size(cnnq{finelayerlevel}.x);
 [match12,f1,f2,cnnfeat1,cnnfeat2] = at_coarse2fine_matching(cnnq,cnndbs,coarselayerlevel,finelayerlevel);
-<<<<<<< Updated upstream
-=======
-% return; 
->>>>>>> Stashed changes
 
 for i=1:numel(f2)
     cnnfeat2size = size(cnndbs{i}{finelayerlevel}.x);
