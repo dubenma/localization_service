@@ -58,7 +58,15 @@ end
 
 % savepath = "../get_tcs_tests/GTCS_VS_ADT"+datestr(now(), 'yy_mm_dd_hh_MM')+".mat";
 % save(savepath, 'desc1', 'descs2');
+% disp("MT::::::::");
+% disp(size(desc1));
+% disp(size(descs2));
+% disp(size(descs2{1}));
+% disp(size(descs2{2}));
+% disp(size(descs2{3}));
 match12 = get_tcs_mkl(desc1,descs2);
+% disp(match12);
+% assert(false);
 % newmatch_all = []; feat1fine = []; feat2fines = []; cnnfeat1fine = []; cnnfeat2fine = [];
 % return;
 

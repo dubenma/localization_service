@@ -3,12 +3,11 @@ clear;
 distcomp.feature( 'LocalUseMpiexec', false )
 
 startup;
+SAVE_SUBRESULT_FILES = 1; %0
+USE_CACHE_FILES = 0; %1
+USE_PAR = 1; %0
+USE_PROFIL = 1; %0
 
-SAVE_SUBRESULT_FILES = 1;
-USE_CACHE_FILES = 0;
-USE_PAR = 1;
-USE_PROFIL = 1;
-%DATASET_SIZE = 1;
 QUERIES = {
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg' ,
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg' ,
@@ -40,6 +39,7 @@ QUERIES = {
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/28.jpg',
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/29.jpg',
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/30.jpg',
+    '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/31.jpg'
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/31.jpg',
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/32.jpg',
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/33.jpg',
@@ -118,6 +118,7 @@ for DATASET_SIZE=1:4
         
         %3. pose verification
         ht_top10_densePV_localization;
+<<<<<<< Updated upstream
         
 %         if USE_PROFIL
 %             prof_dir_name = "outputs/PROFILACE/original/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_"+CYCPROF;
@@ -132,6 +133,59 @@ for DATASET_SIZE=1:4
         % profsave(profile('info'), prof_dir_name);
         saveProfileResult(profile('info'), prof_dir_name);
     end
+<<<<<<< HEAD
+    c = parcluster;
+    c.NumWorkers = nWorkers;
+    saveProfile(c);
+    p = parpool('local', nWorkers);
+end
+%wks1=true;
+wks1 = false; % Co to kurva je? Kde je vysvetlujici komentar?
+if wks1
+    %nWorkers = 64;
+    nWorkers = 8;
+    c = parcluster;
+    c.NumWorkers = nWorkers;
+    saveProfile(c);
+    p = parpool('local', nWorkers);
+end
+
+for DATASET_SIZE=1:4
+    cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");
+    
+    if USE_PROFIL
+        profile off; profile on;
+    end
+    for CYCPROF=1:numel(QUERIES)
+        QUERY_PATH = QUERIES{CYCPROF};
+        %1. retrieval
+        ht_retrieval;
+        
+        %2. geometric verification
+        ht_top100_densePE_localization;
+        
+        %3. pose verification
+        ht_top10_densePV_localization;
+=======
+>>>>>>> Stashed changes
+        
+%         if USE_PROFIL
+%             prof_dir_name = "outputs/PROFILACE/speedup1/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_"+CYCPROF;
+%             profile off;
+%             % profsave(profile('info'), prof_dir_name);
+%             saveProfileResult(profile('info'), prof_dir_name);
+%         end
+    end
+    if USE_PROFIL
+        prof_dir_name = "outputs/PROFILACE/speedup1/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_ALL";
+        profile off;
+        % profsave(profile('info'), prof_dir_name);
+        saveProfileResult(profile('info'), prof_dir_name);
+    end
+end
+%4. evaluate
+%evaluate_SPRING;
+=======
 end
 
 %4. evaluate
@@ -141,3 +195,6 @@ end
 % if ~strcmp(environment(), "laptop")
 %     exit(0); % avoid "MATLAB: management.cpp:671: find: Assertion `' failed."
 % end
+
+
+>>>>>>> d3788b04951a8d1fceb00825391fc727f095766c

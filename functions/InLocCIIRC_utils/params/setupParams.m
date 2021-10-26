@@ -1,5 +1,5 @@
 function [ params ] = setupParams(mode, datasetSize, requireExperimentName)
-    % mode is one of {'s10e', 'holoLens1', 'holoLens2'}
+    % mode is one of {'s10e', 'holoLens1', 'holoLens2'} % SpeedupVersion
     % NOTE: the number after 'holoLens' is a sequence number, not a version of HoloLens glasses!
 % arguments
 %     mode char
