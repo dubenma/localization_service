@@ -6,7 +6,9 @@ num_dbimgs = numel(dbnames);
 cnndbs = cell(1, num_dbimgs);
 
 for i=1:num_dbimgs
-    dbfname = "" + dbnames{i} + params.input.feature.db_matformat;
+    %dbfname = "" + dbnames{i} + params.input.feature.db_matformat;
+    %dbfname = fullfile(params.output.gv_dense.dir, qname, buildCutoutName(dbname, params.output.gv_dense.matformat));
+    dbfname = getFeaturesPath(dbnames{i}, params);
     cnndb = load(dbfname, 'cnn');
     cnndb = cnndb.cnn;
     cnndbs{i} = cnndb;
@@ -19,7 +21,7 @@ for i=1:numel(f2)
     cnnfeat2size = size(cnndbs{i}{finelayerlevel}.x);
     %this_densegv_matname = fullfile(params.output.gv_dense.dir, qname, buildCutoutName(dbnames{i}, params.output.gv_dense.matformat));
     [~,QFname,~] = fileparts(qname);
-    [~,DBFname,~] = fileparts(dbnames{1});
+    [~,DBFname,~] = fileparts(dbnames{i});
     mkdirIfNonExistent(fullfile(params.output.gv_dense.dir, QFname));
     this_densegv_matname = fullfile(params.output.gv_dense.dir, QFname, ""+DBFname+params.output.gv_dense.matformat);
     
@@ -31,6 +33,7 @@ for i=1:numel(f2)
     if exist(fullfile(params.output.gv_dense.dir, qname), 'dir') ~= 7
         mkdir(fullfile(params.output.gv_dense.dir, qname));
     end
+%     disp("SAVgv: " + this_densegv_matname);
     save_dense_gv_results(this_densegv_matname, cnnfeat1size, cnnfeat2size, f1, f2{i}, inls12, match12{i})
     %save('-v6', this_densegv_matname, 'cnnfeat1size', 'cnnfeat2size', 'f1', 'f2', 'inls12', 'match12');
 end
