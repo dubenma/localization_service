@@ -10,3 +10,5 @@ SPRING_Demo/outputs
 SPRING_Demo/outputs_eigen
 SPRING_Demo/outputs_mkl
 slurm*.out
+SPRING_Demo/GITIGNORE_DIR
+GITIGNORE_DIR
