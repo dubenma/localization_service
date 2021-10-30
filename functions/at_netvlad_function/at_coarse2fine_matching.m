@@ -37,7 +37,7 @@ newmatch = cell(1,size(match12,2));
 for ii=1:size(match12,2)
   [d1,f1,ind1] = at_retrieve_fineposition(hash_coarse1,hash_table1,feat1(:,match12(1,ii)),desc1fine,feat1fine,cnnfinesize1);
   [d2,f2,ind2] = at_retrieve_fineposition(hash_coarse2,hash_table2,feat2(:,match12(2,ii)),desc2fine,feat2fine,cnnfinesize2);  
-  thismatch12 = at_dense_tc(d1,d2);  
+  thismatch12 = at_dense_tc2(d1,d2);  
   newmatch{ii} = [ind1(thismatch12(1,:)); ind2(thismatch12(2,:))];  
 end 
 disp("SM2");

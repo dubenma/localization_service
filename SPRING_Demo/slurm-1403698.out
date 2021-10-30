@@ -1,0 +1,2280 @@
+Thu Oct 28 21:27:22 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.67       Driver Version: 460.67       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla K40m          Off  | 00000000:04:00.0 Off |                    0 |
+| N/A   40C    P0    72W / 235W |      0MiB / 11441MiB |     97%   E. Process |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+python is /home/seberma3/.conda/envs/inlocul/bin/python
+python is /usr/bin/python
+/home/seberma3/.conda/envs/inlocul/bin/python
+
+The following have been reloaded with a version change:
+  1) GCC/7.3.0-2.30 => GCC/10.2.0
+  2) GCCcore/7.3.0 => GCCcore/10.2.0
+  3) binutils/2.30-GCCcore-7.3.0 => binutils/2.35-GCCcore-10.2.0
+  4) zlib/1.2.11-GCCcore-7.3.0 => zlib/1.2.11-GCCcore-10.2.0
+
+
+The following have been reloaded with a version change:
+  1) CUDA/11.1.1-GCC-10.2.0 => CUDA/9.1.85
+
+MATLAB is selecting SOFTWARE OPENGL rendering.
+[Warning: Name is nonexistent or not a directory:
+/home/seberma3/_InLoc_PROD/SPRING_Demo/functions/denseGV_F10e] 
+[> In path (line 109)
+  In addpath (line 86)
+  In startup (line 26)] 
+
+env =
+
+    'ciirc'
+
+[Warning: Name is nonexistent or not a directory:
+/local/localization_service/Data/NetVLAD] 
+[> In path (line 109)
+  In addpath (line 86)
+  In startup (line 29)] 
+
+ans =
+
+  logical
+
+   1
+
+[Warning: Name is nonexistent or not a directory:
+/home/seberma3/_InLoc_PROD/SPRING_Demo/functions/denseGV_F10e] 
+[> In path (line 109)
+  In addpath (line 86)
+  In startup (line 26)
+  In inloc_demo (line 5)] 
+
+env =
+
+    'ciirc'
+
+[Warning: Name is nonexistent or not a directory:
+/local/localization_service/Data/NetVLAD] 
+[> In path (line 109)
+  In addpath (line 86)
+  In startup (line 29)
+  In inloc_demo (line 5)] 
+
+env =
+
+    'ciirc'
+
+ENV ciirc
+InLocCIIRC is running experiment "SPRING_Demo".
+InLocCIIRC is running in GPU mode.
+# Starting retrieval
+Finding features for query #1/1
+
+cnn description: Start
+cnn description: End
+processing query 1/1
+# Starting top100 because /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/queries/1/densePE_top100_shortlist.mat does not exist
+# Starting top100 No2 because /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/queries/1/denseGV_top100_shortlist.mat does not exist
+Existuje-li feature file /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg.features.dense.mat ? 2cnn description: Start
+cnn description: End
+Dense feature extraction: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg done. 
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to the parallel pool (number of workers: 8).
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-90_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-60_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-90_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-60_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-120_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-30_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-30_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-180_0.gv_dense.mat
+Elapsed time is 2.372756 seconds.
+Elapsed time is 2.402891 seconds.
+Elapsed time is 2.382919 seconds.
+Elapsed time is 2.447439 seconds.
+Elapsed time is 2.380658 seconds.
+Elapsed time is 2.395502 seconds.
+Elapsed time is 2.362567 seconds.
+Elapsed time is 2.360706 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+   467
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-120_0.jpg DONE. 
+   722
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-90_0.jpg DONE. 
+   870
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-60_0.jpg DONE. 
+   402
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-30_0.jpg DONE. 
+   724
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-30_0.jpg DONE. 
+   386
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-60_0.jpg DONE. 
+   402
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-180_0.jpg DONE. 
+   492
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-90_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-60_-30.gv_dense.mat
+Elapsed time is 2.069306 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_0_0.gv_dense.mat
+Elapsed time is 2.105305 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-120_0.gv_dense.mat
+Elapsed time is 2.067826 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_-180_0.gv_dense.mat
+Elapsed time is 2.084127 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-120_0.gv_dense.mat
+Elapsed time is 2.076472 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_150_0.gv_dense.mat
+Elapsed time is 2.093444 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_150_0.gv_dense.mat
+Elapsed time is 2.056533 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_120_0.gv_dense.mat
+Elapsed time is 2.107875 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+   418
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-120_0.jpg DONE. 
+   284
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_-180_0.jpg DONE. 
+   320
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-120_0.jpg DONE. 
+   270
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_150_0.jpg DONE. 
+   453
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_0_0.jpg DONE. 
+   305
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_120_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-90_0.gv_dense.mat
+Elapsed time is 2.057377 seconds.
+   358
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-120_-30.gv_dense.mat
+Elapsed time is 2.072971 seconds.
+   829
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-60_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-30_-30.gv_dense.mat
+Elapsed time is 2.094557 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_90_0.gv_dense.mat
+Elapsed time is 2.088461 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-60_0.gv_dense.mat
+Elapsed time is 2.091837 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-150_-30.gv_dense.mat
+Elapsed time is 2.073680 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_0_0.gv_dense.mat
+Elapsed time is 2.117750 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-60_0.gv_dense.mat
+Elapsed time is 2.044149 seconds.
+   343
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-90_0.jpg DONE. 
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+   393
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-150_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_120_0.gv_dense.mat
+Elapsed time is 2.040656 seconds.
+   358
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-60_0.jpg DONE. 
+   375
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-120_-30.jpg DONE. 
+   395
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_90_0.jpg DONE. 
+   334
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-60_0.jpg DONE. 
+   638
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_0_0.jpg DONE. 
+   692
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-30_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-60_-30.gv_dense.mat
+Elapsed time is 2.064521 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_-180_0.gv_dense.mat
+Elapsed time is 2.068782 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_150_0.gv_dense.mat
+Elapsed time is 2.101286 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-180_0.gv_dense.mat
+Elapsed time is 2.078960 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_30_0.gv_dense.mat
+Elapsed time is 2.085136 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-30_0.gv_dense.mat
+Elapsed time is 2.163952 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_0_0.gv_dense.mat
+Elapsed time is 2.064201 seconds.
+SM2
+SM2
+SM2
+SM2
+   362
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_120_0.jpg DONE. 
+SM2
+SM2
+   338
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-60_-30.jpg DONE. 
+   340
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-30_0.jpg DONE. 
+   304
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_-180_0.jpg DONE. 
+SM2
+   424
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_0_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-90_-30.gv_dense.mat
+Elapsed time is 2.058168 seconds.
+   382
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_150_0.jpg DONE. 
+   500
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-180_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_0_-30.gv_dense.mat
+Elapsed time is 2.051157 seconds.
+   339
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_30_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_0_-30.gv_dense.mat
+Elapsed time is 2.071447 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_30_-30.gv_dense.mat
+Elapsed time is 2.052902 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_30_0.gv_dense.mat
+Elapsed time is 2.115070 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-150_-30.gv_dense.mat
+Elapsed time is 2.051473 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-150_0.gv_dense.mat
+Elapsed time is 2.120130 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_60_0.gv_dense.mat
+Elapsed time is 2.048204 seconds.
+SM2
+SM2
+   363
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-90_-30.jpg DONE. 
+SM2
+SM2
+   346
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_30_-30.jpg DONE. 
+SM2
+SM2
+   356
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_0_-30.jpg DONE. 
+   490
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_30_0.jpg DONE. 
+   333
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_60_0.jpg DONE. 
+   306
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-150_-30.jpg DONE. 
+   343
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-150_0.jpg DONE. 
+   488
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_0_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-120_-30.gv_dense.mat
+Elapsed time is 2.054165 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-90_-30.gv_dense.mat
+Elapsed time is 2.048601 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_150_0.gv_dense.mat
+Elapsed time is 2.054640 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-30_-30.gv_dense.mat
+Elapsed time is 2.051060 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_60_0.gv_dense.mat
+Elapsed time is 2.059873 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-150_0.gv_dense.mat
+Elapsed time is 2.060482 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-180_-30.gv_dense.mat
+Elapsed time is 2.046243 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-150_0.gv_dense.mat
+Elapsed time is 2.078415 seconds.
+SM2
+   357
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-120_-30.jpg DONE. 
+   336
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-30_-30.jpg DONE. 
+SM2
+SM2
+SM2
+SM2
+   548
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-90_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_0_0.gv_dense.mat
+Elapsed time is 2.045311 seconds.
+   323
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-180_-30.jpg DONE. 
+   391
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_60_0.jpg DONE. 
+   345
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_90_-30.gv_dense.mat
+Elapsed time is 2.053169 seconds.
+   424
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-30_0.gv_dense.mat
+Elapsed time is 2.067503 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-180_0.gv_dense.mat
+Elapsed time is 2.057004 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_90_0.gv_dense.mat
+Elapsed time is 2.066557 seconds.
+   399
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_60_0.gv_dense.mat
+Elapsed time is 2.095278 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_30_0.gv_dense.mat
+Elapsed time is 2.052813 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_90_0.gv_dense.mat
+Elapsed time is 2.045665 seconds.
+SM2
+SM2
+   291
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_90_-30.jpg DONE. 
+   353
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-30_0.jpg DONE. 
+   340
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_0_0.jpg DONE. 
+SM2
+SM2
+   322
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_90_0.jpg DONE. 
+SM2
+   283
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_60_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_120_0.gv_dense.mat
+Elapsed time is 2.045437 seconds.
+   341
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_30_0.jpg DONE. 
+   334
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-180_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-180_-30.gv_dense.mat
+Elapsed time is 2.053585 seconds.
+   379
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_90_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-90_30.gv_dense.mat
+Elapsed time is 2.068733 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_60_0.gv_dense.mat
+Elapsed time is 2.053686 seconds.
+SM2
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-60_-30.gv_dense.mat
+Elapsed time is 2.048547 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_150_0.gv_dense.mat
+Elapsed time is 2.051757 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-90_30.gv_dense.mat
+Elapsed time is 2.085369 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_60_-30.gv_dense.mat
+Elapsed time is 2.043996 seconds.
+SM2
+SM2
+   280
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-180_-30.jpg DONE. 
+SM2
+SM2
+SM2
+   330
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-90_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-180_-30.gv_dense.mat
+Elapsed time is 2.037967 seconds.
+   297
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_150_0.jpg DONE. 
+   275
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_60_0.jpg DONE. 
+   265
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-90_30.jpg DONE. 
+   350
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_120_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_120_-30.gv_dense.mat
+Elapsed time is 2.051931 seconds.
+   265
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-60_-30.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_120_0.gv_dense.mat
+Elapsed time is 2.117592 seconds.
+   328
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_60_-30.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_15_-180_0.gv_dense.mat
+Elapsed time is 2.048838 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-30_30.gv_dense.mat
+Elapsed time is 2.051341 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_150_30.gv_dense.mat
+Elapsed time is 2.048518 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_30_0.gv_dense.mat
+Elapsed time is 2.077132 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-60_30.gv_dense.mat
+Elapsed time is 2.042633 seconds.
+   365
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-180_-30.jpg DONE. 
+SM2
+   256
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_120_-30.jpg DONE. 
+   307
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_120_0.jpg DONE. 
+SM2
+SM2
+SM2
+   245
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_150_30.jpg DONE. 
+   215
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_-180_0.jpg DONE. 
+   423
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-30_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_150_0.gv_dense.mat
+Elapsed time is 2.053949 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_0_0.gv_dense.mat
+Elapsed time is 2.049044 seconds.
+   271
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_30_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_90_0.gv_dense.mat
+Elapsed time is 2.053777 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_0_-30.gv_dense.mat
+Elapsed time is 2.056666 seconds.
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-90_0.gv_dense.mat
+Elapsed time is 2.047772 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_150_-30.gv_dense.mat
+Elapsed time is 2.060306 seconds.
+   515
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-60_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-180_30.gv_dense.mat
+Elapsed time is 2.075685 seconds.
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_30_-30.gv_dense.mat
+Elapsed time is 2.070139 seconds.
+   347
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_150_0.jpg DONE. 
+   248
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_0_0.jpg DONE. 
+SM2
+SM2
+   251
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_90_0.jpg DONE. 
+SM2
+   273
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_150_-30.jpg DONE. 
+   328
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_0_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_90_0.gv_dense.mat
+Elapsed time is 2.051986 seconds.
+   276
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-180_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_30_30.gv_dense.mat
+Elapsed time is 2.052660 seconds.
+   366
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-90_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_60_-30.gv_dense.mat
+Elapsed time is 2.059304 seconds.
+   343
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_30_-30.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_-150_0.gv_dense.mat
+Elapsed time is 2.045311 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_90_0.gv_dense.mat
+Elapsed time is 2.050252 seconds.
+SM2
+   297
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_30_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_90_-30.gv_dense.mat
+Elapsed time is 2.046221 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_120_0.gv_dense.mat
+Elapsed time is 2.084360 seconds.
+   261
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_90_0.jpg DONE. 
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_30_0.gv_dense.mat
+Elapsed time is 2.117604 seconds.
+SM2
+SM2
+   313
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_60_-30.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_60_0.gv_dense.mat
+Elapsed time is 2.037622 seconds.
+   270
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_-150_0.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_60_0.gv_dense.mat
+Elapsed time is 2.045752 seconds.
+   314
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_90_0.jpg DONE. 
+   261
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_90_-30.jpg DONE. 
+   300
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_120_0.jpg DONE. 
+SM2
+SM2
+   359
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_30_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_0_30.gv_dense.mat
+Elapsed time is 2.045001 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_30_30.gv_dense.mat
+Elapsed time is 2.037715 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-90_-30.gv_dense.mat
+Elapsed time is 2.046481 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-60_-30.gv_dense.mat
+Elapsed time is 2.053688 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-30_-30.gv_dense.mat
+Elapsed time is 2.057340 seconds.
+SM2
+   243
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_60_0.jpg DONE. 
+SM2
+   299
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_0_30.jpg DONE. 
+   281
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_60_0.jpg DONE. 
+   260
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_30_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_120_0.gv_dense.mat
+Elapsed time is 2.066936 seconds.
+SM2
+SM2
+SM2
+   294
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-90_-30.jpg DONE. 
+   291
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-30_-30.jpg DONE. 
+SM2
+   256
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-60_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-180_0.gv_dense.mat
+Elapsed time is 2.040447 seconds.
+   302
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_120_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-120_30.gv_dense.mat
+Elapsed time is 2.043199 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_15_60_0.gv_dense.mat
+Elapsed time is 2.035085 seconds.
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_15_-90_0.gv_dense.mat
+Elapsed time is 2.045608 seconds.
+SM2
+   255
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-180_0.jpg DONE. 
+SM2
+   238
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-120_30.jpg DONE. 
+   278
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_60_0.jpg DONE. 
+   287
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_-90_0.jpg DONE. 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-180_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_0_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_0_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_0_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-30_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-180_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-60_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-90_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_-180_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-90_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-180_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_15_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_150_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_30_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_14_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_13_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_0_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_30_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_15_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_11_-60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_1_-120_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_12_-90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_15_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/1/cutout_10_120_0.gv_dense.mat 
+/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg done. 
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+1/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+2/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+3/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+4/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+5/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+6/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+7/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+8/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+9/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg vs a cutout sequence DONE. 
+10/10 done.
+# Starting retrieval
+Finding features for query #1/1
+
+cnn description: Start
+cnn description: End
+processing query 1/1
+# Starting top100 because /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/queries/2/densePE_top100_shortlist.mat does not exist
+# Starting top100 No2 because /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/queries/2/denseGV_top100_shortlist.mat does not exist
+Existuje-li feature file /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg.features.dense.mat ? 2cnn description: Start
+cnn description: End
+Dense feature extraction: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg done. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_30_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_90_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_60_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-60_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_120_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-30_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_0_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-90_0.gv_dense.mat
+Elapsed time is 2.232797 seconds.
+Elapsed time is 2.236112 seconds.
+Elapsed time is 2.232900 seconds.
+Elapsed time is 2.230515 seconds.
+Elapsed time is 2.237865 seconds.
+Elapsed time is 2.209294 seconds.
+Elapsed time is 2.206538 seconds.
+Elapsed time is 2.243672 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+   586
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_60_0.jpg DONE. 
+   394
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-60_0.jpg DONE. 
+SM2
+   698
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_90_0.jpg DONE. 
+   733
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_120_0.jpg DONE. 
+   565
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_30_0.jpg DONE. 
+   454
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-30_0.jpg DONE. 
+   417
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_0_0.jpg DONE. 
+   428
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-90_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_0_0.gv_dense.mat
+Elapsed time is 2.072924 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-120_0.gv_dense.mat
+Elapsed time is 2.065562 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_-90_0.gv_dense.mat
+Elapsed time is 2.080646 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_150_0.gv_dense.mat
+Elapsed time is 2.076520 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_90_0.gv_dense.mat
+Elapsed time is 2.083984 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_-180_0.gv_dense.mat
+Elapsed time is 2.077046 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_30_0.gv_dense.mat
+Elapsed time is 2.069348 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_90_0.gv_dense.mat
+Elapsed time is 2.067480 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+   457
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_0_0.jpg DONE. 
+SM2
+SM2
+SM2
+   412
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-90_0.jpg DONE. 
+   370
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_150_0.jpg DONE. 
+   295
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_90_0.jpg DONE. 
+   367
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_30_0.jpg DONE. 
+   322
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_-180_0.jpg DONE. 
+   455
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-120_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-180_0.gv_dense.mat
+Elapsed time is 2.070064 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-150_0.gv_dense.mat
+Elapsed time is 2.066965 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-30_0.gv_dense.mat
+Elapsed time is 2.067238 seconds.
+   358
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_90_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_120_-30.gv_dense.mat
+Elapsed time is 2.064371 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_60_0.gv_dense.mat
+Elapsed time is 2.078052 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-150_0.gv_dense.mat
+Elapsed time is 2.061277 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_30_0.gv_dense.mat
+Elapsed time is 2.068033 seconds.
+SM2
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-60_0.gv_dense.mat
+Elapsed time is 2.069585 seconds.
+   375
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-150_0.jpg DONE. 
+SM2
+SM2
+SM2
+SM2
+   426
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-180_0.jpg DONE. 
+   373
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-30_0.jpg DONE. 
+SM2
+   362
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_30_0.jpg DONE. 
+   312
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_60_0.jpg DONE. 
+   315
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-90_0.gv_dense.mat
+Elapsed time is 2.050439 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_60_-30.gv_dense.mat
+Elapsed time is 2.052247 seconds.
+   315
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-60_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_30_30.gv_dense.mat
+Elapsed time is 2.053536 seconds.
+   474
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_120_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_90_-30.gv_dense.mat
+Elapsed time is 2.058943 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_-60_0.gv_dense.mat
+Elapsed time is 2.090201 seconds.
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_60_0.gv_dense.mat
+Elapsed time is 2.062201 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-180_-30.gv_dense.mat
+Elapsed time is 2.051622 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_60_0.gv_dense.mat
+Elapsed time is 2.061834 seconds.
+SM2
+SM2
+SM2
+   294
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_90_-30.jpg DONE. 
+   489
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-90_0.jpg DONE. 
+SM2
+SM2
+SM2
+   278
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_30_30.jpg DONE. 
+   496
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_60_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-90_0.gv_dense.mat
+Elapsed time is 2.060402 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_150_0.gv_dense.mat
+Elapsed time is 2.054846 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_90_0.gv_dense.mat
+Elapsed time is 2.047675 seconds.
+   400
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-60_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-120_0.gv_dense.mat
+Elapsed time is 2.054148 seconds.
+   331
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-180_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_-180_0.gv_dense.mat
+Elapsed time is 2.069164 seconds.
+   404
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_60_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_120_0.gv_dense.mat
+Elapsed time is 2.047413 seconds.
+   352
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_60_0.jpg DONE. 
+SM2
+SM2
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_30_-30.gv_dense.mat
+Elapsed time is 2.047560 seconds.
+SM2
+   431
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-120_0.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_0_0.gv_dense.mat
+Elapsed time is 2.061853 seconds.
+   296
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_150_0.jpg DONE. 
+   309
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_-180_0.jpg DONE. 
+   352
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_90_0.jpg DONE. 
+   615
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-90_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_0_0.gv_dense.mat
+Elapsed time is 2.050498 seconds.
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_90_-30.gv_dense.mat
+Elapsed time is 2.045186 seconds.
+   378
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_120_0.jpg DONE. 
+   404
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_30_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_90_30.gv_dense.mat
+Elapsed time is 2.045874 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-60_-30.gv_dense.mat
+Elapsed time is 2.051447 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-60_0.gv_dense.mat
+Elapsed time is 2.046132 seconds.
+SM2
+   356
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_0_0.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-60_-30.gv_dense.mat
+Elapsed time is 2.047089 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_120_0.gv_dense.mat
+Elapsed time is 2.047892 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_150_0.gv_dense.mat
+Elapsed time is 2.071825 seconds.
+SM2
+SM2
+   373
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_0_0.jpg DONE. 
+SM2
+   494
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_90_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-180_0.gv_dense.mat
+Elapsed time is 2.047398 seconds.
+SM2
+   505
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-60_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_0_-30.gv_dense.mat
+Elapsed time is 2.056877 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-30_0.gv_dense.mat
+Elapsed time is 2.053742 seconds.
+SM2
+   402
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_90_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-30_-30.gv_dense.mat
+Elapsed time is 2.052405 seconds.
+SM2
+   388
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-60_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-90_-30.gv_dense.mat
+Elapsed time is 2.043051 seconds.
+   352
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_120_0.jpg DONE. 
+SM2
+   695
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-60_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_150_0.gv_dense.mat
+Elapsed time is 2.043879 seconds.
+   377
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_150_0.jpg DONE. 
+SM2
+SM2
+   349
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_0_-30.jpg DONE. 
+   565
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-30_0.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-180_0.gv_dense.mat
+Elapsed time is 2.051447 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-150_-30.gv_dense.mat
+Elapsed time is 2.067797 seconds.
+   383
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-30_-30.jpg DONE. 
+SM2
+   553
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_150_0.jpg DONE. 
+   383
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-180_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-90_-30.gv_dense.mat
+Elapsed time is 2.048143 seconds.
+   360
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-90_-30.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_150_0.gv_dense.mat
+Elapsed time is 2.057123 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-30_-30.gv_dense.mat
+Elapsed time is 2.052813 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_-90_0.gv_dense.mat
+Elapsed time is 2.061758 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-150_0.gv_dense.mat
+Elapsed time is 2.053338 seconds.
+   360
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-150_-30.jpg DONE. 
+SM2
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-120_0.gv_dense.mat
+Elapsed time is 2.092408 seconds.
+   439
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-180_0.jpg DONE. 
+SM2
+SM2
+   302
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_150_0.jpg DONE. 
+   374
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-150_0.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_150_0.gv_dense.mat
+Elapsed time is 2.050521 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_-150_0.gv_dense.mat
+Elapsed time is 2.068573 seconds.
+   324
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_-90_0.jpg DONE. 
+   385
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-90_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_-120_0.gv_dense.mat
+Elapsed time is 2.053880 seconds.
+   398
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-30_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-120_-30.gv_dense.mat
+Elapsed time is 2.057080 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_15_-90_0.gv_dense.mat
+Elapsed time is 2.073647 seconds.
+SM2
+   375
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-120_0.jpg DONE. 
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_120_-30.gv_dense.mat
+Elapsed time is 2.051718 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_120_0.gv_dense.mat
+Elapsed time is 2.036425 seconds.
+   286
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_150_0.jpg DONE. 
+SM2
+   271
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_-120_0.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-90_-30.gv_dense.mat
+Elapsed time is 2.046627 seconds.
+   324
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_-150_0.jpg DONE. 
+SM2
+SM2
+   276
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_120_-30.jpg DONE. 
+   276
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_-90_0.jpg DONE. 
+   408
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-120_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_60_30.gv_dense.mat
+Elapsed time is 2.049940 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_0_-30.gv_dense.mat
+Elapsed time is 2.054303 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_-180_0.gv_dense.mat
+Elapsed time is 2.080514 seconds.
+   315
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_120_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_30_0.gv_dense.mat
+Elapsed time is 2.058138 seconds.
+SM2
+SM2
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_150_30.gv_dense.mat
+Elapsed time is 2.046318 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_120_30.gv_dense.mat
+Elapsed time is 2.058544 seconds.
+SM2
+   352
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_60_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-90_30.gv_dense.mat
+Elapsed time is 2.037135 seconds.
+   438
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-90_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_15_-180_0.gv_dense.mat
+Elapsed time is 2.040083 seconds.
+   258
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_0_-30.jpg DONE. 
+   255
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-180_0.jpg DONE. 
+SM2
+SM2
+   324
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_30_0.jpg DONE. 
+   412
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_120_30.jpg DONE. 
+SM2
+   352
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-90_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_-30_0.gv_dense.mat
+Elapsed time is 2.047560 seconds.
+   259
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_150_30.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_120_0.gv_dense.mat
+Elapsed time is 2.072957 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_-90_-30.gv_dense.mat
+Elapsed time is 2.200377 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_90_0.gv_dense.mat
+Elapsed time is 2.054845 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-180_30.gv_dense.mat
+Elapsed time is 2.051893 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_-150_0.gv_dense.mat
+Elapsed time is 2.056010 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_0_0.gv_dense.mat
+Elapsed time is 2.044912 seconds.
+   379
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-30_0.jpg DONE. 
+   259
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_-180_0.jpg DONE. 
+SM2
+SM2
+SM2
+SM2
+   321
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-90_-30.jpg DONE. 
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_150_-30.gv_dense.mat
+Elapsed time is 2.057976 seconds.
+   330
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_120_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_-120_0.gv_dense.mat
+Elapsed time is 2.044825 seconds.
+   255
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_-150_0.jpg DONE. 
+   254
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_0_0.jpg DONE. 
+   299
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_90_0.jpg DONE. 
+SM2
+   397
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_150_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_0_30.gv_dense.mat
+Elapsed time is 2.050073 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-60_30.gv_dense.mat
+Elapsed time is 2.044671 seconds.
+   288
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-180_30.jpg DONE. 
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-180_-30.gv_dense.mat
+Elapsed time is 2.072623 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_60_30.gv_dense.mat
+Elapsed time is 2.086112 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_150_-30.gv_dense.mat
+Elapsed time is 2.064244 seconds.
+   343
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-120_0.jpg DONE. 
+SM2
+   208
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-60_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-120_-30.gv_dense.mat
+Elapsed time is 2.088943 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_0_0.gv_dense.mat
+Elapsed time is 2.052609 seconds.
+   257
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_0_30.jpg DONE. 
+SM2
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_15_60_0.gv_dense.mat
+Elapsed time is 2.045606 seconds.
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_-120_0.gv_dense.mat
+Elapsed time is 2.032615 seconds.
+   273
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-120_-30.jpg DONE. 
+   359
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-180_-30.jpg DONE. 
+   244
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_60_30.jpg DONE. 
+   286
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_150_-30.jpg DONE. 
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_120_0.gv_dense.mat
+Elapsed time is 2.028269 seconds.
+   241
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_60_0.jpg DONE. 
+   312
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_0_0.jpg DONE. 
+   223
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_-120_0.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-90_30.gv_dense.mat
+Elapsed time is 2.037968 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_90_0.gv_dense.mat
+Elapsed time is 2.032011 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_120_30.gv_dense.mat
+Elapsed time is 2.069355 seconds.
+   252
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_120_0.jpg DONE. 
+SM2
+SM2
+SM2
+   209
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-90_30.jpg DONE. 
+   224
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_120_30.jpg DONE. 
+   276
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_90_0.jpg DONE. 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-180_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_90_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_30_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_0_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_60_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_15_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_-90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_1_0_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-90_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_150_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_120_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_15_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_-90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_-180_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-60_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_0_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-180_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_12_60_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_10_-90_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_13_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_15_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_11_120_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/2/cutout_14_-120_0.gv_dense.mat 
+/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg done. 
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs a cutout sequence DONE. 
+1/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs a cutout sequence DONE. 
+2/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs a cutout sequence DONE. 
+3/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs a cutout sequence DONE. 
+4/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs a cutout sequence DONE. 
+5/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs a cutout sequence DONE. 
+6/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs a cutout sequence DONE. 
+7/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs a cutout sequence DONE. 
+8/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs a cutout sequence DONE. 
+9/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg vs a cutout sequence DONE. 
+10/10 done.
+# Starting retrieval
+Finding features for query #1/1
+
+cnn description: Start
+cnn description: End
+processing query 1/1
+# Starting top100 because /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/queries/3/densePE_top100_shortlist.mat does not exist
+# Starting top100 No2 because /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/queries/3/denseGV_top100_shortlist.mat does not exist
+Existuje-li feature file /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg.features.dense.mat ? 2cnn description: Start
+cnn description: End
+Dense feature extraction: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg done. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-180_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_60_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_120_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-150_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_90_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_-180_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_90_0.gv_dense.mat
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_150_0.gv_dense.mat
+Elapsed time is 2.098517 seconds.
+Elapsed time is 2.150017 seconds.
+Elapsed time is 2.185296 seconds.
+Elapsed time is 2.093279 seconds.
+Elapsed time is 2.115798 seconds.
+Elapsed time is 2.147656 seconds.
+Elapsed time is 2.161928 seconds.
+Elapsed time is 2.154554 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+   344
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_120_0.jpg DONE. 
+   285
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_60_0.jpg DONE. 
+   309
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_90_0.jpg DONE. 
+   324
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_-180_0.jpg DONE. 
+   219
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_90_0.jpg DONE. 
+   316
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_150_0.jpg DONE. 
+   296
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-180_0.jpg DONE. 
+   270
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_150_0.gv_dense.mat
+Elapsed time is 2.078520 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_-150_0.gv_dense.mat
+Elapsed time is 2.076818 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_-90_0.gv_dense.mat
+Elapsed time is 2.090599 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_150_-30.gv_dense.mat
+Elapsed time is 2.104784 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_-120_0.gv_dense.mat
+Elapsed time is 2.059864 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-180_30.gv_dense.mat
+Elapsed time is 2.096188 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_120_0.gv_dense.mat
+Elapsed time is 2.129678 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_150_-30.gv_dense.mat
+Elapsed time is 2.067068 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+   238
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-180_30.jpg DONE. 
+   288
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_120_0.jpg DONE. 
+   286
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_150_0.jpg DONE. 
+   220
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_-150_0.jpg DONE. 
+   263
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_150_-30.jpg DONE. 
+   254
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_-90_0.jpg DONE. 
+   245
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_150_-30.jpg DONE. 
+   244
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_-120_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_-180_0.gv_dense.mat
+Elapsed time is 2.066797 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-180_-30.gv_dense.mat
+Elapsed time is 2.070203 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_30_0.gv_dense.mat
+Elapsed time is 2.069668 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_-150_0.gv_dense.mat
+Elapsed time is 2.070585 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_0_0.gv_dense.mat
+Elapsed time is 2.074477 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_30_0.gv_dense.mat
+Elapsed time is 2.067856 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_30_0.gv_dense.mat
+Elapsed time is 2.085705 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-150_-30.gv_dense.mat
+Elapsed time is 2.095668 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+   213
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_30_0.jpg DONE. 
+   263
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-180_0.jpg DONE. 
+   276
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-180_-30.jpg DONE. 
+   296
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_30_0.jpg DONE. 
+   258
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-150_0.jpg DONE. 
+   224
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_0_0.jpg DONE. 
+   212
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-150_-30.jpg DONE. 
+   222
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_30_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_120_0.gv_dense.mat
+Elapsed time is 2.066905 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_-90_0.gv_dense.mat
+Elapsed time is 2.072727 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_-30_0.gv_dense.mat
+Elapsed time is 2.064542 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_90_-30.gv_dense.mat
+Elapsed time is 2.057544 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_120_0.gv_dense.mat
+Elapsed time is 2.075614 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_150_0.gv_dense.mat
+Elapsed time is 2.062146 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_60_0.gv_dense.mat
+Elapsed time is 2.067456 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_-60_0.gv_dense.mat
+Elapsed time is 2.065120 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+SM2
+   360
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_120_0.jpg DONE. 
+SM2
+   211
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_90_-30.jpg DONE. 
+   216
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_-90_0.jpg DONE. 
+   236
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-30_0.jpg DONE. 
+   264
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_60_0.jpg DONE. 
+   219
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-60_0.jpg DONE. 
+   245
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_120_0.jpg DONE. 
+   261
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_-150_0.gv_dense.mat
+Elapsed time is 2.046815 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_60_0.gv_dense.mat
+Elapsed time is 2.053468 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_90_0.gv_dense.mat
+Elapsed time is 2.071654 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-120_0.gv_dense.mat
+Elapsed time is 2.059760 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_90_-30.gv_dense.mat
+Elapsed time is 2.069216 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_30_0.gv_dense.mat
+Elapsed time is 2.050984 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_-180_0.gv_dense.mat
+Elapsed time is 2.058196 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_-150_0.gv_dense.mat
+Elapsed time is 2.071164 seconds.
+SM2
+SM2
+SM2
+SM2
+SM2
+   286
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_-150_0.jpg DONE. 
+SM2
+SM2
+   233
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_60_0.jpg DONE. 
+   304
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_90_0.jpg DONE. 
+   266
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_30_0.jpg DONE. 
+   237
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-120_0.jpg DONE. 
+   240
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-180_0.jpg DONE. 
+   232
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_90_-30.jpg DONE. 
+   258
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_-150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-90_0.gv_dense.mat
+Elapsed time is 2.038581 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_30_0.gv_dense.mat
+Elapsed time is 2.064898 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_-180_0.gv_dense.mat
+Elapsed time is 2.093809 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_60_-30.gv_dense.mat
+Elapsed time is 2.055027 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_-120_0.gv_dense.mat
+Elapsed time is 2.072155 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_-180_0.gv_dense.mat
+Elapsed time is 2.071898 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_150_0.gv_dense.mat
+Elapsed time is 2.059559 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_60_0.gv_dense.mat
+Elapsed time is 2.055035 seconds.
+SM2
+SM2
+SM2
+SM2
+   225
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_-90_0.jpg DONE. 
+SM2
+SM2
+   239
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_30_0.jpg DONE. 
+   271
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_-180_0.jpg DONE. 
+   248
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_60_-30.jpg DONE. 
+   194
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-120_0.jpg DONE. 
+   294
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_-180_0.jpg DONE. 
+   259
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_150_0.jpg DONE. 
+   256
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_60_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_-180_-30.gv_dense.mat
+Elapsed time is 2.036946 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_90_0.gv_dense.mat
+Elapsed time is 2.061839 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_120_0.gv_dense.mat
+Elapsed time is 2.075508 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_60_0.gv_dense.mat
+Elapsed time is 2.067036 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_0_0.gv_dense.mat
+Elapsed time is 2.081313 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_150_0.gv_dense.mat
+Elapsed time is 2.089348 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_90_0.gv_dense.mat
+Elapsed time is 2.074148 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_0_0.gv_dense.mat
+Elapsed time is 2.055158 seconds.
+SM2
+SM2
+SM2
+SM2
+   242
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_0_0.jpg DONE. 
+   204
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_-180_-30.jpg DONE. 
+SM2
+   315
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_120_0.jpg DONE. 
+SM2
+SM2
+   356
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_150_0.jpg DONE. 
+   247
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_90_0.jpg DONE. 
+   258
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_60_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_120_-30.gv_dense.mat
+Elapsed time is 2.046610 seconds.
+   214
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_90_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_150_30.gv_dense.mat
+Elapsed time is 2.086530 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_90_0.gv_dense.mat
+Elapsed time is 2.067035 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_120_-30.gv_dense.mat
+Elapsed time is 2.056967 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_90_-30.gv_dense.mat
+Elapsed time is 2.050566 seconds.
+   231
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_0_0.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_-150_0.gv_dense.mat
+Elapsed time is 2.048203 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_150_0.gv_dense.mat
+Elapsed time is 2.054740 seconds.
+SM2
+SM2
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_150_-30.gv_dense.mat
+Elapsed time is 2.040909 seconds.
+   240
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_120_-30.jpg DONE. 
+   225
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_120_-30.jpg DONE. 
+SM2
+SM2
+   245
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_90_-30.jpg DONE. 
+   228
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_150_30.jpg DONE. 
+   276
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_90_0.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_120_-30.gv_dense.mat
+Elapsed time is 2.050658 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_-30_0.gv_dense.mat
+Elapsed time is 2.057094 seconds.
+   231
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_60_-30.gv_dense.mat
+Elapsed time is 2.054350 seconds.
+   261
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_150_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_-60_0.gv_dense.mat
+Elapsed time is 2.086072 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_30_30.gv_dense.mat
+Elapsed time is 2.053473 seconds.
+   271
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_90_-30.gv_dense.mat
+Elapsed time is 2.054612 seconds.
+SM2
+SM2
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_120_0.gv_dense.mat
+Elapsed time is 2.049068 seconds.
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_120_-30.gv_dense.mat
+Elapsed time is 2.038900 seconds.
+   238
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-30_0.jpg DONE. 
+SM2
+   163
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_90_-30.jpg DONE. 
+   203
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_60_-30.jpg DONE. 
+SM2
+   239
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_120_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_30_-30.gv_dense.mat
+Elapsed time is 2.035516 seconds.
+   218
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_-60_0.jpg DONE. 
+   233
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_30_30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_-90_0.gv_dense.mat
+Elapsed time is 2.048493 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_60_0.gv_dense.mat
+Elapsed time is 2.060577 seconds.
+   221
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_120_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_120_-30.gv_dense.mat
+Elapsed time is 2.057958 seconds.
+   270
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_120_0.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_30_30.gv_dense.mat
+Elapsed time is 2.078130 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_150_30.gv_dense.mat
+Elapsed time is 2.060385 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_120_0.gv_dense.mat
+Elapsed time is 2.043274 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_-120_0.gv_dense.mat
+Elapsed time is 2.041835 seconds.
+   238
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_30_-30.jpg DONE. 
+SM2
+SM2
+   204
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_-90_0.jpg DONE. 
+SM2
+   258
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_150_30.jpg DONE. 
+   179
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_120_-30.jpg DONE. 
+SM2
+   198
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_30_30.jpg DONE. 
+   223
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_60_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_16_-180_0.gv_dense.mat
+Elapsed time is 2.075263 seconds.
+   218
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_120_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_120_30.gv_dense.mat
+Elapsed time is 2.061454 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_150_0.gv_dense.mat
+Elapsed time is 2.057446 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_60_30.gv_dense.mat
+Elapsed time is 2.070627 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_90_0.gv_dense.mat
+Elapsed time is 2.055248 seconds.
+   199
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_-120_0.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_30_-30.gv_dense.mat
+Elapsed time is 2.075006 seconds.
+SM2
+SM2
+   215
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_120_30.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_-120_0.gv_dense.mat
+Elapsed time is 2.048376 seconds.
+   193
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_60_30.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_90_30.gv_dense.mat
+Elapsed time is 2.052953 seconds.
+   195
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/16/cutout_16_-180_0.jpg DONE. 
+SM2
+SM2
+   276
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_90_0.jpg DONE. 
+SM2
+   202
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_30_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_60_-30.gv_dense.mat
+Elapsed time is 2.043995 seconds.
+   248
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_150_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_120_30.gv_dense.mat
+Elapsed time is 2.107439 seconds.
+   213
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_-120_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_0_0.gv_dense.mat
+Elapsed time is 2.048080 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_90_-30.gv_dense.mat
+Elapsed time is 2.054965 seconds.
+   219
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_90_30.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_16_-120_0.gv_dense.mat
+Elapsed time is 2.055693 seconds.
+SM2
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_60_-30.gv_dense.mat
+Elapsed time is 2.075082 seconds.
+   188
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/15/cutout_15_60_-30.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_-180_-30.gv_dense.mat
+Elapsed time is 2.044064 seconds.
+   257
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_120_30.jpg DONE. 
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_90_-30.gv_dense.mat
+Elapsed time is 2.040221 seconds.
+   206
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_90_-30.jpg DONE. 
+SM2
+SM2
+   223
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/12/cutout_12_0_0.jpg DONE. 
+SM2
+   196
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/13/cutout_13_60_-30.jpg DONE. 
+   205
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/16/cutout_16_-120_0.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_-60_0.gv_dense.mat
+Elapsed time is 2.026294 seconds.
+   141
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/10/cutout_10_90_-30.jpg DONE. 
+   194
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-180_-30.jpg DONE. 
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_120_-30.gv_dense.mat
+Elapsed time is 2.087790 seconds.
+SM2
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_150_-30.gv_dense.mat
+Elapsed time is 2.036144 seconds.
+/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_60_0.gv_dense.mat
+Elapsed time is 2.039081 seconds.
+   191
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_-60_0.jpg DONE. 
+SM2
+SM2
+SM2
+   243
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/14/cutout_14_120_-30.jpg DONE. 
+   245
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/1/cutout_1_150_-30.jpg DONE. 
+   230
+
+dense matching: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs /home/seberma3/InLocCIIRC_NEWdataset/cutouts4/B-315/11/cutout_11_60_0.jpg DONE. 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-180_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_-180_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_-180_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_-30_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_150_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_-90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_30_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_30_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_150_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_-150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_16_-180_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_90_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_150_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_30_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_120_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_60_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_90_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_120_30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_15_60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_12_0_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_-60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_16_-120_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_14_120_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_13_60_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_150_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_10_90_-30.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_11_60_0.gv_dense.mat 
+THSLOAD: /home/seberma3/_InLoc_PROD/SPRING_Demo/outputs/1/gv_dense/3/cutout_1_-180_-30.gv_dense.mat 
+/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg done. 
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs a cutout sequence DONE. 
+1/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs a cutout sequence DONE. 
+2/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs a cutout sequence DONE. 
+3/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs a cutout sequence DONE. 
+4/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs a cutout sequence DONE. 
+5/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs a cutout sequence DONE. 
+6/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs a cutout sequence DONE. 
+7/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs a cutout sequence DONE. 
+8/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs a cutout sequence DONE. 
+9/10 done.
+densePE: /home/seberma3/InLocCIIRC_NEWdataset/query-s10e/3.jpg vs a cutout sequence DONE. 
+10/10 done.
