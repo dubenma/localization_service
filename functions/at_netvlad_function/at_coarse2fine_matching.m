@@ -64,7 +64,22 @@ end
 % disp(size(descs2{1}));
 % disp(size(descs2{2}));
 % disp(size(descs2{3}));
-match12 = get_tcs_mkl(desc1,descs2);
+
+
+%% REMOVE THIS
+%%%%%%%%%%
+% profile off; profile on;
+%%%%%%%%%%
+
+
+%%
+
+% tic;
+% disp("BUude se ukladat a pak je asseet false");
+% save("TEST_get_tcs_params.mat", 'desc1', 'descs2');
+% assert(false);
+match12 = get_tcs_cublas(desc1,descs2);
+% toc;
 
 % disp(match12);
 % assert(false);
@@ -82,7 +97,9 @@ match12 = get_tcs_mkl(desc1,descs2);
 
 
 newmatch_all = cell(1, num_imgdbs);
-for i=1:num_imgdbs
+fprintf("num_imgdbs : %i\n", num_imgdbs);
+% Zde by mohl byt parfor asi
+parfor i=1:num_imgdbs
     [hash_table1, hash_coarse1] = at_dense_hashtable(cnnfeat1,cnnfeat1fine);
     [hash_table2, hash_coarse2] = at_dense_hashtable(cnnfeat2{i},cnnfeat2fine{i});
     
@@ -101,13 +118,21 @@ for i=1:num_imgdbs
 %         if size(thismatch12OBS, 2) ~= size(thismatch12{1}, 2)
 %             disp("Odchykla v kodu!"); 
 %         end        
-        newmatch{ii} = [ind1(thismatch12{1}(1,:)); ind2(thismatch12{1}(2,:))];        
+        newmatch{ii} = [ind1(thismatch12{1}(1,:)); ind2(thismatch12{1}(2,:))];
     end
     %disp("SM2");
     %disp(size(match12,2));
     newmatch = [newmatch{:}];
-    newmatch_all{i} = newmatch;
+    newmatch_all{i} = newmatch;    
 end
+
+% %% REMOVE TGIS
+%         %%%%%%%%%%%%%%%%%
+%         prof_dir_name = "outputs/PROFILACE/TEST_MKL_PARTS_"+randi(1000001);
+%         profile off;
+%         % profsave(profile('info'), prof_dir_name);
+%         saveProfileResult(profile('info'), prof_dir_name);
+%         %%%%%%%%%%%%%%%%%
 
 % %--- compute similarity (matching NN score)
 % % [match12,inls12] = at_denseransac(desc1,f1,desc2,f2);

@@ -60,7 +60,7 @@ setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo");
 setenv("INLOC_HW","GPU");
 
 
-for DATASET_SIZE=1:4
+for DATASET_SIZE=1:1
     %COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
     %cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");
     COMPUTED_FEATURES_PATH = "/home/seberma3/_InLoc_PROD_Speedup/SPRING_Demo/inputs/features/computed_featuresSize"+DATASET_SIZE+".mat";
@@ -108,7 +108,7 @@ for DATASET_SIZE=1:4
         profile off; profile on;
     end
     
-    for CYCPROF=1:numel(QUERIES)
+    for CYCPROF=1:1 %numel(QUERIES)
         QUERY_PATH = QUERIES{CYCPROF};
         %1. retrieval
         ht_retrieval;
@@ -117,7 +117,7 @@ for DATASET_SIZE=1:4
         ht_top100_densePE_localization;
         
         %3. pose verification
-        ht_top10_densePV_localization;
+% % % % % % % % % % % % % % %         ht_top10_densePV_localization;
         
 %         if USE_PROFIL
 %             prof_dir_name = "outputs/PROFILACE/original/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_"+CYCPROF;
@@ -131,8 +131,10 @@ for DATASET_SIZE=1:4
         profile off;
         % profsave(profile('info'), prof_dir_name);
         saveProfileResult(profile('info'), prof_dir_name);
+        disp("PROFILACE ULOZENA");
     end
 end
+disp("Algoritmus skoncil");
 
 %4. evaluate
 % cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");

@@ -12,3 +12,6 @@ SPRING_Demo/outputs_mkl
 slurm*.out
 SPRING_Demo/GITIGNORE_DIR
 GITIGNORE_DIR
+functions/at_netvlad_function/TEST_get_tcs_params.mat
+functions/QC.mat
+functions/QO.mat

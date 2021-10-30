@@ -17,7 +17,8 @@ end
 cnnfeat1size = size(cnnq{finelayerlevel}.x);
 [match12,f1,f2,cnnfeat1,cnnfeat2] = at_coarse2fine_matching(cnnq,cnndbs,coarselayerlevel,finelayerlevel);
 
-for i=1:numel(f2)
+% Zde by mohl byt parfor asi
+parfor i=1:numel(f2)
     cnnfeat2size = size(cnndbs{i}{finelayerlevel}.x);
     %this_densegv_matname = fullfile(params.output.gv_dense.dir, qname, buildCutoutName(dbnames{i}, params.output.gv_dense.matformat));
     [~,QFname,~] = fileparts(qname);

@@ -1,6 +1,7 @@
 function matches = at_dense_tc_many(desc1,descs2)
 matches = cell(1, numel(descs2));
-for i=1:numel(descs2)
+
+parfor i=1:numel(descs2)
    matches{i} = at_dense_tc(desc1, descs2{i});
 end
 % [idx12, dis12] = yael_nn(desc2, desc1, 1);
