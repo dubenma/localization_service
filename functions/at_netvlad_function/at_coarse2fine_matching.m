@@ -78,7 +78,11 @@ end
 % disp("BUude se ukladat a pak je asseet false");
 % save("TEST_get_tcs_params.mat", 'desc1', 'descs2');
 % assert(false);
+reset(gpuDevice);
+% disp("Zaverecna kontrola");
+% system("nvidia-smi");
 match12 = get_tcs_cublas(desc1,descs2);
+% disp("Pooperacni kontrola");
 % toc;
 
 % disp(match12);
@@ -97,7 +101,7 @@ match12 = get_tcs_cublas(desc1,descs2);
 
 
 newmatch_all = cell(1, num_imgdbs);
-fprintf("num_imgdbs : %i\n", num_imgdbs);
+% fprintf("num_imgdbs : %i\n", num_imgdbs);
 % Zde by mohl byt parfor asi
 parfor i=1:num_imgdbs
     [hash_table1, hash_coarse1] = at_dense_hashtable(cnnfeat1,cnnfeat1fine);

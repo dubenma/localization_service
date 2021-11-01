@@ -1,7 +1,6 @@
 % TODO: Pomuze tohle udelat paralelni cluster?:
 clear;
 distcomp.feature( 'LocalUseMpiexec', false )
-
 startup;
 
 SAVE_SUBRESULT_FILES = 1;
@@ -52,13 +51,13 @@ QUERIES = {
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/40.jpg'
     };
 
+% gpuDevice(2);
 %QUERY_PATH = '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg';
 %COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
 
 %setenv("INLOC_EXPERIMENT_NAME","hospital_1")
 setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo");
 setenv("INLOC_HW","GPU");
-
 
 for DATASET_SIZE=1:1
     %COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
@@ -92,7 +91,7 @@ for DATASET_SIZE=1:1
         p = parpool('local', nWorkers);
     end
     %wks1=true;
-    wks1 = false; % Co to kurva je? Kde je vysvetlujici komentar?
+    wks1 = false; 
     if wks1
         %nWorkers = 64;
         nWorkers = 8;
@@ -108,7 +107,7 @@ for DATASET_SIZE=1:1
         profile off; profile on;
     end
     
-    for CYCPROF=1:1 %numel(QUERIES)
+    for CYCPROF=1:3 %numel(QUERIES)
         QUERY_PATH = QUERIES{CYCPROF};
         %1. retrieval
         ht_retrieval;
@@ -119,12 +118,6 @@ for DATASET_SIZE=1:1
         %3. pose verification
 % % % % % % % % % % % % % % %         ht_top10_densePV_localization;
         
-%         if USE_PROFIL
-%             prof_dir_name = "outputs/PROFILACE/original/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_"+CYCPROF;
-%             %profile off;
-%             % profsave(profile('info'), prof_dir_name);
-%             saveProfileResult(profile('info'), prof_dir_name);
-%         end
     end
     if USE_PROFIL
         prof_dir_name = "outputs/PROFILACE/original/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_ALL";

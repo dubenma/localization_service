@@ -10,7 +10,7 @@ __conda_setup="$('/opt/apps/software/Anaconda3/2020.02/bin/conda' 'shell.zsh' 'h
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-	echo problem
+	echo Pruser
 	exit 1
     if [ -f "/opt/apps/software/Anaconda3/2020.02/etc/profile.d/conda.sh" ]; then
         . "/opt/apps/software/Anaconda3/2020.02/etc/profile.d/conda.sh"
@@ -40,5 +40,4 @@ module load CUDA/9.2.88-GCC-7.3.0-2.30
 #module load cuDNN/7.0.5-CUDA-9.1.85
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/lucivpav/gflags-2.2.2/build/lib:/home/lucivpav/InLoc_demo/functions/vlfeat/toolbox/mex/mexa64:/home/seberma3/.conda/envs/inlocul/lib
-
 matlab -batch inloc_demo

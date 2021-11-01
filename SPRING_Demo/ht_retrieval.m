@@ -1,4 +1,7 @@
 %Note: It loads localization score and output top100 database list for each query. 
+
+% disp("GPUcheck xA"); system("nvidia-smi");
+
 [~,QFname,~] = fileparts(QUERY_PATH);
 
 %% Load query and database list
@@ -23,8 +26,9 @@ if ~USE_CACHE_FILES || exist(top100_matname, 'file') ~= 2
     
     %Load score
     %load(params.input.scores.path, 'score');
+%     disp("GPUcheck xB"); system("nvidia-smi");
     score = getScores1Query(params, COMPUTED_FEATURES_PATH, QUERY_PATH, cutoutFeatures); % TODO: existuje var cutoutFeatures?
-       
+%     disp("GPUcheck C"); system("nvidia-smi");   
     %shortlist format
     %for i=1:size(query_imgnames_all,2)
         %queryName = query_imgnames_all{i};
@@ -35,7 +39,8 @@ if ~USE_CACHE_FILES || exist(top100_matname, 'file') ~= 2
         ImgList(1).topNscore = score(ii).scores(score_idx(1:shortlist_topN));
         ImgList(1).primary = true;
     %end
-
+%     reset(gpuDevice);
+% disp("GPUcheck D"); system("nvidia-smi");   
     % I do not need secondary queries
     
 %     % add secondary queries

@@ -13,6 +13,10 @@ dirname = fullfile(params.output.dir, string(DATASET_SIZE), 'queries', QFname);
 if exist(dirname, 'dir') ~= 7
    mkdir(dirname); 
 end
+
+% Tohle je v ht_retireival
+% dirname = fullfile(params.output.dir, string(DATASET_SIZE), 'queries', QFname);
+% top100_matname = fullfile(dirname, 'original_top100_shortlist.mat');
     
 densePE_matname = fullfile(dirname, 'densePE_top100_shortlist.mat');
 denseGV_matname = fullfile(dirname, 'denseGV_top100_shortlist.mat');
@@ -22,6 +26,7 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2 %1 == 1
     if ~USE_CACHE_FILES || exist(denseGV_matname, 'file') ~= 2 %1 == 1 
         disp("# Starting top100 No2 because " + denseGV_matname + " does not exist");
         %dense feature extraction
+        
         net = load(params.netvlad.dataset.pretrained);
         net = net.net;
         net= relja_simplenn_tidy(net);
@@ -33,13 +38,17 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2 %1 == 1
         fprintf("Existuje-li feature file %s ? %d", q_densefeat_matname, exist(q_densefeat_matname));
         %if exist(q_densefeat_matname, 'file') ~= 2 % TODO: Tohle tady nebude, protoze query je predem neznamy
         % this is necessary because of denseGV:
+       
         queryImage = load_query_image_compatible_with_cutouts(ImgList_original(1).queryname, ...
             params.dataset.db.cutout.size);
+      
         cnn = at_serialAllFeats_convfeat(net, queryImage, 'useGPU', true);
         cnn{1} = [];
         cnn{2} = [];
         cnn{4} = [];
         cnn{6} = [];
+       
+        
         [feat_path, ~, ~] = fileparts(q_densefeat_matname);
         if exist(feat_path, 'dir')~=7; mkdir(feat_path); end
         save('-v6', q_densefeat_matname, 'cnn'); % TODO: Tohle tady nebude, protoze query je predem neznamy

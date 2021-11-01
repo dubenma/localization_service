@@ -6,8 +6,9 @@ nCutouts = size(cutoutFeatures,2);
 %featuresPath = fullfile(params.input.feature.dir, 'query_features.mat');
 %load(featuresPath, 'queryFeatures');
 
+% disp("GPUcheck CA"); system("nvidia-smi");
 queryFeatures = getFeatures1Query(params, queryPath);
-
+% disp("GPUcheck CB"); system("nvidia-smi");
 % nQueries = size(queryFeatures,2);
 score = struct('queryname', {}, 'scores', {});
 
@@ -17,7 +18,7 @@ score = struct('queryname', {}, 'scores', {});
 % end
 % allCutoutFeatures = allCutoutFeatures';
 allCutoutFeatures = cutoutFeatures;
-
+% disp("GPUcheck CC"); system("nvidia-smi");
 tol = 1e-6;
 if ~all(abs(vecnorm(allCutoutFeatures)-1.0)<tol)
     fprintf('norm: %f\n', vecnorm(allCutoutFeatures));

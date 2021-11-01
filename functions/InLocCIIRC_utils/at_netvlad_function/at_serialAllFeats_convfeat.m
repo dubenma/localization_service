@@ -66,6 +66,7 @@ cnnfeat{1}.x = gather(res(6).x);
 clear res
 
 relja_display('cnn description: End');
+relja_simplenn_move(net, 'cpu');
 % fprintf(1,'%f\n',toc);
 
 end

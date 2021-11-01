@@ -9,8 +9,8 @@ cutoutSize = [cutoutSize(2), cutoutSize(1)]; % width, height
 % if exist(params.input.feature.dir, 'dir') ~= 7
 %     mkdir(params.input.feature.dir);
 % end
-load(params.netvlad.dataset.pretrained, 'net');
-net = relja_simplenn_tidy(net);
+load(params.netvlad.dataset.pretrained, 'net'); % It loads ca. 360 MB GPU
+net = relja_simplenn_tidy(net); % It loads ca. 360 MB GPU
 net = relja_cropToLayer(net, 'postL2'); %original
 % net = relja_cropToLayer(net, 'vlad:intranorm'); %experiment SS2021
 
@@ -31,9 +31,10 @@ net = relja_cropToLayer(net, 'postL2'); %original
 %         queryName = queryImageFilenames{1};
         %queryImage = load_query_image_compatible_with_cutouts(fullfile(queryDirWithSlash, queryPath), cutoutSize);
         queryImage = load_query_image_compatible_with_cutouts(queryPath, cutoutSize);
-        cnn = at_serialAllFeats_convfeat(net, queryImage, 'useGPU', true);
+        cnn = at_serialAllFeats_convfeat(net, queryImage, 'useGPU', true); % It loads ca 7GB GPU
         queryFeatures(1).queryname = queryPath;
         queryFeatures(1).features = cnn{6}.x(:);
+%         reset(gpuDevice);
 %     end
 %     save(p, 'queryFeatures', '-v7.3');
 % end

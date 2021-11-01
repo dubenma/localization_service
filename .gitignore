@@ -10,6 +10,7 @@ SPRING_Demo/outputs
 SPRING_Demo/outputs_eigen
 SPRING_Demo/outputs_mkl
 slurm*.out
+SPRING_Demo/slurm*.out
 SPRING_Demo/GITIGNORE_DIR
 GITIGNORE_DIR
 functions/at_netvlad_function/TEST_get_tcs_params.mat
