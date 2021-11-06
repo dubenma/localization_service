@@ -1,4 +1,4 @@
-function [ params ] = setupParams(mode, datasetSize, requireExperimentName)
+function [ params ] = setupParams(mode, datasetSize, requireExperimentName, topM, topN)
     % mode is one of {'s10e', 'holoLens1', 'holoLens2'}
     % NOTE: the number after 'holoLens' is a sequence number, not a version of HoloLens glasses!
 % arguments
@@ -148,7 +148,7 @@ params.input.projectMesh_py_path = fullfile([thisScriptPath, '../projectMesh/pro
 
 %output
 %params.output.dir = fullfile(params.cache.dir, sprintf('outputs%s', experimentSuffix));
-params.output.dir = '/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs';
+params.output.dir = "/home/seberma3/_InLoc_PROD/SPRING_Demo/outputs"+topM+"_"+topN;
 
 %params.output.gv_dense.dir = fullfile(params.output.dir, 'gv_dense');%dense matching results (directory)
 params.output.gv_dense.dir = fullfile(params.output.dir, string(datasetSize), 'gv_dense');%dense matching results (directory)
@@ -199,6 +199,6 @@ mkdirIfNonExistent(params.output.gv_dense.dir);
 mkdirIfNonExistent(params.output.pnp_dense_inlier.dir);
 
 %% topN constants; TODO: set it up for ht_retrieval, dense_PE and rename the script names
-params.PV.topN = 10;
+params.PV.topN = topN;
 
 end

@@ -5,6 +5,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-gpu=16
 #SBATCH --job-name=Tervenapeaset_%j.log
+#SBATCH --constraint="SET1"
 
 __conda_setup="$('/opt/apps/software/Anaconda3/2020.02/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then

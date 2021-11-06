@@ -74,10 +74,6 @@ for DATASET_SIZE=1:4
     %[ params ] = setupParams('hospital_1', true); % NOTE: adjust
     [ params ] = setupParams('SPRING_Demo', DATASET_SIZE, true, shortlist_topN, topN_with_GV); % NOTE: adjust
     
-    disp("Slozka outputu: " + params.output.dir);
-    disp("TOP M: "+ shortlist_topN);
-    disp("TOP N: "+ topN_with_GV);
-    
     inloc_hw = getenv("INLOC_HW");
     if isempty(inloc_hw) || (~strcmp(inloc_hw, "GPU") && ~strcmp(inloc_hw, "CPU"))
         fprintf('Please specify environment variable INLOC_HW to one of: "GPU", "CPU"\n');
@@ -128,7 +124,6 @@ for DATASET_SIZE=1:4
         %3. pose verification
         ht_top10_densePV_localization;
      
-        disp("Konci query c." + CYCPROF);
     end
     if USE_PROFIL
         prof_dir_name = "outputs/PROFILACE/original/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_ALL";
@@ -138,7 +133,6 @@ for DATASET_SIZE=1:4
     end
 end
 
-disp("ALGORITMUS SKONCIL");
 end % FUNCTION inloc_demo
 
 %4. evaluate

@@ -1,9 +1,13 @@
 %Note: It first rerank top100 original shortlist (ImgList_original) in accordance
 %with the number of dense matching inliers. TODO: and then?
 
-shortlist_topN = 100;
-topN_with_GV = 10;
-mCombinations = 10;
+disp("shortlist_topN: " + shortlist_topN);
+disp("topN_with_GV: " + topN_with_GV);
+disp("mCombinations: " + mCombinations);
+
+% shortlist_topN = 80; %100;
+% topN_with_GV = 8; %10;
+% mCombinations = 8; %10;
 
 %% densePE (top100 reranking -> top10 pose candidate)
 
