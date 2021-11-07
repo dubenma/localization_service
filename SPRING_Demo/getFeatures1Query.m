@@ -9,10 +9,16 @@ cutoutSize = [cutoutSize(2), cutoutSize(1)]; % width, height
 % if exist(params.input.feature.dir, 'dir') ~= 7
 %     mkdir(params.input.feature.dir);
 % end
+disp("GetFeat - GPU will be reseted");
+%reset(gpuDevice);
+gpuDevice(1);
 load(params.netvlad.dataset.pretrained, 'net'); % It loads ca. 360 MB GPU
 net = relja_simplenn_tidy(net); % It loads ca. 360 MB GPU
 net = relja_cropToLayer(net, 'postL2'); %original
 % net = relja_cropToLayer(net, 'vlad:intranorm'); %experiment SS2021
+
+disp("NETX");
+disp(net);
 
 %% query
 % x = load(params.input.qlist.path);
@@ -32,6 +38,9 @@ net = relja_cropToLayer(net, 'postL2'); %original
         %queryImage = load_query_image_compatible_with_cutouts(fullfile(queryDirWithSlash, queryPath), cutoutSize);
         queryImage = load_query_image_compatible_with_cutouts(queryPath, cutoutSize);
         cnn = at_serialAllFeats_convfeat(net, queryImage, 'useGPU', true); % It loads ca 7GB GPU
+        %cnn = at_serialAllFeats_convfeat(net, queryImage, 'useGPU', false); % It loads ca 7GB GPU
+        disp("Bez GPU");
+        system("nvidia-smi");
         queryFeatures(1).queryname = queryPath;
         queryFeatures(1).features = cnn{6}.x(:);
 %         reset(gpuDevice);

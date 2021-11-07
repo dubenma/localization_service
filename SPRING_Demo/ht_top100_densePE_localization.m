@@ -1,9 +1,9 @@
 %Note: It first rerank top100 original shortlist (ImgList_original) in accordance
 %with the number of dense matching inliers. TODO: and then?
 
-shortlist_topN = 100;
-topN_with_GV = 10;
-mCombinations = 10;
+% shortlist_topN = 100;
+% topN_with_GV = 10;
+% mCombinations = 10;
 
 %% densePE (top100 reranking -> top10 pose candidate)
 
@@ -51,12 +51,12 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2 %1 == 1
         
         [feat_path, ~, ~] = fileparts(q_densefeat_matname);
         if exist(feat_path, 'dir')~=7; mkdir(feat_path); end
-        save('-v6', q_densefeat_matname, 'cnn'); % TODO: Tohle tady nebude, protoze query je predem neznamy
+        save('-v6', q_densefeat_matname, 'cnn');
         fprintf('Dense feature extraction: %s done. \n', ImgList_original(1).queryname);
         %end
         
         % Extrahuje to lokální deskriptory databazovych snimku na 3. a 5. vrstve cnn
-        for jj = 1:1:shortlist_topN
+        for jj = 1:1:shortlist_topN            
             %db_densefeat_matname = fullfile(params.input.feature.dir, params.dataset.db.cutout.dirname, ...
             %    [ImgList_original(ii).topNname{jj}, params.input.feature.db_matformat]);
             %db_densefeat_matname = ImgList_original(1).topNname{jj} + params.input.feature.db_matformat;

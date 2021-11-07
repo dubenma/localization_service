@@ -1,9 +1,10 @@
 import os
-os.environ["PYOPENGL_PLATFORM"] = "egl"
 import numpy as np
 import sys
 import scipy.io as sio
 
+os.environ["PYOPENGL_PLATFORM"] = "egl"
+#os.environ["PYOPENGL_PLATFORM"] = "osmesa"
 import pyrender
 import trimesh
 from PIL import Image

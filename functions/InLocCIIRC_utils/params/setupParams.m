@@ -1,4 +1,4 @@
-function [ params ] = setupParams(mode, datasetSize, requireExperimentName)
+function [ params ] = setupParams(mode, datasetSize, requireExperimentName, topM, topN)
     % params for SUP version
     % mode is one of {'s10e', 'holoLens1', 'holoLens2'}
     % NOTE: the number after 'holoLens' is a sequence number, not a version of HoloLens glasses!
@@ -15,8 +15,8 @@ env = environment();
 params.mode = mode; 
 disp("ENV " + env)
 if strcmp(env, 'laptop')
-    params.dataset.dir = '/Volumes/GoogleDrive/Mùj disk/ARTwin/InLocCIIRC_dataset';
-    params.netvlad.dataset.dir = '/Volumes/GoogleDrive/Mu°j disk/ARTwin/InLocCIIRC_dataset/NetVLAD';
+    params.dataset.dir = '/Volumes/GoogleDrive/Mï¿½j disk/ARTwin/InLocCIIRC_dataset';
+    params.netvlad.dataset.dir = '/Volumes/GoogleDrive/Muï¿½j disk/ARTwin/InLocCIIRC_dataset/NetVLAD';
     params.multiCameraPoseExe.path = '/Users/lucivpav/repos/MultiCameraPose/build/src/multi_camera_pose';
 elseif strcmp(env, 'cmp')
     params.dataset.dir = '/mnt/datagrid/personal/lucivpav/InLocCIIRC_dataset';
@@ -141,7 +141,7 @@ params.input.projectMesh_py_path = fullfile([thisScriptPath, '../projectMesh/pro
 
 %output
 %params.output.dir = fullfile(params.cache.dir, sprintf('outputs%s', experimentSuffix));
-params.output.dir = '/home/seberma3/_InLoc_PROD_Speedup/SPRING_Demo/outputs';
+params.output.dir = "/home/seberma3/_InLoc_PROD_Speedup/SPRING_Demo/outputs"+topM+"__"+topN;
 params.output.gv_dense.dir = fullfile(params.output.dir, string(datasetSize), 'gv_dense');%dense matching results (directory)
 params.output.gv_dense.matformat = '.gv_dense.mat';%dense matching results (file extention)
 params.output.gv_sparse.dir = fullfile(params.output.dir, string(datasetSize), 'gv_sparse');%sparse matching results (directory)

@@ -25,6 +25,8 @@ simpleNnOpts= {'conserveMemory', false, 'mode', 'test'};
 
 relja_display('cnn description: Start'); %tic
 
+disp("NET");
+disp(net);
 if opts.useGPU
   net= relja_simplenn_move(net, 'gpu');
 else

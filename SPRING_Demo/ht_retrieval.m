@@ -8,8 +8,8 @@
 load(COMPUTED_FEATURES_PATH);
 load(params.input.dblist.path);
 
-%% top100 retrieval
-shortlist_topN = 100;
+%% topM retrieval
+
 %dirname = fullfile(params.output.dir,'queries', QFname);
 dirname = fullfile(params.output.dir, string(DATASET_SIZE), 'queries', QFname);
 top100_matname = fullfile(dirname, 'original_top100_shortlist.mat');

@@ -78,10 +78,23 @@ end
 % disp("BUude se ukladat a pak je asseet false");
 % save("TEST_get_tcs_params.mat", 'desc1', 'descs2');
 % assert(false);
-reset(gpuDevice);
+
+%reset(gpuDevice);
+%gpuDevice;
+
 % disp("Zaverecna kontrola");
 % system("nvidia-smi");
+disp("cublas will be called - switching GPUs");
+gpuDevice(2);
+disp("cublas will be called");
 match12 = get_tcs_cublas(desc1,descs2);
+disp("cublas finished - switching GPU back");
+gpuDevice(1);
+disp("Alles OK! GPU switched!");
+%gpuDevice;
+
+%match12 = get_tcs_mkl(desc1,descs2);
+% reset(gpuDevice);
 % disp("Pooperacni kontrola");
 % toc;
 

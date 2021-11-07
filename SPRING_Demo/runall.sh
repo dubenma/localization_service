@@ -1,10 +1,11 @@
 #!/bin/bash
 #SBATCH  --mem=128G
-#SBATCH --time=0-45:00:00
+#SBATCH --time=0-22:00:00
 #SBATCH --partition=gpu
-#SBATCH --gres=gpu:2
+#SBATCH --gres=gpu:1
 #SBATCH --cpus-per-gpu=16
 #SBATCH --job-name=Tervenapeaset_%j.log
+#SBATCH --constraint="DGX"
 
 __conda_setup="$('/opt/apps/software/Anaconda3/2020.02/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
@@ -36,6 +37,8 @@ ml load LLVM/6.0.0-GCCcore-7.3.0
 #ml load CUDA
 module load CUDA/9.1.85
 module load CUDA/9.2.88-GCC-7.3.0-2.30
+module load CUDA/9.2.88-GCC-7.3.0-2.30
+module load cuDNN/7.0.5-CUDA-9.1.85
 #module load CUDA/9.1.85
 #module load cuDNN/7.0.5-CUDA-9.1.85
 

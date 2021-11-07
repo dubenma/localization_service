@@ -1,7 +1,11 @@
-% TODO: Pomuze tohle udelat paralelni cluster?:
-clear;
+function inloc_demo(topM, topN)
+%clear;
 distcomp.feature( 'LocalUseMpiexec', false )
 startup;
+
+shortlist_topN = topM; %100;
+topN_with_GV = topN; %10;
+mCombinations = topN; %10;
 
 SAVE_SUBRESULT_FILES = 1;
 USE_CACHE_FILES = 0;
@@ -59,14 +63,14 @@ QUERIES = {
 setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo");
 setenv("INLOC_HW","GPU");
 
-for DATASET_SIZE=1:1
+for DATASET_SIZE=1:4
     %COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
     %cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");
     COMPUTED_FEATURES_PATH = "/home/seberma3/_InLoc_PROD_Speedup/SPRING_Demo/inputs/features/computed_featuresSize"+DATASET_SIZE+".mat";
     load("inputs/cutout_imgnames_all"+DATASET_SIZE+".mat", 'cutout_imgnames_all');
     %setenv("INLOC_HW","CPU")
     %[ params ] = setupParams('hospital_1', true); % NOTE: adjust
-    [ params ] = setupParams('SPRING_Demo', DATASET_SIZE, true); % NOTE: adjust
+    [ params ] = setupParams('SPRING_Demo', DATASET_SIZE, true, shortlist_topN, topN_with_GV); % NOTE: adjust
     
     inloc_hw = getenv("INLOC_HW");
     if isempty(inloc_hw) || (~strcmp(inloc_hw, "GPU") && ~strcmp(inloc_hw, "CPU"))
@@ -107,7 +111,7 @@ for DATASET_SIZE=1:1
         profile off; profile on;
     end
     
-    for CYCPROF=1:3 %numel(QUERIES)
+    for CYCPROF=1:numel(QUERIES)
         QUERY_PATH = QUERIES{CYCPROF};
         %1. retrieval
         ht_retrieval;
@@ -116,18 +120,19 @@ for DATASET_SIZE=1:1
         ht_top100_densePE_localization;
         
         %3. pose verification
-% % % % % % % % % % % % % % %         ht_top10_densePV_localization;
+        ht_top10_densePV_localization;
         
     end
     if USE_PROFIL
-        prof_dir_name = "outputs/PROFILACE/original/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_ALL";
+        prof_dir_name = "outputs"+topM+"__"+topN+"/PROFILACE/original/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_ALL";
         profile off;
         % profsave(profile('info'), prof_dir_name);
         saveProfileResult(profile('info'), prof_dir_name);
-        disp("PROFILACE ULOZENA");
+        disp("PROFILACE datasetu " + DATASET_SIZE + " ULOZENA");
     end
 end
 disp("Algoritmus skoncil");
+end % FUNCTION inloc_demo
 
 %4. evaluate
 % cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");
