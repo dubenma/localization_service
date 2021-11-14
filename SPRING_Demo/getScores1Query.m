@@ -7,7 +7,7 @@ nCutouts = size(cutoutFeatures,2);
 %load(featuresPath, 'queryFeatures');
 
 queryFeatures = getFeatures1Query(params, queryPath);
-
+system("nvidia-smi");
 % nQueries = size(queryFeatures,2);
 score = struct('queryname', {}, 'scores', {});
 

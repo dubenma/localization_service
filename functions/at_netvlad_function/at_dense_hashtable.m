@@ -6,18 +6,6 @@ y_coarse_size = size(cnnfeat1,2);
 x_fine_size = size(cnnfeat1fine,1);
 y_fine_size = size(cnnfeat1fine,2);
 
-% scale = x_fine_size/x_coarse_size;
-% if scale ~= whos  
-%   error('aspect ratio should be preserved');
-% end
-
-% x_coarse_size = 5;
-% y_coarse_size = 4;
-% scale = 2;
-% x_fine_size = x_coarse_size * scale;
-% y_fine_size = y_coarse_size * scale;
-
-% [x_coarse,y_coarse] = meshgrid(1:x_coarse_size,1:y_coarse_size);
 hash_coarse = reshape(1:(x_coarse_size*y_coarse_size),x_coarse_size,y_coarse_size);
 
 hash_fine = imresize(hash_coarse,[x_fine_size y_fine_size],'nearest');

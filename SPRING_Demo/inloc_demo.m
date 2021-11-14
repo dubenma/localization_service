@@ -1,10 +1,9 @@
 function inloc_demo(topM, topN)
 
-shortlist_topN = topM; %100;
-topN_with_GV = topN; %10;
-mCombinations = topN; %10;
-
-%clear;
+shortlist_topN = topM;
+topN_with_GV = topN;
+mCombinations = topN;
+system("nvidia-smi");
 distcomp.feature( 'LocalUseMpiexec', false )
 
 startup;
@@ -13,7 +12,6 @@ SAVE_SUBRESULT_FILES = 1;
 USE_CACHE_FILES = 0;
 USE_PAR = 1;
 USE_PROFIL = 1;
-%DATASET_SIZE = 1;
 QUERIES = {
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg' ,
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg' ,
@@ -57,21 +55,16 @@ QUERIES = {
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/40.jpg'
     };
 
-%QUERY_PATH = '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg';
-%COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
-
-%setenv("INLOC_EXPERIMENT_NAME","hospital_1")
 setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo");
 setenv("INLOC_HW","GPU");
 
 
 for DATASET_SIZE=1:4
+    disp("Zacina DATASET_SIZE " + DATASET_SIZE);
     %COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
     %cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");
     COMPUTED_FEATURES_PATH = "/home/seberma3/_InLoc_PROD_Speedup/SPRING_Demo/inputs/features/computed_featuresSize"+DATASET_SIZE+".mat";
     load("inputs/cutout_imgnames_all"+DATASET_SIZE+".mat", 'cutout_imgnames_all');
-    %setenv("INLOC_HW","CPU")
-    %[ params ] = setupParams('hospital_1', true); % NOTE: adjust
     [ params ] = setupParams('SPRING_Demo', DATASET_SIZE, true, shortlist_topN, topN_with_GV); % NOTE: adjust
     
     disp("Slozka outputu: " + params.output.dir);
@@ -131,9 +124,8 @@ for DATASET_SIZE=1:4
         disp("Konci query c." + CYCPROF);
     end
     if USE_PROFIL
-        prof_dir_name = "outputs/PROFILACE/original/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_ALL";
+        prof_dir_name = "outputs"+topM+"_"+topN+"/PROFILACE/original/"+DATASET_SIZE+"/P" + datestr(now(), 'yy_mm_dd_hh_MM') + "_QUE_ALL";
         profile off;
-        % profsave(profile('info'), prof_dir_name);
         saveProfileResult(profile('info'), prof_dir_name);
     end
 end

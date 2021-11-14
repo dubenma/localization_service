@@ -13,14 +13,14 @@ disp("mCombinations: " + mCombinations);
 
 % dirname = fullfile(params.output.dir, 'queries', QFname);
 dirname = fullfile(params.output.dir, string(DATASET_SIZE), 'queries', QFname);
-
+disp("#ht100 bude ukladat do slozky: " + dirname);
 if exist(dirname, 'dir') ~= 7
    mkdir(dirname); 
 end
     
 densePE_matname = fullfile(dirname, 'densePE_top100_shortlist.mat');
 denseGV_matname = fullfile(dirname, 'denseGV_top100_shortlist.mat');
-
+system("nvidia-smi");
 if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
     disp("# Starting top100 because " + densePE_matname + " does not exist");
     if ~USE_CACHE_FILES || exist(denseGV_matname, 'file') ~= 2
@@ -35,11 +35,10 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         % Extrahuje to lokální deskriptory na 3. a 5. vrstve cnn
         q_densefeat_matname = "" + ImgList_original(1).queryname + params.input.feature.q_matformat;
         fprintf("Existuje-li feature file %s ? %d", q_densefeat_matname, exist(q_densefeat_matname));
-        %if exist(q_densefeat_matname, 'file') ~= 2 % TODO: Tohle tady nebude, protoze query je predem neznamy
-        % this is necessary because of denseGV:
+
         queryImage = load_query_image_compatible_with_cutouts(ImgList_original(1).queryname, ...
             params.dataset.db.cutout.size);
-        cnn = at_serialAllFeats_convfeat(net, queryImage, 'useGPU', true);
+        cnn = at_serialAllFeats_convfeat(net, queryImage);
         cnn{1} = [];
         cnn{2} = [];
         cnn{4} = [];
@@ -48,7 +47,6 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         if exist(feat_path, 'dir')~=7; mkdir(feat_path); end
         save('-v6', q_densefeat_matname, 'cnn'); % TODO: Tohle tady nebude, protoze query je predem neznamy
         fprintf('Dense feature extraction: %s done. \n', ImgList_original(1).queryname);
-        %end
         
         % Extrahuje to lokální deskriptory databazovych snimku na 3. a 5. vrstve cnn
         for jj = 1:1:shortlist_topN
@@ -58,19 +56,6 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
             db_densefeat_matname = getFeaturesPath(ImgList_original(1).topNname{jj}, params);
             if exist(db_densefeat_matname, 'file') ~= 2
                    assert(false);
-%                 Zakomentovano, protozue nechci dovolit buildovat features
-%                 pri lokalizuaci! Uz ma bejt vse hotovo!
-%                 %cutoutImage = imread(fullfile(params.dataset.db.cutout.dir, ImgList_original(ii).topNname{jj}));
-%                 cutoutImage = imread(ImgList_original(1).topNname{jj});
-%                 cnn = at_serialAllFeats_convfeat(net, cutoutImage, 'useGPU', true);
-%                 cnn{1} = [];
-%                 cnn{2} = [];
-%                 cnn{4} = [];
-%                 cnn{6} = [];
-%                 [feat_path, ~, ~] = fileparts(db_densefeat_matname);
-%                 if exist(feat_path, 'dir')~=7; mkdir(feat_path); end
-%                 save('-v6', db_densefeat_matname, 'cnn');
-%                 fprintf('Dense feature extraction: %s done. \n', ImgList_original(1).topNname{jj});
             end
         end
         %end
@@ -88,7 +73,6 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         ImgList(1).primary = ImgList_original(1).primary;
         
         %preload query feature
-        %qfname = fullfile(params.input.feature.dir, params.dataset.query.dirname, [ImgList(ii).queryname, params.input.feature.q_matformat]);
         qfname = "" + ImgList(1).queryname + params.input.feature.q_matformat;
         cnnq = load(qfname, 'cnn');cnnq = cnnq.cnn;
         f = dir(fullfile(params.output.gv_dense.dir, ImgList(1).queryname)); %skip-recomputation
@@ -108,13 +92,6 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         end
         for jj = 1:1:shortlist_topN
             cutoutPath = ImgList(1).topNname{jj};
-            %                 %this_gvresults = load(fullfile(params.output.gv_dense.dir, ImgList(1).queryname, buildCutoutName(cutoutPath, params.output.gv_dense.matformat)));
-            %                 fprintf("ImgList(1).queryname : %s", ImgList(1).queryname);
-            %                 fprintf("built : %s", buildCutoutName(cutoutPath, params.output.gv_dense.matformat));
-            %                 fprintf("FULL : %s", fullfile(ImgList(1).queryname, buildCutoutName(cutoutPath, params.output.gv_dense.matformat)));
-            %                 fprintf("exist : %d", exist(fullfile(ImgList(1).queryname, buildCutoutName(cutoutPath, params.output.gv_dense.matformat)) ));
-            %                 this_gvresults = load(fullfile(ImgList(1).queryname,
-            %                 buildCutoutName(cutoutPath, params.output.gv_dense.matformat)));
             [~,QFname,~] = fileparts(ImgList(1).queryname);
             [~,DBFname,~] = fileparts(cutoutPath);
             %mkdirIfNonExistent(fullfile(params.output.gv_dense.dir, QFname));
@@ -144,12 +121,6 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
     
     %% for each query, find top-mCombinations sequences of lengths params.sequence.length
     treatQueriesSequentially = isfield(params, 'sequence') && isfield(params.sequence, 'length');
-%     if treatQueriesSequentially && params.sequence.length == 1
-%         treatQueriesSequentially = false; % to avoid NaN pose estimates for queries that don't have HoloLens data
-%     end
-%     if treatQueriesSequentially && strcmp(params.sequence.processing.mode, 'sequentialPV')
-%         treatQueriesSequentially = false;
-%     end
     if ~treatQueriesSequentially
         desiredSequenceLength = 1;
     else
@@ -165,11 +136,11 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         queryIdx = queryNameToQueryId(ImgList(i).queryname);
         queryInd(i) = i;%queryIdx;
     end
-    
+    system("nvidia-smi");
     
     for i=1:length(ImgListSequential)
         parentQueryName = ImgListSequential(i).queryname;
-        parentQueryId = i;%queryNameToQueryId(parentQueryName);
+        parentQueryId = i;
         % compute cumulative score for each combination
         
         % generate all combination indices
@@ -245,7 +216,7 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
             lastQueryInd{idx} = lastQueryId;
         end
     end
-    
+    system("nvidia-smi");
     %dense pnp
     for ii = 1:length(qlist)
         %for ii = 1:length(qlist)

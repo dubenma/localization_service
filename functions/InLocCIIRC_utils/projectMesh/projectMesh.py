@@ -1,9 +1,10 @@
 import os
-os.environ["PYOPENGL_PLATFORM"] = "egl"
 import numpy as np
 import sys
 import scipy.io as sio
 
+#os.environ['PYOPENGL_PLATFORM']  = 'osmesa'
+os.environ['PYOPENGL_PLATFORM']  = 'egl'
 import pyrender
 import trimesh
 from PIL import Image
@@ -132,6 +133,9 @@ def projectMeshDebug(meshPath, f, R, t, sensorSize, ortho, mag, debug):
     return projectMeshCachedDebug(scene, f, R, t, sensorSize, ortho, mag, debug)
 
 if __name__ == '__main__':
+    os.system("export EGL_DEVICE_ID=0")
+    print("Systemove info:")
+    print(os.environ["PYOPENGL_PLATFORM"])
     debug = False
     if not debug:
         if len(sys.argv) != 3:

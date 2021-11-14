@@ -16,17 +16,9 @@ cnnfinesize2 = size(cnnfeat2fine(:,:,1));
 [desc1fine, feat1fine] = at_cnnfeat2vlfeat(cnnfeat1fine);
 [desc2fine, feat2fine] = at_cnnfeat2vlfeat(cnnfeat2fine);
 
-AA = 2048;
-AB = 40000;
-% desc1 = single(rand(AA, AB));
-% desc2 = single(rand(AA, AB));
-
 tic;
 match12 = at_dense_tc(desc1,desc2);
 toc
-%tic;
-%match12NEW = get_tcs(desc1,desc2);
-%toc
 
 % fine level position is
 
@@ -43,11 +35,6 @@ end
 disp("SM2");
 disp(size(match12,2));
 newmatch = [newmatch{:}];
-
-
-% %--- compute similarity (matching NN score)
-% % [match12,inls12] = at_denseransac(desc1,f1,desc2,f2);
-%
 
 function [d1,f1,ind1] = at_retrieve_fineposition(hash_coarse1,hash_table1,feat1,desc1fine,feat1fine,sizeF)
 

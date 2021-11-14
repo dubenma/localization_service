@@ -1,11 +1,6 @@
 function [ params ] = setupParams(mode, datasetSize, requireExperimentName, topM, topN)
     % mode is one of {'s10e', 'holoLens1', 'holoLens2'}
     % NOTE: the number after 'holoLens' is a sequence number, not a version of HoloLens glasses!
-% arguments
-%     mode char
-%     datasetSize int
-%     requireExperimentName logical = false
-% end
 
 thisScriptPath = [fileparts(mfilename('fullpath')), '/'];
 addpath([thisScriptPath, '../environment']);
