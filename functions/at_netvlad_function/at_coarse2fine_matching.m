@@ -36,6 +36,8 @@ disp("SM2");
 disp(size(match12,2));
 newmatch = [newmatch{:}];
 
+end
+
 function [d1,f1,ind1] = at_retrieve_fineposition(hash_coarse1,hash_table1,feat1,desc1fine,feat1fine,sizeF)
 
 x = feat1(2,:);
@@ -57,3 +59,5 @@ ind1 = sub2ind(sizeF,sub1(2,:),sub1(1,:));
 
 d1 = desc1fine(:,ind1);
 f1 = feat1fine(:,ind1);
+
+end

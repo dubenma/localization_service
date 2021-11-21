@@ -5,10 +5,6 @@ disp("shortlist_topN: " + shortlist_topN);
 disp("topN_with_GV: " + topN_with_GV);
 disp("mCombinations: " + mCombinations);
 
-% shortlist_topN = 80; %100;
-% topN_with_GV = 8; %10;
-% mCombinations = 8; %10;
-
 %% densePE (top100 reranking -> top10 pose candidate)
 
 % dirname = fullfile(params.output.dir, 'queries', QFname);
@@ -20,7 +16,7 @@ end
     
 densePE_matname = fullfile(dirname, 'densePE_top100_shortlist.mat');
 denseGV_matname = fullfile(dirname, 'denseGV_top100_shortlist.mat');
-system("nvidia-smi");
+
 if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
     disp("# Starting top100 because " + densePE_matname + " does not exist");
     if ~USE_CACHE_FILES || exist(denseGV_matname, 'file') ~= 2
@@ -61,9 +57,9 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         %end
         
         inloc_hw = getenv("INLOC_HW");
-        if strcmp(inloc_hw, "GPU")
-            %exit(0);
-        end
+%         if strcmp(inloc_hw, "GPU")
+%             %exit(0);
+%         end
         
         %shortlist reranking
         ImgList = struct('queryname', {}, 'topNname', {}, 'topNscore', {}, 'primary', {}, 'Ps', {});
@@ -225,7 +221,6 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         fprintf('%d/%d done.\n', ii, length(qlist));
     end
     
-    %load top-mCombinations poses
     for ii = 1:1:length(ImgListSequential)
         ImgListSequential(ii).Ps = cell(1, mCombinations);
         for jj = 1:1:mCombinations

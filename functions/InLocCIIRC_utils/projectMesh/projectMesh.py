@@ -133,7 +133,7 @@ def projectMeshDebug(meshPath, f, R, t, sensorSize, ortho, mag, debug):
     return projectMeshCachedDebug(scene, f, R, t, sensorSize, ortho, mag, debug)
 
 if __name__ == '__main__':
-    os.system("export EGL_DEVICE_ID=0")
+    # os.system("export EGL_DEVICE_ID=0")
     print("Systemove info:")
     print(os.environ["PYOPENGL_PLATFORM"])
     debug = False

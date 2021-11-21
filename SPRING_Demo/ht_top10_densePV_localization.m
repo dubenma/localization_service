@@ -12,7 +12,7 @@ if exist(dirname, 'dir') ~= 7
 end
 densePV_matname = fullfile(dirname, 'densePV_top10_shortlist.mat');
 
-if ~USE_CACHE_FILES || exist(densePV_matname, 'file') ~= 2 || 1 == 1
+if ~USE_CACHE_FILES || exist(densePV_matname, 'file') ~= 2
     disp("# Starting top10");
     
     %synthesis list
@@ -81,7 +81,6 @@ if ~USE_CACHE_FILES || exist(densePV_matname, 'file') ~= 2 || 1 == 1
         this_dbind = dbind_uniq{ii};
         
         %compute synthesized images and similarity scores
-        % TODO: Vratit sem parfor
         if USE_PAR
             parfor jj = 1:1:length(this_qlist)
                 parfor_densePV( this_qlist{jj}, this_dblist{jj}, this_dbind{jj}, this_PsList{jj}, params );

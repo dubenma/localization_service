@@ -1,5 +1,5 @@
 function inloc_demo(topM, topN)
-
+% disp("Szoreny");
 shortlist_topN = topM;
 topN_with_GV = topN;
 mCombinations = topN;
@@ -59,7 +59,7 @@ setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo");
 setenv("INLOC_HW","GPU");
 
 
-for DATASET_SIZE=1:4
+for DATASET_SIZE=4:4
     disp("Zacina DATASET_SIZE " + DATASET_SIZE);
     %COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
     %cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");
@@ -132,11 +132,3 @@ end
 
 disp("ALGORITMUS SKONCIL");
 end % FUNCTION inloc_demo
-
-%4. evaluate
-% cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");
-% evaluate_SPRING;
-% 
-% if ~strcmp(environment(), "laptop")
-%     exit(0); % avoid "MATLAB: management.cpp:671: find: Assertion `' failed."
-% end
