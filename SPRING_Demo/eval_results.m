@@ -1,4 +1,6 @@
 disp("Evaluation has stared");
+[ params ] = setupParams('SPRING_Demo', DATASET_SIZE, true, shortlist_topN, topN_with_GV);
+
 % Pro kazdy query zjistit jeho spravnou pozu a porovnat s odhadlou.
 CamCsDists = zeros(1, numel(ImgListAllQueries));
 RotDists = zeros(1, numel(ImgListAllQueries));

@@ -84,13 +84,16 @@ end
 
 % disp("Zaverecna kontrola");
 % system("nvidia-smi");
-disp("cublas will be called - switching GPUs");
-gpuDevice(2);
+% disp("cublas will be called - switching GPUs");
+% gpuDevice(2);
 disp("cublas will be called");
+
 match12 = get_tcs_cublas(desc1,descs2);
-disp("cublas finished - switching GPU back");
-gpuDevice(1);
-disp("Alles OK! GPU switched!");
+
+disp("cublas FIN");
+% disp("cublas finished - switching GPU back");
+% gpuDevice(1);
+% disp("Alles OK! GPU switched!");
 %gpuDevice;
 
 %match12 = get_tcs_mkl(desc1,descs2);
@@ -115,7 +118,6 @@ disp("Alles OK! GPU switched!");
 
 newmatch_all = cell(1, num_imgdbs);
 % fprintf("num_imgdbs : %i\n", num_imgdbs);
-% Zde by mohl byt parfor asi
 parfor i=1:num_imgdbs
     [hash_table1, hash_coarse1] = at_dense_hashtable(cnnfeat1,cnnfeat1fine);
     [hash_table2, hash_coarse2] = at_dense_hashtable(cnnfeat2{i},cnnfeat2fine{i});
@@ -127,6 +129,8 @@ parfor i=1:num_imgdbs
 %         tic;
 %           thismatch12OBS = at_dense_tc(d1,d2);
 %         toc        
+
+% save("ALA/"+randi(99999999)+".mat", 'd1', 'd2');
         thismatch12 = get_tcs_mkl(d1,{d2});
 %         disp("DEBUG msg 2");
 %         save("KontrolaNavratu.mat", 'thismatch12');

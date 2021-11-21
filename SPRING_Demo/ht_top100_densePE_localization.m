@@ -42,7 +42,8 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2 %1 == 1
         queryImage = load_query_image_compatible_with_cutouts(ImgList_original(1).queryname, ...
             params.dataset.db.cutout.size);
       
-        cnn = at_serialAllFeats_convfeat(net, queryImage, 'useGPU', true);
+        cnn = at_serialAllFeats_convfeat(net, queryImage, 'useGPU', false);
+        %cnn = at_serialAllFeats_convfeat(net, queryImage, 'useGPU', true);
         cnn{1} = [];
         cnn{2} = [];
         cnn{4} = [];

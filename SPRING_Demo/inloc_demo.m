@@ -63,10 +63,11 @@ QUERIES = {
 setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo");
 setenv("INLOC_HW","GPU");
 
-for DATASET_SIZE=1:4
+for DATASET_SIZE=2:4
     %COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
     %cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");
-    COMPUTED_FEATURES_PATH = "/home/seberma3/_InLoc_PROD_Speedup/SPRING_Demo/inputs/features/computed_featuresSize"+DATASET_SIZE+".mat";
+    % COMPUTED_FEATURES_PATH = "/home/seberma3/_InLoc_PROD_Speedup/SPRING_Demo/inputs/features/computed_featuresSize"+DATASET_SIZE+".mat";
+    COMPUTED_FEATURES_PATH = "inputs/features/computed_featuresSize"+DATASET_SIZE+".mat";
     load("inputs/cutout_imgnames_all"+DATASET_SIZE+".mat", 'cutout_imgnames_all');
     %setenv("INLOC_HW","CPU")
     %[ params ] = setupParams('hospital_1', true); % NOTE: adjust
