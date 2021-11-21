@@ -5,7 +5,7 @@ tmp*/
 *.fig
 .DS_Store
 SPRING_Demo/eval
-SPRING_Demo/inputs
+SPRING_Demo/inputs*
 SPRING_Demo/outputs*
 SPRING_Demo/OBSoutputs*
 *html
