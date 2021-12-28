@@ -24,15 +24,15 @@ for datasetSize=datasetSizes
     Max_scores = zeros(1,numel(allQueries));
     
     for q=1:numel(allQueries)
-        [~ ,queryNum, ~] = fileparts(allQueries(q).name);
+        %[~ ,queryNum, ~] = fileparts(allQueries(q).name);
         
-        queryResultDir = fullfile(outputDir, ""+datasetSize,"queries", queryNum);
+        queryResultDir = fullfile(outputDir, ""+datasetSize,"queries", ""+q);
         top_cuts_info = load(fullfile(queryResultDir, "densePV_top10_shortlist.mat"));
-        truePosePath = fullfile("/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/poses/", ""+queryNum+".txt");
+        truePosePath = fullfile("/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/poses/", ""+q+".txt");
         Px = load(truePosePath);
         Px = Px(1:3, :);
         [Ktrue, Rtrue, Ctrue] = P2KRC(Px);
-        Max_scores(q) = top_cuts_info.ImgList.topNscore(1);
+        Max_scores(q) = top_cuts_info.ImgList.topNscore(quality_order);
         
         topCameraPose = top_cuts_info.ImgList.Ps(quality_order);
         topCameraPose = cell2mat(topCameraPose{1});
@@ -40,7 +40,8 @@ for datasetSize=datasetSizes
         
         
         [K_est, R_est, C_est] = P2KRC(topCameraPose);
-        C_dists(q) = norm(Ctrue - C_est);
+        dis = norm(Ctrue - C_est);
+        C_dists(q) = dis; 
         R_dists(q) = rotationDistance(Rtrue, R_est);
     end
     
@@ -54,17 +55,20 @@ for datasetSize=datasetSizes
         disp("R_dists");
         disp(R_dists);
     else
-        fprintf("Avg c.dist for dataset size %d = %f\n", datasetSize, mean(C_dists));
-        %fprintf("Min c.dist for dataset size %d = %f\n", datasetSize, min(C_dists));
-        %fprintf("Max c.dist for dataset size %d = %f\n", datasetSize, max(C_dists));
+        fprintf("Prumer euklei. vzd. pro ds%d = %f m\n", datasetSize, mean(C_dists));
+        fprintf("Median euklei. vzd. pro ds%d = %f m\n", datasetSize, quantile(C_dists, 0.5));
+        fprintf("Min c.dist for dataset size %d = %f\n", datasetSize, min(C_dists));
+        fprintf("Max c.dist for dataset size %d = %f\n", datasetSize, max(C_dists));
         %fprintf("Stddev of c.dist for dataset size %d = %f\n", datasetSize, std(C_dists));
-        fprintf("Avg r.dist for dataset size %d = %f\n", datasetSize, mean(R_dists));
-        %fprintf("Min r.dist for dataset size %d = %f\n", datasetSize, min(R_dists));
-        %fprintf("Max r.dist for dataset size %d = %f\n", datasetSize, max(R_dists));
+        fprintf("Prumer rotacni vzd. pro ds%d = %f °\n", datasetSize, mean(R_dists));
+        fprintf("Median rotacni vzd. pro ds%d = %f °\n", datasetSize, quantile(R_dists, 0.5));
+        fprintf("Min r.dist for dataset size %d = %f\n", datasetSize, min(R_dists));
+        fprintf("Max r.dist for dataset size %d = %f\n", datasetSize, max(R_dists));
         %fprintf("Stddev of r.dist for dataset size %d = %f\n", datasetSize, std(R_dists));
-        fprintf("Avg max simil. score for dataset size %d = %f\n", datasetSize, mean(Max_scores));
-        disp("Evaluace ukoncena\n");
+        %fprintf("Avg max simil. score for dataset size %d = %f\n", datasetSize, mean(Max_scores));
+        disp("----------------");
     end
     
 end
+disp("Evaluace ukoncena");
 end

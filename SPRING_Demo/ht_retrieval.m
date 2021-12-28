@@ -27,7 +27,8 @@ if ~USE_CACHE_FILES || exist(top100_matname, 'file') ~= 2
     %Load score
     %load(params.input.scores.path, 'score');
 %     disp("GPUcheck xB"); system("nvidia-smi");
-    score = getScores1Query(params, COMPUTED_FEATURES_PATH, QUERY_PATH, cutoutFeatures); % TODO: existuje var cutoutFeatures?
+    %score = getScores1Query(params, COMPUTED_FEATURES_PATH, QUERY_PATH, cutoutFeatures); % TODO: existuje var cutoutFeatures?
+    score = getScores1Query(params, COMPUTED_FEATURES_PATH, QUERY_PATH);
 %     disp("GPUcheck C"); system("nvidia-smi");   
     %shortlist format
     %for i=1:size(query_imgnames_all,2)
