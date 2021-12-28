@@ -2,6 +2,7 @@ import os
 import numpy as np
 import sys
 import scipy.io as sio
+import math
 
 os.environ["PYOPENGL_PLATFORM"] = "egl"
 #os.environ["PYOPENGL_PLATFORM"] = "osmesa"
@@ -87,7 +88,8 @@ def projectMeshCachedDebug(scene, f, R, t, sensorSize, ortho, mag, debug):
     if ortho:
         camera = pyrender.OrthographicCamera(xmag=mag, ymag=mag)
     else:
-        camera = pyrender.PerspectiveCamera(fovVertical)
+        #camera = pyrender.PerspectiveCamera(math.radians(65.83))
+        camera = pyrender.PerspectiveCamera(fovVertical) # Na zkousku /2
 
     camera_pose = np.eye(4)
     camera_pose[0:3,0:3] = R
@@ -163,3 +165,4 @@ if __name__ == '__main__':
     sio.savemat(outputPath, {'RGBcut': RGBcut, 'XYZcut': XYZcut, 'depth': depth})
 
     print('done!')
+    print(outputPath)

@@ -1,4 +1,5 @@
 function parfor_densePV(qname, dbCutoutname, dbnamesId, Ps, params)
+
 if iscell(dbCutoutname) && numel(dbCutoutname) == 1
    dbCutoutname = dbCutoutname{1}; % It should be string. Not cell!
 end
@@ -49,7 +50,7 @@ firstQueryId = queryNameToQueryId(qname) - sequenceLength + 1;
             Rfix = rotationMatrix(deg2rad(rFix), 'XYZ');
             sensorSize = [size(Iq,2), size(Iq,1)];
             headless = ~strcmp(environment(), 'laptop');
-            [RGBpersp, XYZpersp, depth] = projectMesh(meshPath, fl, inv(R)*Rfix, t, sensorSize, false, -1, params.input.projectMesh_py_path, headless);
+            [RGBpersp, XYZpersp, depth] = projectMesh(QFname, DBFname, meshPath, fl, inv(R)*Rfix, t, sensorSize, false, -1, params, headless);
             RGB_flag = all(~isnan(XYZpersp), 3);
 
             %compute DSIFT error
@@ -65,7 +66,8 @@ firstQueryId = queryNameToQueryId(qname) - sequenceLength + 1;
                 [fsynth, dsynth] = vl_phow(im2single(I_synth),'sizes',8,'step',4);
                 f_linind = sub2ind(size(I_synth), fsynth(2, :), fsynth(1, :));
                 iseval = RGB_flag(f_linind);
-                dq = relja_rootsift(single(dq)); dsynth = relja_rootsift(single(dsynth));
+                dq = relja_rootsift(single(dq)); 
+                dsynth = relja_rootsift(single(dsynth));
 
                 %error
                 err = sqrt(sum((dq(:, iseval) - dsynth(:, iseval)).^2, 1));

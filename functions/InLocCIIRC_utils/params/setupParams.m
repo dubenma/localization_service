@@ -64,7 +64,17 @@ elseif strcmp(mode, 'dining_room')
     setenv("INLOC_EXPERIMENT_NAME",'dining_room')
 elseif strcmp(mode, 'SPRING_Demo')
     params.mode = mode;
-    params = SPRINGDemoParams(params);
+    %params = SPRINGDemoParams(params);    
+ params = s10eParams(params);
+ %params.camera.sensor.size = [756, 1344]; % height, width
+    %params.camera.fl = 1038; % in pixels; this is not worse than the previous fl
+%     params = holoLens1Params(params);
+    params.spaceName = sprintf('');
+    params.dataset.query.dirname = sprintf('queries');
+    params.dataset.query.mainDir =  fullfile(params.dataset.dir,params.dataset.query.dirname);
+    %params.dataset.query.dir = fullfile(params.dataset.query.mainDir,params.dataset.query.space_names,'query_all'); % NOTE: it cannot be extracted to setupParams.m, because we need it in here already
+    
+    
 elseif strcmp(mode, 'SPRING_Demo_onequery')
     params.mode = mode;
     params = SPRINGDemoOneParams(params);
@@ -162,6 +172,7 @@ params.evaluation.errors.path = fullfile(params.evaluation.dir, 'errors.csv');
 params.evaluation.summary.path = fullfile(params.evaluation.dir, 'summary.txt');
 params.evaluation.retrieved.poses.dir = fullfile(params.evaluation.dir, 'retrievedPoses');
 params.evaluation.retrieved.queries.path = fullfile(params.evaluation.dir, 'retrievedQueries.csv');
+params.output.proj.dir = fullfile(params.output.dir, string(datasetSize), 'proj');
 
 % NOTE: this snippet might be expensive
 if ~exist(params.input.dblist.path, 'file')
@@ -180,4 +191,5 @@ params.PV.topN = 10;
 mkdirIfNonExistent(params.output.synth.dir);
 mkdirIfNonExistent(params.output.gv_dense.dir);
 mkdirIfNonExistent(params.output.pnp_dense_inlier.dir);
+mkdirIfNonExistent(params.output.proj.dir);
 end

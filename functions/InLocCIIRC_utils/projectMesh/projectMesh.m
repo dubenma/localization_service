@@ -1,11 +1,14 @@
-function [RGBcut, XYZcut, depth] = projectMesh(meshPath, f, R, t, sensorSize, ortho, mag, projectMeshPyPath, headless)
+function [RGBcut, XYZcut, depth] = projectMesh(QFname, DBFname, meshPath, f, R, t, sensorSize, ortho, mag, params, headless)
+projectMeshPyPath = params.input.projectMesh_py_path;
 % R = cameraToModel(1:3,1:3); % columns are bases of epsilon wrt model (see GVG)
 % t = cameraToModel(1:3,4); % wrt model
 % camera points to -z direction, having x on its right, y going up (right-handed CS)
 % TODO: support outputSize param. Then interpolation may be necessary for the XYZcut
 
 inputPath = strcat(tempname(), '.mat');
-outputPath = strcat(tempname(), '.mat');
+outputDir = fullfile(params.output.proj.dir, QFname);
+mkdirIfNonExistent(outputDir);
+outputPath = fullfile(outputDir, sprintf('%s%s', DBFname, ".mat"));
 save(inputPath, 'meshPath', 'f', 'R', 't', 'sensorSize', 'ortho', 'mag');
 
 
@@ -49,6 +52,5 @@ load(outputPath, 'RGBcut', 'XYZcut', 'depth')
 
 % delete temporary files
 delete(inputPath);
-delete(outputPath);
 
 end
