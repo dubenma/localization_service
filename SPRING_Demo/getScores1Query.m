@@ -1,21 +1,11 @@
-function [score] = getScores1Query(params, featuresPath, queryPath, cutoutFeatures)
+function [score] = getScores1Query(params, featuresPath, queryPath)
 
-%featuresPath = fullfile(params.input.feature.dir, 'db_features.mat');
 load(featuresPath, 'cutoutFeatures');
 nCutouts = size(cutoutFeatures,2);
-%featuresPath = fullfile(params.input.feature.dir, 'query_features.mat');
-%load(featuresPath, 'queryFeatures');
 
 queryFeatures = getFeatures1Query(params, queryPath);
-system("nvidia-smi");
-% nQueries = size(queryFeatures,2);
 score = struct('queryname', {}, 'scores', {});
 
-% allCutoutFeatures = zeros(nCutouts, size(cutoutFeatures,1));
-% for i=1:nCutouts
-%     allCutoutFeatures(i,:) = cutoutFeatures(i).features';
-% end
-% allCutoutFeatures = allCutoutFeatures';
 allCutoutFeatures = cutoutFeatures;
 
 tol = 1e-6;
@@ -34,7 +24,4 @@ end
     similarityScores = dot(thisQueryFeatures, allCutoutFeatures);
     score(1).queryname = queryFeatures(1).queryname;
     score(1).scores = single(similarityScores); % NOTE: this is not a probability distribution (and it does not have to be)
-
-% save(params.input.scores.path, 'score');
-
 end

@@ -1,4 +1,5 @@
 function [ queryFeatures ] = getFeatures1Query(params, queryPath)
+% Describes one query image with feature vector
 
 x = load(params.input.dblist.path);
 cutoutImageFilenames = x.cutout_imgnames_all;
@@ -8,7 +9,6 @@ cutoutSize = [cutoutSize(2), cutoutSize(1)]; % width, height
 load(params.netvlad.dataset.pretrained, 'net');
 net = relja_simplenn_tidy(net);
 net = relja_cropToLayer(net, 'postL2'); %original
-% net = relja_cropToLayer(net, 'vlad:intranorm'); %experiment SS2021
 
 %% query
 queryFeatures = struct('queryname', {}, 'features', {});

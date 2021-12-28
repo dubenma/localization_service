@@ -1,11 +1,6 @@
-%Note: It first synthesize query views according to top10 pose candedates
-%and compute similarity between original query and synthesized views. Pose
-%candidates are then re-scored by the similarity.
 [~,QFname,~] = fileparts(QUERY_PATH);
 
 PV_topN = params.PV.topN; % assuming this is not larger than mCombinations
-% densePV_matname = fullfile(params.output.dir, 'densePV_top10_shortlist.mat');
-%dirname = fullfile(params.output.dir, 'queries', QFname);
 dirname = fullfile(params.output.dir, string(DATASET_SIZE), 'queries', QFname);
 if exist(dirname, 'dir') ~= 7
     mkdir(dirname);
@@ -53,10 +48,6 @@ if ~USE_CACHE_FILES || exist(densePV_matname, 'file') ~= 2
     end
     
     %compute synthesized views and similarity
-    
-    % Because projectMesh in densePV requires up to 20 GB of RAM per one instance,
-    % we need to limit the number of workers
-    % TODO: optimize and leverage more workers
     poolobj = gcp('nocreate');
     delete(poolobj); % terminate any previous pool
     if strcmp(environment(), 'laptop')
@@ -107,7 +98,6 @@ if ~USE_CACHE_FILES || exist(densePV_matname, 'file') ~= 2
         [~,DBFname,DBFsuffix] = fileparts(ImgList(1).topNname{jj});
         dbnamesId = jj;
         ImgList(1).dbnamesId(jj) = dbnamesId;
-        %load(fullfile(params.output.synth.dir, ImgList(1).queryname, sprintf('%d%s', dbnamesId, params.output.synth.matformat)), 'scores');
         synthpath = fullfile(params.output.synth.dir, QFname, sprintf('%s%s', DBFname, params.output.synth.matformat));
         load(synthpath, 'scores');
         cumulativeScore = sum(cell2mat(scores)); % TODO: try something else than a sum?

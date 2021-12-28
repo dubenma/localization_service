@@ -1,5 +1,7 @@
 function inloc_demo(topM, topN)
-% disp("Szoreny");
+%topM : originally 100. InLoc takes topM most similiar images in the first step (image retrieval) 
+%topN : originally 10. InLoc takes topN most similiar images in the second step. It renders topN synthetic images and estimates topN camera poses.
+
 shortlist_topN = topM;
 topN_with_GV = topN;
 mCombinations = topN;
@@ -8,10 +10,12 @@ distcomp.feature( 'LocalUseMpiexec', false )
 
 startup;
 
-SAVE_SUBRESULT_FILES = 1;
-USE_CACHE_FILES = 0;
-USE_PAR = 1;
-USE_PROFIL = 1;
+SAVE_SUBRESULT_FILES = 1;    % if =1 : Saves outputs for the experiments
+USE_CACHE_FILES = 0;         % if =1 : Loads saved subresults (just for testing, this is not allowed in real runtime)
+USE_PAR = 1;                 % if =1 : runs parallel code (parfor cycles). It is faster, but code profiling contains much less details
+USE_PROFIL = 1;              % if =1 : uses code profilation
+
+% We use 40 query images for experiments and testing
 QUERIES = {
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/1.jpg' ,
     '/home/seberma3/InLocCIIRC_NEWdataset/query-s10e/2.jpg' ,
@@ -59,10 +63,9 @@ setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo");
 setenv("INLOC_HW","GPU");
 
 
-for DATASET_SIZE=4:4
+for DATASET_SIZE=1:4
     disp("Zacina DATASET_SIZE " + DATASET_SIZE);
-    %COMPUTED_FEATURES_PATH = "/home/seberma3/InLocCIIRC_NEWdataset/inputs-pokus/features/computed_featuresSize"+DATASET_SIZE +".mat";
-    %cutout_imgnames_all = dir("/home/seberma3/InLocCIIRC_NEWdataset/cutouts"+DATASET_SIZE+"/*/*/cut*.jpg");
+  
     COMPUTED_FEATURES_PATH = "/home/seberma3/_InLoc_PROD_Speedup/SPRING_Demo/inputs/features/computed_featuresSize"+DATASET_SIZE+".mat";
     load("inputs/cutout_imgnames_all"+DATASET_SIZE+".mat", 'cutout_imgnames_all');
     [ params ] = setupParams('SPRING_Demo', DATASET_SIZE, true, shortlist_topN, topN_with_GV); % NOTE: adjust
@@ -93,10 +96,9 @@ for DATASET_SIZE=4:4
         saveProfile(c);
         p = parpool('local', nWorkers);
     end
-    %wks1=true;
-    wks1 = false; % Co to kurva je? Kde je vysvetlujici komentar?
+    
+    wks1 = false;
     if wks1
-        %nWorkers = 64;
         nWorkers = 8;
         c = parcluster;
         c.NumWorkers = nWorkers;
@@ -111,16 +113,15 @@ for DATASET_SIZE=4:4
     end
     
     for CYCPROF=1:numel(QUERIES)
-        QUERY_PATH = QUERIES{CYCPROF};
-        %1. retrieval
+         QUERY_PATH = QUERIES{CYCPROF};
+        % step 1: retrieval. It loads topM images and orders them by score
         ht_retrieval;
         
-        %2. geometric verification
+        % step 2: geometric verification. Recalculates score (previous score + inliers num.). Then takes only topN images.
         ht_top100_densePE_localization;
         
-        %3. pose verification
-        ht_top10_densePV_localization;
-     
+        % step 2: pose verification. It orders topN estimated poses by quality score
+        ht_top10_densePV_localization;     
         disp("Konci query c." + CYCPROF);
     end
     if USE_PROFIL

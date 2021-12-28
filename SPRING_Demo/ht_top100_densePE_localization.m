@@ -1,13 +1,5 @@
-%Note: It first rerank top100 original shortlist (ImgList_original) in accordance
-%with the number of dense matching inliers. TODO: and then?
-
-disp("shortlist_topN: " + shortlist_topN);
-disp("topN_with_GV: " + topN_with_GV);
-disp("mCombinations: " + mCombinations);
-
 %% densePE (top100 reranking -> top10 pose candidate)
 
-% dirname = fullfile(params.output.dir, 'queries', QFname);
 dirname = fullfile(params.output.dir, string(DATASET_SIZE), 'queries', QFname);
 disp("#ht100 bude ukladat do slozky: " + dirname);
 if exist(dirname, 'dir') ~= 7
@@ -26,12 +18,8 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         net = net.net;
         net= relja_simplenn_tidy(net);
         net= relja_cropToLayer(net, 'postL2');
-        %for ii = 1:1:length(ImgList_original)
-        %q_densefeat_matname = fullfile(params.input.feature.dir, params.dataset.query.dirname, [ImgList_original(ii).queryname, params.input.feature.q_matformat]);
         % Extrahuje to lokální deskriptory na 3. a 5. vrstve cnn
         q_densefeat_matname = "" + ImgList_original(1).queryname + params.input.feature.q_matformat;
-        fprintf("Existuje-li feature file %s ? %d", q_densefeat_matname, exist(q_densefeat_matname));
-
         queryImage = load_query_image_compatible_with_cutouts(ImgList_original(1).queryname, ...
             params.dataset.db.cutout.size);
         cnn = at_serialAllFeats_convfeat(net, queryImage);
@@ -41,26 +29,20 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         cnn{6} = [];
         [feat_path, ~, ~] = fileparts(q_densefeat_matname);
         if exist(feat_path, 'dir')~=7; mkdir(feat_path); end
-        save('-v6', q_densefeat_matname, 'cnn'); % TODO: Tohle tady nebude, protoze query je predem neznamy
+        save('-v6', q_densefeat_matname, 'cnn');
         fprintf('Dense feature extraction: %s done. \n', ImgList_original(1).queryname);
         
         % Extrahuje to lokální deskriptory databazovych snimku na 3. a 5. vrstve cnn
-        for jj = 1:1:shortlist_topN
-            %db_densefeat_matname = fullfile(params.input.feature.dir, params.dataset.db.cutout.dirname, ...
-            %    [ImgList_original(ii).topNname{jj}, params.input.feature.db_matformat]);
-            %db_densefeat_matname = ImgList_original(1).topNname{jj} + params.input.feature.db_matformat;
+        for jj = 1:1:shortlist_topN           
             db_densefeat_matname = getFeaturesPath(ImgList_original(1).topNname{jj}, params);
             if exist(db_densefeat_matname, 'file') ~= 2
+                disp("Chybi soubor");
+                disp(db_densefeat_matname);
                    assert(false);
             end
         end
-        %end
         
         inloc_hw = getenv("INLOC_HW");
-%         if strcmp(inloc_hw, "GPU")
-%             %exit(0);
-%         end
-        
         %shortlist reranking
         ImgList = struct('queryname', {}, 'topNname', {}, 'topNscore', {}, 'primary', {}, 'Ps', {});
         %for ii = 1:1:length(ImgList_original)
@@ -73,7 +55,6 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         cnnq = load(qfname, 'cnn');cnnq = cnnq.cnn;
         f = dir(fullfile(params.output.gv_dense.dir, ImgList(1).queryname)); %skip-recomputation
         if numel(f) ~= (shortlist_topN+2)
-            % TODO: Vratit sem parfor!
             if USE_PAR
                 parfor kk = 1:1:shortlist_topN
                     parfor_denseGV( cnnq, ImgList(1).queryname, ImgList(1).topNname{kk}, params );
@@ -90,7 +71,6 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
             cutoutPath = ImgList(1).topNname{jj};
             [~,QFname,~] = fileparts(ImgList(1).queryname);
             [~,DBFname,~] = fileparts(cutoutPath);
-            %mkdirIfNonExistent(fullfile(params.output.gv_dense.dir, QFname));
             this_densegv_matname = fullfile(params.output.gv_dense.dir, QFname, ""+DBFname+params.output.gv_dense.matformat);
             fprintf("THSLOAD: %s \n", this_densegv_matname);
             this_gvresults = load(this_densegv_matname);
@@ -102,8 +82,6 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
         ImgList(1).topNscore = ImgList(1).topNscore(idx);
         
         fprintf('%s done. \n', ImgList(1).queryname);
-        %end
-        %     save('DenseGV.mat');
         if SAVE_SUBRESULT_FILES
             save('-v6', denseGV_matname, 'ImgList');
         end
@@ -191,7 +169,7 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
     firstQueryInd = cell(1, length(ImgListSequential)*mCombinations);
     lastQueryInd = cell(1, length(ImgListSequential)*mCombinations);
     for ii = 1:length(ImgListSequential)
-        lastQueryId = ii;%queryNameToQueryId(ImgListSequential(ii).queryname); % the one for which we try to estimate pose
+        lastQueryId = ii;
         for jj = 1:mCombinations
             idx = mCombinations*(ii-1)+jj;
             qlist{idx} = ImgListSequential(ii).queryname;
@@ -212,10 +190,9 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
             lastQueryInd{idx} = lastQueryId;
         end
     end
-    system("nvidia-smi");
+    
     %dense pnp
     for ii = 1:length(qlist)
-        %for ii = 1:length(qlist)
         parfor_densePE(qlist{ii}, dblist{ii}, dbind{ii}, posesFromHoloLensList{ii}, firstQueryInd{ii}, lastQueryInd{ii}, params);
         fprintf('densePE: %s vs a cutout sequence DONE. \n', qlist{ii});
         fprintf('%d/%d done.\n', ii, length(qlist));
@@ -227,8 +204,6 @@ if ~USE_CACHE_FILES || exist(densePE_matname, 'file') ~= 2
             [~,QFname,~] = fileparts(ImgListSequential(ii).queryname);
             [~,DBFname,DBFsuffix] = fileparts(ImgListSequential(ii).topNname{jj});
             this_densepe_matname = fullfile(params.output.pnp_dense_inlier.dir, QFname, sprintf('%s%s', DBFname, params.output.pnp_dense.matformat));
-%             this_densepe_matname = fullfile(params.output.pnp_dense_inlier.dir, ImgListSequential(ii).queryname, ...
-%                 sprintf('%d%s', jj, params.output.pnp_dense.matformat));
             load(this_densepe_matname, 'Ps');
             ImgListSequential(ii).Ps{jj} = Ps;
         end
