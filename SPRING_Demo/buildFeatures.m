@@ -3,8 +3,7 @@ queryDirWithSlash = [params.dataset.query.mainDir, '/'];
 
 x = load(params.input.dblist.path);
 cutoutImageFilenames = x.cutout_imgnames_all;
-cutoutSize = size(imread(fullfile(params.dataset.db.cutout.dir, cutoutImageFilenames{1})));
-cutoutSize = [cutoutSize(2), cutoutSize(1)]; % width, height
+cutoutSize = params.dataset.db.cutout.size
 
 if exist(params.input.feature.dir, 'dir') ~= 7
     mkdir(params.input.feature.dir);

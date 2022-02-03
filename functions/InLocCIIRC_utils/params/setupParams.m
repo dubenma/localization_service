@@ -27,10 +27,10 @@ elseif strcmp(env, 'ciirc')
     params.netvlad.dataset.dir = '/nfs/projects/artwin/VisLoc/Models/NetVLAD';
     params.multiCameraPoseExe.path = 'TODO';
 elseif strcmp(env, 'localization_service')
-    params.dataset.dir = sprintf('/local/localization_service/Maps/SPRING/Broca_dataset');
+    params.dataset.dir = sprintf('/local/localization_service/Maps/SPRING/Broca_dataset2');
     params.netvlad.dataset.dir = '/local/localization_service/Models/NetVLAD';
-    params.cache.dir = '/local/localization_service/Cache';
-    params.results.dir = '/local/localization_service/Results';
+    params.cache.dir = '/local/localization_service/Cache2';
+    params.results.dir = '/local/localization_service/Results2';
     params.multiCameraPoseExe.path = 'TODO';    
 elseif strcmp(env, 'steidsta-desktop')
 %     params.dataset.dir = '/media/steidsta/Seagate Basic/SPRING/hospital_1/cutouts_36';
@@ -168,9 +168,9 @@ if ~exist(params.input.dblist.path, 'file')
     warning('params.input.dblist.path "%s" does not exists. Some params.dataset.db.cutout params will not be set.', params.input.dir);
 else
     load(params.input.dblist.path);
-    params.dataset.db.cutout.size = size(imread(fullfile(params.dataset.db.cutout.dir, cutout_imgnames_all{1})));
-    params.dataset.db.cutout.size = [params.dataset.db.cutout.size(2), params.dataset.db.cutout.size(1)]; % width, height
-    params.dataset.db.cutout.fl = 600.0000; % TODO: this must match the params in buildCutouts (see _dataset repo)!
+    %params.dataset.db.cutout.size = size(imread(fullfile(params.dataset.db.cutout.dir, cutout_imgnames_all{1}))); %TODO
+    params.dataset.db.cutout.size = [1344 756]; % width, height
+    params.dataset.db.cutout.fl = 1034.0000; % TODO: this must match the params in buildCutouts (see _dataset repo)!
     params.dataset.db.cutout.K = buildK(params.dataset.db.cutout.fl, params.dataset.db.cutout.size(1), params.dataset.db.cutout.size(2));
 end
 
