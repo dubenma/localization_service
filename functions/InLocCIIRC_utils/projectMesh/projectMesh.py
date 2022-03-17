@@ -1,5 +1,5 @@
 import os
-os.environ["PYOPENGL_PLATFORM"] = "egl"
+os.environ["PYOPENGL_PLATFORM"] = "osmesa"
 import numpy as np
 import sys
 import scipy.io as sio

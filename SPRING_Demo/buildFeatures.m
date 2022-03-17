@@ -1,9 +1,9 @@
 function [ status ] = buildFeatures(params)
 queryDirWithSlash = [params.dataset.query.mainDir, '/'];
 
-x = load(params.input.dblist.path);
-cutoutImageFilenames = x.cutout_imgnames_all;
-cutoutSize = params.dataset.db.cutout.size
+x = load(params.input.dblist.path); % cutout_imnames_all.mat
+cutoutImageFilenames = x.cutout_imgnames_all; 
+cutoutSize = params.dataset.db.cutout.size;
 
 if exist(params.input.feature.dir, 'dir') ~= 7
     mkdir(params.input.feature.dir);
@@ -15,7 +15,7 @@ net = relja_cropToLayer(net, 'postL2'); %original
 % net = relja_cropToLayer(net, 'vlad:intranorm'); %experiment SS2021
 
 %% query
-x = load(params.input.qlist.path);
+x = load(params.input.qlist.path); %query_imgnames_all.mat
 queryImageFilenames = x.query_imgnames_all;
 
 featureLength = 32768;

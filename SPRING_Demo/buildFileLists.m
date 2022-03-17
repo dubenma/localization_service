@@ -27,10 +27,10 @@ else
 end
 cutout_imgnames_all = {};
 for p = 1:numel(paths)
-    files = dir(fullfile(paths{p}, '**/cutout*.jpg'));
+    files = dir(string(fullfile(paths{p}, '**/cutout*.jpg')));
     nFiles = size(files,1);
     for i=1:nFiles
-        relativePath = extractAfter(files(i).folder, size(paths{p},2)+1);
+        relativePath = extractAfter(files(i).folder, strlength(string(paths{p}))+1);
         cutout_imgnames_all{end+1} = sprintf('%s/%s/%s',params.dataset.db.space_names{p},relativePath,files(i).name);
 %         cutout_imgnames_all{end+1} = fullfile(relativePath, files(i).name);
     end

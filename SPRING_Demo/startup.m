@@ -23,11 +23,11 @@ addpath('../functions/InLocCIIRC_utils/getPosesFromHoloLens');
 addpath('../functions/InLocCIIRC_utils/buildK');
 addpath('../functions/InLocCIIRC_utils/queryNameToQueryId');
 
-addpath('functions/denseGV_F10e');
+addpath('/local/localization_service/Code/Matlab/SPRING/functions/denseGV_F10e');
 
 env = environment();
 addpath('/local/localization_service/Data/NetVLAD');
-addpath('../functions/yael_matlab_linux64_v438');
+addpath('/local/localization_service/Code/Matlab/SPRING/functions/yael_matlab_linux64_v438');
 
-run('../functions/vlfeat/toolbox/vl_setup.m');
-run('../functions/matconvnet/matlab/vl_setupnn.m');
+run('/local/localization_service/Code/Matlab/SPRING/functions/vlfeat/toolbox/vl_setup.m');
+run('/local/localization_service/Code/Matlab/SPRING/functions/matconvnet/matlab/vl_setupnn.m');

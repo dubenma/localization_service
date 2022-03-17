@@ -69,7 +69,7 @@ if exist(densePE_matname, 'file') ~= 2
             cnnq = load(qfname, 'cnn');cnnq = cnnq.cnn;
             f = dir(fullfile(params.output.gv_dense.dir, ImgList(ii).queryname)); %skip-recomputation
             if numel(f) ~= (shortlist_topN+2)
-                parfor kk = 1:1:shortlist_topN
+                for kk = 1:1:shortlist_topN
                     parfor_denseGV( cnnq, ImgList(ii).queryname, ImgList(ii).topNname{kk}, params );
                     fprintf('dense matching: %s vs %s DONE. \n', ImgList(ii).queryname, ImgList(ii).topNname{kk});
                 end

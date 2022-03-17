@@ -4,7 +4,7 @@ addpath('tools/')
 addpath('visual_inspection/')
 %% initialization
 
-load(params.input.qlist.path);
+load(params.input.qlist.path); % loads query_imgnames_all.mat
 densePV_matname = fullfile(params.output.dir, 'densePV_top10_shortlist.mat');
 load(densePV_matname, 'ImgList');
 

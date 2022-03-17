@@ -102,7 +102,7 @@ params.vicon.rotation.wrt.model = deg2rad([90.0 180.0 0.0]);
 params.camera.K = buildK(params.camera.fl, params.camera.sensor.size(2), params.camera.sensor.size(1));
 
 %database
-params.dataset.db.space_names = {'hospital_1', 'hospital_2','livinglab_1','livinglab_2'};
+params.dataset.db.space_names = {'livinglab_2'};
 %%scan
 params.dataset.db.scan.dir = 'scans';
 params.dataset.db.scan.matformat = '.ptx.mat';
