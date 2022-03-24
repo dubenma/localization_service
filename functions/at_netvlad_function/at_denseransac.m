@@ -31,7 +31,7 @@ while ii < Nh
 %   [inls,H{ii}] = at_geometricVerification([f1; ones(1,size(f1,2))], [f2; ones(1,size(f2,2))], mt, ...
 %     'tolerance1',10, 'tolerance2',5, 'tolerance3', 5);
 
-  if length(inls) > 400 
+  if length(inls) > 50 
     all_inliers{ii} = origindex(1,inls);
     mt(:,inls) = [];
     origindex(:,inls) = [];
