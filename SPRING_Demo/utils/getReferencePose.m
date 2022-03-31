@@ -22,6 +22,7 @@ function [P,spaceName,fullName] = getReferencePose(qid,imgList,params)
     P_gt.C = P_gt.position';
     rFix = [0., 180., 180.];
     Rfix = rotationMatrix(deg2rad(rFix), 'XYZ');
+    Rfix = eye(3);
     % Rfix = [1 0 0; 0 -1 0; 0 0 -1]
     P_gt.R =Rfix*P_gt.R';
     P = [P_gt.R, -P_gt.R*P_gt.C];
