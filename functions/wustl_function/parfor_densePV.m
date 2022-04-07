@@ -32,7 +32,7 @@ if exist(this_densePV_matname, 'file') ~= 2
 
             spaceName = strsplit(dbname, '/');
             spaceName = spaceName{1};
-            meshPath = fullfile(params.dataset.models.dir, spaceName, '7e39d21bde2f459e9013726db7f5c9fc.obj');
+            meshPath = fullfile(params.dataset.models.dir, spaceName, 'model.obj');
 %             meshPath = fullfile(params.dataset.models.dir, 'model_rotated.obj');
 %             t = -inv(R)*t;
              rFix = [0.0, 180.0, 180.0];
