@@ -1,6 +1,8 @@
 % input_path = "/home/ciirc/dubenma1/data/Inloc dataset/Maps/SPRING/Broca_dataset2/Broca Living Lab without Curtains/all/cutouts_matlab/poses.csv";
 % output_path = "~/dubenma1/data/Inloc dataset/Maps/SPRING/Broca_dataset2";
 
+disp("Creating poses files")
+cutouts_in_path = fullfile(input_path, "cutouts");
 poses_file_path = fullfile(cutouts_in_path, "poses.csv");
 poses_path = fullfile(output_path, "poses");
 
@@ -30,7 +32,7 @@ for i = 1 : size(table,1)
     save(fullfile(path, cutout_name + ".mat"),'position','R')
 end
 
-
+disp("Creating poses files done!")
 
 
 

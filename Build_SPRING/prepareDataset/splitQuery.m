@@ -1,15 +1,28 @@
-%% select space
+%% set parameters for 'dynamic' and 'space_name' 
+dynamic = 1;
+space_name = "livinglab";
+
+if not(exist('dynamic','var'))
+    dynamic = 0;
+end
+
 if not(exist('space_name','var'))
     space_name = "livinglab"; % hospital, livinglab
 end
 %% set paths
-new_dataset_dir = "/local1/homes/dubenma1/data/inloc_dataset/Broca_dataset";
+
+if dynamic
+    dynam_str = "dynamic_" + string(dynamic);
+else
+    dynam_str = "static";
+end
+
+new_dataset_dir = "/local1/homes/dubenma1/data/inloc_dataset/final_dataset/Broca_dataset_" + dynam_str;
+input_dir = fullfile("/local1/homes/dubenma1/data/inloc_dataset/before_splitting_queries", dynam_str, space_name);
 
 if space_name == "hospital"
-    input_dir = "/local1/homes/dubenma1/data/inloc_dataset/before_splitting_queries/hospital"
     query_ids = [8,10,14,27,40,43,46,51,56,91,101,103];
 elseif space_name == "livinglab"
-    input_dir = "/local1/homes/dubenma1/data/inloc_dataset/before_splitting_queries/livinglab";
     query_ids = [15,21,31,34];
 end
 
@@ -60,15 +73,47 @@ for i = 1 : length(query_ids)
     end
     movefile(inpath, outpath);
     
-    % masks
-    dir_name = "masks";
-    inpath = fullfile(new_dataset_dir, dir_name, space_name, string(query_ids(i)));
-    outpath = fullfile(new_dataset_dir, "queries", space_name, dir_name);
-    if not(isfolder(outpath))
-        mkdir(outpath)
+    %% dynamic
+    if dynamic 
+    % cutouts
+        dir_name = "cutouts_dynamic";
+        inpath = fullfile(new_dataset_dir, dir_name, space_name, string(query_ids(i)));
+        outpath = fullfile(new_dataset_dir, "queries", space_name, dir_name);
+        if not(isfolder(outpath))
+            mkdir(outpath)
+        end
+        movefile(inpath, outpath);
+
+        % matfiles
+        dir_name = "matfiles_dynamic";
+        inpath = fullfile(new_dataset_dir, dir_name, space_name, string(query_ids(i)));
+        outpath = fullfile(new_dataset_dir, "queries", space_name, dir_name);
+        if not(isfolder(outpath))
+            mkdir(outpath)
+        end
+        movefile(inpath, outpath);
+
+        % meshes
+        dir_name = "meshes_dynamic";
+        inpath = fullfile(new_dataset_dir, dir_name, space_name, string(query_ids(i)));
+        outpath = fullfile(new_dataset_dir, "queries", space_name, dir_name);
+        if not(isfolder(outpath))
+            mkdir(outpath)
+        end
+        movefile(inpath, outpath);
+        
+        % masks
+        dir_name = "masks_dynamic";
+        inpath = fullfile(new_dataset_dir, dir_name, space_name, string(query_ids(i)));
+        outpath = fullfile(new_dataset_dir, "queries", space_name, dir_name);
+        if not(isfolder(outpath))
+            mkdir(outpath)
+        end
+        movefile(inpath, outpath);
     end
-    movefile(inpath, outpath);
-    
+
+        
+
 end
 
 %% delete excessive query data
