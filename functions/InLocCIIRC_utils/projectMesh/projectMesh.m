@@ -6,7 +6,8 @@ function [RGBcut, XYZcut, depth] = projectMesh(meshPath, f, R, t, sensorSize, or
 
 inputPath = strcat(tempname, '.mat');
 outputPath = strcat(tempname, '.mat');
-save(inputPath, 'meshPath', 'f', 'R', 't', 'sensorSize', 'ortho', 'mag');
+meshPath = convertStringsToChars(meshPath);
+save(inputPath, 'meshPath', 'f', 'R', 't', 'sensorSize', 'ortho', 'mag','-v7');
 
 
 %os.environ['LD_LIBRARY_PATH'] 
