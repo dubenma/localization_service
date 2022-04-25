@@ -27,10 +27,10 @@ elseif strcmp(env, 'ciirc')
     params.netvlad.dataset.dir = '/nfs/projects/artwin/VisLoc/Models/NetVLAD';
     params.multiCameraPoseExe.path = 'TODO';
 elseif strcmp(env, 'localization_service')
-    params.dataset.dir = sprintf('/local/localization_service/Maps/SPRING/Broca_dataset2');
+    %params.dataset.dir = sprintf('/local1/homes/dubenma1/data/localization_service_dataset/Maps/Broca_dataset');
     params.netvlad.dataset.dir = '/local/localization_service/Models/NetVLAD';
-    params.cache.dir = '/local/localization_service/Cache2';
-    params.results.dir = '/local/localization_service/Results2';
+    %params.cache.dir = '/local1/homes/dubenma1/data/localization_service_dataset/Cache';
+    %params.results.dir = '/local1/homes/dubenma1/data/localization_service_dataset/Results';
     params.multiCameraPoseExe.path = 'TODO';    
 elseif strcmp(env, 'steidsta-desktop')
 %     params.dataset.dir = '/media/steidsta/Seagate Basic/SPRING/hospital_1/cutouts_36';
@@ -83,39 +83,53 @@ else
 end
 
 % params.mode = mode; % TODO: this should be a  propery of the queries - where they were taken
-params.dataset.models.dir = fullfile(params.dataset.dir, params.spaceName, 'models');
-params.pointCloud.path = fullfile(params.dataset.models.dir, 'model_rotated.ply');
-params.mesh.path = fullfile(params.dataset.models.dir,  'model_rotated.obj');
-params.projectPointCloudPy.path = [thisScriptPath, '../projectPointCloud/projectPointCloud.py'];
-params.reconstructPosePy.path = [thisScriptPath, '../reconstructPose/reconstructPose.py'];
+params.dataset.models.dir = fullfile(params.dataset.dir, 'models');
+%params.pointCloud.path = fullfile(params.dataset.models.dir, 'model_rotated.ply');
+%params.mesh.path = fullfile(params.dataset.models.dir,  'model_rotated.obj');
+%params.projectPointCloudPy.path = [thisScriptPath, '../projectPointCloud/projectPointCloud.py'];
+%params.reconstructPosePy.path = [thisScriptPath, '../reconstructPose/reconstructPose.py'];
 params.poses.dir = fullfile(params.dataset.query.dir, 'poses');
-params.projectedPoses.dir = fullfile(params.dataset.query.dir, 'projectedPoses');
-params.queryDescriptions.path = fullfile(params.dataset.query.dir, 'descriptions.csv');
-params.rawPoses.path = fullfile(params.dataset.query.dir, 'rawPoses.csv');
-params.inMap.tDiffMax = 1.3;
-params.inMap.rotDistMax = 10; % in degrees
-params.renderClosestCutouts = false;
-params.closest.cutout.dir = fullfile(params.dataset.query.dir, 'closestCutout');
-params.vicon.origin.wrt.model = [-0.13; 0.04; 2.80];
-params.vicon.rotation.wrt.model = deg2rad([90.0 180.0 0.0]);
+%params.projectedPoses.dir = fullfile(params.dataset.query.dir, 'projectedPoses');
+%params.queryDescriptions.path = fullfile(params.dataset.query.dir, 'descriptions.csv');
+%params.rawPoses.path = fullfile(params.dataset.query.dir, 'rawPoses.csv');
+%params.inMap.tDiffMax = 1.3;
+%params.inMap.rotDistMax = 10; % in degrees
+%params.renderClosestCutouts = false;
+%params.closest.cutout.dir = fullfile(params.dataset.query.dir, 'closestCutout');
+%params.vicon.origin.wrt.model = [-0.13; 0.04; 2.80];
+%params.vicon.rotation.wrt.model = deg2rad([90.0 180.0 0.0]);
 
 params.camera.K = buildK(params.camera.fl, params.camera.sensor.size(2), params.camera.sensor.size(1));
 
 %database
-params.dataset.db.space_names = {'livinglab_2'};
+params.dataset.db.space_names = params.dataset.query.space_names; % 'livinglab', 'hospital'
 %%scan
 params.dataset.db.scan.dir = 'scans';
 params.dataset.db.scan.matformat = '.ptx.mat';
-%%cutouts
-params.dataset.db.cutout.dirname = 'cutouts'; % TODO: rename to ...cutouts...?
-params.dataset.db.cutout.matDirname = 'matfiles'; % TODO: rename to ...cutouts...?
+
+% cutouts
+if params.dynamicMode == "original"
+    params.dataset.db.cutout.dirname = 'cutouts';
+    params.dataset.db.cutout.matDirname = 'matfiles';
+elseif contains(params.dynamicMode, "static")
+    params.dataset.db.cutout.dirname = 'cutouts';
+    params.dataset.db.cutout.matDirname = 'matfiles_dynamic';
+elseif contains(params.dynamicMode, "dynamic")
+    params.dataset.db.cutout.dirname = 'cutouts';
+    params.dataset.db.cutout.matDirname = 'matfiles_dynamic';
+end
+
 params.dataset.db.cutout.dir = fullfile(params.dataset.dir, params.dataset.db.cutout.dirname);
 params.dataset.db.cutout.MatDir = fullfile(params.dataset.dir,params.dataset.db.cutout.matDirname);
+%params.dataset.db.cutout.MasksDir = fullfile(params.dataset.dir,params.dataset.db.cutout.dirMasksName);
 
 params.dataset.db.cutouts.dir = fullfile(params.dataset.db.cutout.dir,params.dataset.db.space_names);
 params.dataset.db.cutouts.MatDir = fullfile(params.dataset.db.cutout.MatDir ,params.dataset.db.space_names);
+%params.dataset.db.cutouts.MasksDir = fullfile(params.dataset.db.cutout.MasksDir ,params.dataset.db.space_names);
+
 params.dataset.db.cutout.imgformat = '.jpg';
 params.dataset.db.cutout.matformat = '.mat';
+%params.dataset.db.cutout.masksformat = '.png';
 
 %%alignments
 params.dataset.db.trans.dir = fullfile(params.dataset.dir, 'alignments.legacy');

@@ -1,6 +1,4 @@
 function [ status ] = buildFeatures(params)
-queryDirWithSlash = [params.dataset.query.mainDir, '/'];
-
 x = load(params.input.dblist.path); % cutout_imnames_all.mat
 cutoutImageFilenames = x.cutout_imgnames_all; 
 cutoutSize = params.dataset.db.cutout.size;
@@ -28,7 +26,7 @@ if exist(p, 'file') ~= 2
     for i=1:nQueries
         fprintf('Finding features for query #%d/%d\n\n', i, nQueries)
         queryName = queryImageFilenames{i};
-        queryImage = load_query_image_compatible_with_cutouts(fullfile(queryDirWithSlash, queryName), cutoutSize);
+        queryImage = load_query_image_compatible_with_cutouts(fullfile(params.dataset.query.mainDir, queryName), cutoutSize);
         cnn = at_serialAllFeats_convfeat(net, queryImage, 'useGPU', true);
         queryFeatures(i).queryname = queryName;
         queryFeatures(i).features = cnn{6}.x(:);
