@@ -113,10 +113,10 @@ if params.dynamicMode == "original"
     params.dataset.db.cutout.matDirname = 'matfiles';
 elseif contains(params.dynamicMode, "static")
     params.dataset.db.cutout.dirname = 'cutouts';
-    params.dataset.db.cutout.matDirname = 'matfiles_dynamic';
+    params.dataset.db.cutout.matDirname = 'matfiles';
 elseif contains(params.dynamicMode, "dynamic")
     params.dataset.db.cutout.dirname = 'cutouts';
-    params.dataset.db.cutout.matDirname = 'matfiles_dynamic';
+    params.dataset.db.cutout.matDirname = 'matfiles';
 end
 
 params.dataset.db.cutout.dir = fullfile(params.dataset.dir, params.dataset.db.cutout.dirname);
