@@ -7,7 +7,7 @@ function [P,spaceName,fullName] = getReferencePose(qid,imgList,params)
     params.dataset.db.space_names;
     trueName = '';
     for i = 1:numel(params.dataset.db.space_names)
-        run(fullfile(params.dataset.dir,'metadata',params.dataset.db.space_names{i},'query_mapping.m'));
+        run(fullfile(params.dataset.query.dir{i}, 'metadata', 'query_mapping.m'));
         if ~strcmp(spaceName, params.dataset.db.space_names{i})    
 %             qid = qid - numel(q2name);
         else
