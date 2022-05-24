@@ -22,6 +22,7 @@ addpath('../functions/InLocCIIRC_utils/multiCameraPose');
 addpath('../functions/InLocCIIRC_utils/getPosesFromHoloLens');
 addpath('../functions/InLocCIIRC_utils/buildK');
 addpath('../functions/InLocCIIRC_utils/queryNameToQueryId');
+addpath('tools/')
 
 addpath('/local/localization_service/Code/Matlab/SPRING/functions/denseGV_F10e');
 

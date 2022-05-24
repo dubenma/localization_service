@@ -112,6 +112,7 @@ for i=1:numel(ImgList) %continue where we stopped
     end
     query_eval{i}.pano_id = strsplit(fullName,'/'); query_eval{i}.pano_id = query_eval{i}.pano_id{1};
     query_eval{i}.id = i;
+    query_eval{i}.query_name = ImgList(i).queryname;
     query_eval{i}.C_ref = C_ref;
     query_eval{i}.R_ref = R_ref;
     query_eval{i}.C_ref_orig = P_ref.C;
@@ -145,8 +146,13 @@ for i=1:numel(ImgList) %continue where we stopped
         if ~exist(fullfile(fullfile(params.evaluation.dir,'all_results'),sprintf('%s_results_q_id_%d_best_db_%d.jpg',sprintf('err_NaN'),i,1)))
             getFailureView(params,ImgList,i,1,true,fullfile(params.evaluation.dir,'all_results'),sprintf('%s_results_q_id_%d_best_db_%d.jpg',sprintf('err_NaN'),i,1));
         end
-        
     end
+    if visual_inspection    
+        if ~exist(fullfile(fullfile(params.evaluation.dir,'all_results', 'matches'),sprintf('%s_results_q_id_%d_best_db_%d.jpg',sprintf('err_NaN'),i,1)))
+            getFailureView(params,ImgList,i,1,true,fullfile(params.evaluation.dir,'all_results', 'matches'),sprintf('%s_results_q_id_%d_best_db_%d.jpg',sprintf('err_NaN'),i,1));
+        end
+    end
+  
     
     
     
@@ -162,7 +168,7 @@ for i=1:numel(ImgList) %continue where we stopped
     retrievedQueries(i).space = ref_spaceName;
     
 end
-save(fullfile(params.evaluation.dir,'query_eval.mat'),'query_eval', '-v7');
+save(fullfile(params.evaluation.dir,'query_eval.mat'),'query_eval', 'errors', '-v7');
 % errors
 errorsBak = errors;
 errorsTable = struct2table(errors);
@@ -290,10 +296,12 @@ grid on;
 % ax = gca
 xticks(gca,[0.1,0.15,0.2,(1:8)/4])
 xtickangle(-75)
+ylim([0 90])
 % xticklabels(gca,strsplit(num2str(thr_t)))
  hold on;
  xlabel('Distance threshold [m]');
  ylabel('Correctly localised queries [%]');
   title('InLoc SPRING at Broca')
  saveas(gcf,fullfile(params.evaluation.dir,'correctly_localized_queries.jpg'))
-
+ 
+save(fullfile(params.evaluation.dir,'correctly_localized_queries.mat'),'thr_t', 'scores', '-v7');
