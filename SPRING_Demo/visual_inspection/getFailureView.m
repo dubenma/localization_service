@@ -42,7 +42,7 @@ im_db = imread(fullfile(params.dataset.db.cutout.dir, cutoutName));
 %         block(:,:,1:)
 %         together_q(tent_xq2d(1,feat_i)-1:tent_xq2d(1,feat_i)+1,tent_xq2d(2,feat_i)-1:tent_xq2d(2,feat_i)+1,:) = ;
 %     end
-figure();
+figure('visible','off');
 imshow(rgb2gray([im_q im_db]));hold on;
 for c = 1:20:size(tent_xq2d,2)
     plot3d([tent_xq2d(:,c), tent_xdb2d(:,c) + [size(im_q,2) 0 ]'],'r-');

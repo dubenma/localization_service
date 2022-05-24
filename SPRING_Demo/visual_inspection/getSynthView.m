@@ -17,20 +17,21 @@ function im_synth = getSynthView(params,ImgList,q_id,db_rank,showMontage,savePth
             headless = ~strcmp(environment(), 'laptop');          
             rot = inv(R)*Rfix';
             trans = -inv(R)*t;
+            disp(qname);
             [RGBpersp, XYZpersp, depth] = projectMesh(meshPath, fl, rot, trans, sensorSize, false, -1, params.input.projectMesh_py_path, headless);
             if showMontage
 %                 errmaps =load(fullfile(params.output.synth.dir, ImgList(q_id).queryname, sprintf('%d%s', db_rank, params.output.synth.matformat)),'errmaps');
 %                 errmaps= grs2rgb(errmaps.errmaps{1});
                 blend = Iq/2 + RGBpersp/2;
                 comparison = {Iq,RGBpersp,blend,imread(fullfile(params.dataset.db.cutout.dir, dbname))};
-                f = figure();
+                f = figure('visible','off');
                 montage(comparison,'Size',[1 4]);
                 if nargin >= 6
                     if nargin >=7
                         mkdirIfNonExistent(savePth);
-                        saveas(gcf,fullfile(savePth,sprintf('%s_results_q_id_%d_best_db_%d.jpg',prefix,q_id,db_rank)));
+                        saveas(f,fullfile(savePth,sprintf('%s_results_q_id_%d_best_db_%d.jpg',prefix,q_id,db_rank)));
                     else
-                    saveas(gcf,fullfile(savePth,sprintf('results_q_id_%d_best_db_%d.jpg',q_id,db_rank)));
+                    saveas(f,fullfile(savePth,sprintf('results_q_id_%d_best_db_%d.jpg',q_id,db_rank)));
 %                     close(f);
                     end
                 end
