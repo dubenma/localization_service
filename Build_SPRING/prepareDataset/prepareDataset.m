@@ -1,11 +1,11 @@
 %% select space
-space_name = "livinglab"; % hospital, livinglab
+space_name = "hospital"; % hospital, livinglab
 
 % if dynamic is 0 then it generates the same dataset as if no dynamic 
 % objects were used
 % if dynamic is 1 or more, combination of static and dynamic datasets is
 % created, and data for dynamic part are taken from the directory "dynamic_" + string(dynamic)
-dynamic = 1;
+dynamic = 2;
 %% set paths
 if dynamic
     dynam_str = "dynamic_" + string(dynamic);

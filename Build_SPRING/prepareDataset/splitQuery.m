@@ -1,6 +1,6 @@
 %% set parameters for 'dynamic' and 'space_name' 
-dynamic = 1;
-space_name = "livinglab";
+dynamic = 2;
+space_name = "hospital"; % hospital, livinglab
 
 if not(exist('dynamic','var'))
     dynamic = 0;
@@ -21,9 +21,9 @@ new_dataset_dir = "/local1/homes/dubenma1/data/inloc_dataset/final_dataset/Broca
 input_dir = fullfile("/local1/homes/dubenma1/data/inloc_dataset/before_splitting_queries", dynam_str, space_name);
 
 if space_name == "hospital"
-    query_ids = [8,10,14,27,40,43,46,51,56,91,101,103];
+    query_ids = [10,14,27,40,43,46,51,56,73,74,82,91,101,103,108]; %old = [8,10,14,27,40,43,46,51,56,91,101,103];
 elseif space_name == "livinglab"
-    query_ids = [15,21,31,34];
+    query_ids = [12,23,24,31,34]; % old = [15,21,31,34];
 end
 
 %% copy all database and query data
