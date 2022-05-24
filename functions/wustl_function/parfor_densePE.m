@@ -44,54 +44,61 @@ if exist(this_densepe_matname, 'file') ~= 2
             parfor_denseGV( cnnq, thisQueryName, dbname, params );
         end
         this_gvresults = load(this_densegv_matname);
-        tent_xq2d = this_gvresults.f1(:, this_gvresults.inls12(1, :));
-        tent_xdb2d = this_gvresults.f2(:, this_gvresults.inls12(2, :));
-
-    
-        %depth information
-        this_db_matname = fullfile(params.dataset.db.cutout.MatDir, [dbname, params.dataset.db.cutout.matformat]);
-        load(this_db_matname, 'XYZcut');
-
-        %Feature upsampling
-        Idbsize = size(XYZcut);
-        Iqsize = Idbsize; % we padded the queries to match cutout aspect ratio (and rescaled to cutout dimensions
-        tent_xq2d = at_featureupsample(tent_xq2d,this_gvresults.cnnfeat1size,Iqsize);
-            % without this, the features in query image would not match the cutout aspect ratio
-        tent_xdb2d = at_featureupsample(tent_xdb2d,this_gvresults.cnnfeat2size,Idbsize);
-            % this may not be necessary
-        %query ray
         
-        % convert xq2d to match original query image
-        queryWidth = params.camera.sensor.size(2);
-        queryHeight = params.camera.sensor.size(1);
-        cutoutWidth = Idbsize(2);
-        cutoutHeight = Idbsize(1);
-        tent_xq2d = adjust_inliers_to_match_original_query(tent_xq2d, queryWidth, queryHeight, cutoutWidth, cutoutHeight);
+        if ~isempty(this_gvresults.inls12)
+            
+            tent_xq2d = this_gvresults.f1(:, this_gvresults.inls12(1, :));
+            tent_xdb2d = this_gvresults.f2(:, this_gvresults.inls12(2, :));
 
-        K = params.camera.K;
 
-        tent_ray2d = K^-1 * [tent_xq2d; ones(1, size(tent_xq2d, 2))];
-        %DB 3d points
-        indx = sub2ind(size(XYZcut(:,:,1)),tent_xdb2d(2,:),tent_xdb2d(1,:));
-        X = XYZcut(:,:,1);Y = XYZcut(:,:,2);Z = XYZcut(:,:,3);
-        tent_xdb3d = [X(indx); Y(indx); Z(indx)];
-        %Select keypoint correspond to 3D
-        idx_3d = all(~isnan(tent_xdb3d), 1); % this typically contains only one
-        tent_xq2d = tent_xq2d(:, idx_3d);
-        tent_xdb2d = tent_xdb2d(:, idx_3d);
-        tent_ray2d = tent_ray2d(:, idx_3d);
-        tent_xdb3d = tent_xdb3d(:, idx_3d);
-        allCorrespondences2D{i} = tent_xq2d;
-        allCorrespondences3D{i} = tent_xdb3d;
+            %depth information
+            this_db_matname = fullfile(params.dataset.db.cutout.MatDir, [dbname, params.dataset.db.cutout.matformat]);
+            load(this_db_matname, 'XYZcut');
 
-        tentatives_2d = [tent_xq2d; tent_xdb2d];
-        tentatives_3d = [tent_ray2d; tent_xdb3d];
-        allTentatives2D{i} = tentatives_2d;
-        allTentatives3D{i} = tentatives_3d;
-        allInls{i} = ones(1,size(tentatives_2d,2));
+            %Feature upsampling
+            Idbsize = size(XYZcut);
+            Iqsize = Idbsize; % we padded the queries to match cutout aspect ratio (and rescaled to cutout dimensions
+            tent_xq2d = at_featureupsample(tent_xq2d,this_gvresults.cnnfeat1size,Iqsize);
+                % without this, the features in query image would not match the cutout aspect ratio
+            tent_xdb2d = at_featureupsample(tent_xdb2d,this_gvresults.cnnfeat2size,Idbsize);
+                % this may not be necessary
+            %query ray
 
-        if size(tentatives_2d, 2) < 3 
-            queriesWithLowTentatives(j) = true;
+            % convert xq2d to match original query image
+            queryWidth = params.camera.sensor.size(2);
+            queryHeight = params.camera.sensor.size(1);
+            cutoutWidth = Idbsize(2);
+            cutoutHeight = Idbsize(1);
+            tent_xq2d = adjust_inliers_to_match_original_query(tent_xq2d, queryWidth, queryHeight, cutoutWidth, cutoutHeight);
+
+            K = params.camera.K;
+
+            tent_ray2d = K^-1 * [tent_xq2d; ones(1, size(tent_xq2d, 2))];
+            %DB 3d points
+            indx = sub2ind(size(XYZcut(:,:,1)),tent_xdb2d(2,:),tent_xdb2d(1,:));
+            X = XYZcut(:,:,1);Y = XYZcut(:,:,2);Z = XYZcut(:,:,3);
+            tent_xdb3d = [X(indx); Y(indx); Z(indx)];
+            %Select keypoint correspond to 3D
+            idx_3d = all(~isnan(tent_xdb3d), 1); % this typically contains only one
+            tent_xq2d = tent_xq2d(:, idx_3d);
+            tent_xdb2d = tent_xdb2d(:, idx_3d);
+            tent_ray2d = tent_ray2d(:, idx_3d);
+            tent_xdb3d = tent_xdb3d(:, idx_3d);
+            allCorrespondences2D{i} = tent_xq2d;
+            allCorrespondences3D{i} = tent_xdb3d;
+
+            tentatives_2d = [tent_xq2d; tent_xdb2d];
+            tentatives_3d = [tent_ray2d; tent_xdb3d];
+            allTentatives2D{i} = tentatives_2d;
+            allTentatives3D{i} = tentatives_3d;
+            allInls{i} = ones(1,size(tentatives_2d,2));
+
+            if size(tentatives_2d, 2) < 3 
+                queriesWithLowTentatives(j) = true;
+            end
+        else
+            Ps(1,:) = {nan(3,4)};
+            skipPoseEstimation = true;
         end
     end
     nQueriesWithoutLowTentatives = sequenceLength-sum(queriesWithLowTentatives);

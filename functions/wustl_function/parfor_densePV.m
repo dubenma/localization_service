@@ -90,6 +90,8 @@ if exist(this_densePV_matname, 'file') ~= 2
             RGB_flag = [];
             score = single(0);
             errmap = 0;
+            rot = [];
+            trans = [];
         end
         Iqs{i} = Iq;
         RGBpersps{i} = RGBpersp;
@@ -101,7 +103,7 @@ if exist(this_densePV_matname, 'file') ~= 2
     if exist(fullfile(params.output.synth.dir, qname), 'dir') ~= 7
         mkdir(fullfile(params.output.synth.dir, qname));
     end
-    save(this_densePV_matname, 'Iqs', 'RGBpersps', 'RGB_flags', 'scores', 'errmaps');
+    save(this_densePV_matname, 'Iqs', 'RGBpersps', 'RGB_flags', 'scores', 'errmaps', 'rot', 'trans');
 end
 
 
