@@ -69,8 +69,8 @@ if exist(densePE_matname, 'file') ~= 2
             cnnq = load(qfname, 'cnn');cnnq = cnnq.cnn;
             f = dir(fullfile(params.output.gv_dense.dir, ImgList(ii).queryname)); %skip-recomputation
             if numel(f) ~= (shortlist_topN+2)
-                for kk = 1:1:shortlist_topN
-                    parfor_denseGV( cnnq, ImgList(ii).queryname, ImgList(ii).topNname{kk}, params );
+                parfor kk = 1:1:shortlist_topN
+                    parfor_denseGV( cnnq, ImgList(ii).queryname, ImgList(ii).topNname{kk}, ii, params );
                     fprintf('dense matching: %s vs %s DONE. \n', ImgList(ii).queryname, ImgList(ii).topNname{kk});
                 end
             end
@@ -199,7 +199,7 @@ if exist(densePE_matname, 'file') ~= 2
     end
 
     %dense pnp
-    for ii = 1:length(qlist)
+    parfor ii = 1:length(qlist)
     %for ii = 1:length(qlist)
         parfor_densePE(qlist{ii}, dblist{ii}, dbind{ii}, posesFromHoloLensList{ii}, firstQueryInd{ii}, lastQueryInd{ii}, params);
         fprintf('densePE: %s vs a cutout sequence DONE. \n', qlist{ii});

@@ -156,8 +156,8 @@ if exist(densePV_matname, 'file') ~= 2
         this_dbind = dbind_uniq{ii};
         
         %compute synthesized images and similarity scores
+%         parfor jj = 1:1:length(this_qlist)
         parfor jj = 1:1:length(this_qlist)
-%         for jj = 1:1:length(this_qlist)
             parfor_densePV( this_qlist{jj}, this_dblist{jj}, this_dbind{jj}, this_PsList{jj}, params );
             fprintf('densePV: %d / %d done. \n', jj, length(this_qlist));
         end
