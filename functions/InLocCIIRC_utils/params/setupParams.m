@@ -65,6 +65,9 @@ elseif strcmp(mode, 'SPRING_Demo')
 elseif strcmp(mode, 'SPRING_Demo_onequery')
     params.mode = mode;
     params = SPRINGDemoOneParams(params);
+elseif strcmp(mode, 'B315')
+    params.mode = mode;
+    params = b315Params(params);
 else
     error('Unrecognized mode');
 end

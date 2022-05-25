@@ -1,11 +1,11 @@
 %% select space
-space_name = "hospital"; % hospital, livinglab
+space_name = "b315"; % hospital, livinglab
 
 % if dynamic is 0 then it generates the same dataset as if no dynamic 
 % objects were used
 % if dynamic is 1 or more, combination of static and dynamic datasets is
 % created, and data for dynamic part are taken from the directory "dynamic_" + string(dynamic)
-dynamic = 2;
+dynamic = 0;
 %% set paths
 if dynamic
     dynam_str = "dynamic_" + string(dynamic);
@@ -25,6 +25,12 @@ elseif space_name == "livinglab"
     output_path = fullfile(output_path, dynam_str, space_name);
     n_cutouts = 35;
     habitat_dir_name = "semantic_l";
+elseif space_name == "b315"
+    input_path = "/local1/projects/artwin/datasets/B-315_dataset/matterport_data";
+    output_path = "/local1/projects/artwin/datasets/B-315_dataset/matterport_data/inloc_dataset/before_splitting_queries";
+    output_path = fullfile(output_path, dynam_str, space_name);
+    n_cutouts = 26;
+    habitat_dir_name = "b315_habitat";
 end
 % output_path = fullfile(output_path, space_name);
 
