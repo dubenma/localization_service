@@ -1,7 +1,7 @@
 function [ params ] = SPRINGDemoParams(params)
     
     %params.spaceName = sprintf('');
-    params.dynamicMode = "static_2"; % original, static_1, dynamic_1, dynamic_2...
+    params.dynamicMode = "dynamic_2"; % original, static_1, dynamic_1, dynamic_2...
     
     if params.dynamicMode == "original"
         params.dataset.name = "Broca_dataset_static";
@@ -14,18 +14,21 @@ function [ params ] = SPRINGDemoParams(params)
     else
         error('Unrecognized mode');
     end
-    
+    % query
     params.dataset.query.space_names = {'livinglab', 'hospital'};
+    % database
+    params.dataset.db.space_names = params.dataset.query.space_names;
    
     params.dataset.dir = fullfile('/local1/homes/dubenma1/data/localization_service_dataset/Maps', params.dataset.name);
     
     params.dataset.query.dirname = sprintf('queries');
     params.dataset.query.mainDir =  fullfile(params.dataset.dir,params.dataset.query.dirname);
     params.dataset.query.dir = fullfile(params.dataset.query.mainDir,params.dataset.query.space_names,'query_all'); % NOTE: it cannot be extracted to setupParams.m, because we need it in here already
-    
     params.dataset.query.dslevel = 8^-1;
     params.camera.sensor.size = [756 1344 3]; %height, width, 3
     params.camera.fl = 1034.0000; 
+    params.camera.K = buildK(params.camera.fl, params.camera.sensor.size(2), params.camera.sensor.size(1));
+    
     params.blacklistedQueryInd = [];
 
     space_names_strs = string(params.dataset.query.space_names);

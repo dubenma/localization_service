@@ -102,10 +102,7 @@ params.poses.dir = fullfile(params.dataset.query.dir, 'poses');
 %params.vicon.origin.wrt.model = [-0.13; 0.04; 2.80];
 %params.vicon.rotation.wrt.model = deg2rad([90.0 180.0 0.0]);
 
-params.camera.K = buildK(params.camera.fl, params.camera.sensor.size(2), params.camera.sensor.size(1));
 
-%database
-params.dataset.db.space_names = params.dataset.query.space_names; % 'livinglab', 'hospital'
 %%scan
 params.dataset.db.scan.dir = 'scans';
 params.dataset.db.scan.matformat = '.ptx.mat';
@@ -151,7 +148,12 @@ params.input.feature.db_matformat = '.features.dense.mat';
 params.input.feature.q_matformat = '.features.dense.mat';
 params.input.feature.db_sps_matformat = '.features.sparse.mat';
 params.input.feature.q_sps_matformat = '.features.sparse.mat';
-params.input.projectMesh_py_path = fullfile([thisScriptPath, '../projectMesh/projectMesh.py']);
+
+if strcmp(mode, 'B315')
+    params.input.projectMesh_py_path = fullfile([thisScriptPath, '../projectMesh/projectMeshHololens.py']);
+else
+    params.input.projectMesh_py_path = fullfile([thisScriptPath, '../projectMesh/projectMesh.py']);
+end
 
 %output
 params.output.dir = fullfile(params.cache.dir, sprintf('outputs%s', experimentSuffix));

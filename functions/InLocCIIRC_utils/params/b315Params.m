@@ -1,15 +1,14 @@
 function [ params ] = b315Params(params)
     
     %params.spaceName = sprintf('');
-    params.dynamicMode = "original"; % original, static_1, dynamic_1, dynamic_2...
+    params.dynamicMode = "dynamic"; % original, static, dynamic
     
-    if params.dynamicMode == "original"
-        params.dataset.name = "b315_dataset"; %TODO
-    else
-        error('Unrecognized mode');
-    end
+    params.dataset.name = "b315_dataset"; %TODO
     
-    params.dataset.query.space_names = {'b315'};
+    % query
+    params.dataset.query.space_names = {'seq04'}; % {'seq03', 'seq04'}
+    % database
+    params.dataset.db.space_names = {'b315'};
    
     params.dataset.dir = fullfile('/local1/projects/artwin/datasets/B-315_dataset/matterport_data/localization_service/Maps/', params.dataset.name); %TODO
     
@@ -18,7 +17,13 @@ function [ params ] = b315Params(params)
     params.dataset.query.dir = fullfile(params.dataset.query.mainDir,params.dataset.query.space_names,'query_all');
     params.dataset.query.dslevel = 8^-1;
     params.camera.sensor.size = [756 1344 3]; %height, width, 3
-    params.camera.fl = 1034.0000;
+    
+    % hololens parameters
+    params.camera.fl = 1037.301697;
+    u0 = 664.387146;
+    v0 = 396.142090;
+    params.camera.K = [params.camera.fl 0 u0; 0 params.camera.fl v0; 0 0 1];
+    
     params.blacklistedQueryInd = [];
 
     space_names_strs = string(params.dataset.query.space_names);
@@ -32,7 +37,8 @@ function [ params ] = b315Params(params)
         n_queries = n_queries + length(dir(fullfile(params.dataset.query.dir{i}, "*.jpg"))); % number of queries   
     end
     
-    params.cache.dir = fullfile('/local1/homes/dubenma1/data/localization_service_dataset/Cache_' + params.dataset.name, params.dynamicMode, string(n_queries) + "_queries");
-    params.results.dir = fullfile('/local1/homes/dubenma1/data/localization_service_dataset/Results_' + params.dataset.name, params.dynamicMode, string(n_queries) + "_queries");
+    main_dir = fullfile('/local1/projects/artwin/datasets/B-315_dataset/', 'inloc_results');
+    params.cache.dir = fullfile(main_dir, 'Cache_' + params.dataset.name, params.dynamicMode, string(n_queries) + "_queries");
+    params.results.dir = fullfile(main_dir, 'Results_' + params.dataset.name, params.dynamicMode, string(n_queries) + "_queries");
     
 end
