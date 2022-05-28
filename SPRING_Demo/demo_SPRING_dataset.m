@@ -1,8 +1,9 @@
 startup;
-
-setenv("INLOC_EXPERIMENT_NAME","SPRING_Demo")
+mode = "B315";
+% mode = "SPRING_Demo";
+setenv("INLOC_EXPERIMENT_NAME",mode)
 setenv("INLOC_HW","GPU")
-[ params ] = setupParams('SPRING_Demo', true); % NOTE: adjust
+[ params ] = setupParams(mode, true);
 
 inloc_hw = getenv("INLOC_HW");
 if isempty(inloc_hw) || (~strcmp(inloc_hw, "GPU") && ~strcmp(inloc_hw, "CPU"))

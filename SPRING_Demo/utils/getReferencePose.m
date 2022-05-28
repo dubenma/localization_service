@@ -6,18 +6,18 @@ function [P,spaceName,fullName] = getReferencePose(qid,imgList,params)
     [~,space_id,~] = fileparts(qname); space_id = str2num(space_id); % space_id is the query id
     params.dataset.db.space_names;
     trueName = '';
-    for i = 1:numel(params.dataset.db.space_names)
-        run(fullfile(params.dataset.query.dir{i}, 'metadata', 'query_mapping.m'));
-        if ~strcmp(spaceName, params.dataset.db.space_names{i})    
-%             qid = qid - numel(q2name);
-        else
-            
-            trueName = q2name(space_id);
-            break
-        end
+
+    run(fullfile(params.dataset.query.mainDir, spaceName, 'query_all', 'metadata', 'query_mapping.m'));
+
+    trueName = q2name(space_id);
+
+    
+    if strcmp(params.mode,'B315')
+        panoDirId = 1;
+    else
+        panoId = strsplit(trueName,'_'); 
+        panoDirId = str2double(panoId{3})+1;
     end
-    panoId = strsplit(trueName,'_'); 
-    panoDirId = str2double(panoId{3})+1;
     P_gt = load(fullfile(params.dataset.query.mainDir,spaceName,'poses',string(panoDirId),sprintf('%s.%s',trueName,'mat')));
     P_gt.C = P_gt.position';
     rFix = [0., 180., 180.];

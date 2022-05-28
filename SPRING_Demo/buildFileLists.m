@@ -31,21 +31,21 @@ if ~strcmp(params.dynamicMode, "original")
     for i = 1 : length(query_imgnames_all)
         qname = query_imgnames_all{i};
         spaceName = strsplit(qname,'/'); spaceName = spaceName{1};
-        [~,space_id,~] = fileparts(qname); space_id = str2num(space_id); % space_id is the query id
+        [~,space_id,~] = fileparts(qname); space_id = str2num(space_id); % space_id is the query id 
         
-        for j = 1:numel(params.dataset.db.space_names)
-            run(fullfile(params.dataset.query.dir{j}, 'metadata', 'query_mapping.m'));
-            if strcmp(spaceName, params.dataset.db.space_names{j})    
-                trueName = q2name(space_id);
-                break
-            end
-        end
+        run(fullfile(params.dataset.query.mainDir, spaceName, 'query_all', 'metadata', 'query_mapping.m'));
+        trueName = q2name(space_id);
         
         [~, name, ~] = fileparts(trueName);
         trueName = name + ".png";
 
-        panoId = strsplit(trueName,'_'); 
-        panoDirId = str2double(panoId{3})+1;
+        if strcmp(params.mode,'B315')
+            panoDirId = 1;
+        else
+            panoId = strsplit(trueName,'_'); 
+            panoDirId = str2double(panoId{3})+1;
+        end
+        
         mask_path = fullfile(params.dataset.query.mainDir, spaceName, "masks_dynamic", string(panoDirId), trueName);
 
         copyfile(mask_path, fullfile(params.input.dir, "queries_masks", string(i) + ".png"));
@@ -53,6 +53,7 @@ if ~strcmp(params.dynamicMode, "original")
 end
 
 %% cutouts
+paths = {};
 if numel(params.dataset.db.cutouts.dir) == 1
     paths{1} = params.dataset.db.cutouts.dir;
 else

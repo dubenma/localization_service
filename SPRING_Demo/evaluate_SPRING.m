@@ -64,52 +64,56 @@ for i=1:numel(ImgList) %continue where we stopped
     est_spaceName = strsplit(ImgList(i).topNname{1},'/'); est_spaceName = est_spaceName{1};
     est_mapName = strsplit(est_spaceName,'_'); est_mapName = est_mapName{1};
     ref_mapName = strsplit(ref_spaceName,'_'); ref_mapName = ref_mapName{1};
+    if strcmp(params.mode, 'B315')
+        ref_spaceName = 'b315';
+        ref_mapName = 'b315';
+    end
     
     C_ref = [];
     R_ref = [];
-    if ~strcmp(est_spaceName,ref_spaceName) &&  strcmp(est_mapName,ref_mapName)
-        interesting = true;
-        transform = [];
-        E_h_12 = [1.000000000000 0.000265824958 -0.000320481340 -0.965982019901;
-            -0.000265917915 0.999999940395 -0.000290183641 0.005340866279;
-            0.000320404157 0.000290269381 1.000000119209 0.241866841912;
-            0.000000000000 0.000000000000 0.000000000000 1.000000000000];
-        
-        E_l_21 = [ 0.999996125698 0.000008564073 0.002756817034 3.283028602600;
-            -0.000006930272 0.999999821186 -0.000592759345 0.000593465462;
-            -0.002756824018 0.000592722441 0.999996006489 1.970497488976;
-            0.000000000000 0.000000000000 0.000000000000 1.000000000000];
-        switch (est_spaceName)
-            case params.dataset.db.space_names{1}
-                transform = E_h_12;
-            case params.dataset.db.space_names{2}
-                transform = inv(E_h_12);
-            case params.dataset.db.space_names{3}
-                transform = inv(E_l_21);
-            case params.dataset.db.space_names{4}
-                transform = E_l_21;
-            otherwise
-                interesting = true
-                error('ups')
-                % getSynthView(params,ImgList,i,1,true);
-        end
-        
-        
-        
-        
-        % norm(P_ref.C - P_est.C)
-        % norm((E)*[P_ref.C;1] - P_est.C)
-        
-        C_ref = transform*[P_ref.C;1];
-        C_ref = C_ref(1:3);
-        R_ref = P_ref.R*transform(1:3,1:3);
-%         errors(i).translation = norm(C_ref(1:3) - P_est.C);
-        
-    else
-       transform = eye(4);
-       C_ref = P_ref.C;
-       R_ref = P_ref.R;
-    end
+%     if ~strcmp(est_spaceName,ref_spaceName) &&  strcmp(est_mapName,ref_mapName)
+%         interesting = true;
+%         transform = [];
+%         E_h_12 = [1.000000000000 0.000265824958 -0.000320481340 -0.965982019901;
+%             -0.000265917915 0.999999940395 -0.000290183641 0.005340866279;
+%             0.000320404157 0.000290269381 1.000000119209 0.241866841912;
+%             0.000000000000 0.000000000000 0.000000000000 1.000000000000];
+%         
+%         E_l_21 = [ 0.999996125698 0.000008564073 0.002756817034 3.283028602600;
+%             -0.000006930272 0.999999821186 -0.000592759345 0.000593465462;
+%             -0.002756824018 0.000592722441 0.999996006489 1.970497488976;
+%             0.000000000000 0.000000000000 0.000000000000 1.000000000000];
+%         switch (est_spaceName)
+%             case params.dataset.db.space_names{1}
+%                 transform = E_h_12;
+%             case params.dataset.db.space_names{2}
+%                 transform = inv(E_h_12);
+%             case params.dataset.db.space_names{3}
+%                 transform = inv(E_l_21);
+%             case params.dataset.db.space_names{4}
+%                 transform = E_l_21;
+%             otherwise
+%                 interesting = true
+%                 error('ups')
+%                 % getSynthView(params,ImgList,i,1,true);
+%         end
+%         
+%         
+%         
+%         
+%         % norm(P_ref.C - P_est.C)
+%         % norm((E)*[P_ref.C;1] - P_est.C)
+%         
+%         C_ref = transform*[P_ref.C;1];
+%         C_ref = C_ref(1:3);
+%         R_ref = P_ref.R*transform(1:3,1:3);
+% %         errors(i).translation = norm(C_ref(1:3) - P_est.C);
+%         
+%     else
+    transform = eye(4);
+    C_ref = P_ref.C;
+    R_ref = P_ref.R;
+%     end
     query_eval{i}.pano_id = strsplit(fullName,'/'); query_eval{i}.pano_id = query_eval{i}.pano_id{1};
     query_eval{i}.id = i;
     query_eval{i}.query_name = ImgList(i).queryname;
@@ -122,9 +126,12 @@ for i=1:numel(ImgList) %continue where we stopped
     query_eval{i}.est_space = est_spaceName;
     query_eval{i}.ref_space = ref_spaceName;
     query_eval{i}.spaceTransform = transform;
-    
     errors(i).translation = norm(C_ref - P_est.C); 
-    errors(i).orientation = rotationDistance(R_ref, P_est.R);
+    if strcmp(params.mode, 'B315')
+        errors(i).orientation = rotationDistance(R_ref, P_est.R');
+    else
+        errors(i).orientation = rotationDistance(R_ref, P_est.R);
+    end
     errors(i).queryId =  ImgList(i).queryname;
     errors(i).inMap = strcmp(est_mapName,ref_mapName);
     inLocCIIRCLostCount = inLocCIIRCLostCount + isnan(errors(i).translation);
@@ -301,7 +308,7 @@ ylim([0 90])
  hold on;
  xlabel('Distance threshold [m]');
  ylabel('Correctly localised queries [%]');
-  title('InLoc SPRING at Broca')
+  title('InLoc results')
  saveas(gcf,fullfile(params.evaluation.dir,'correctly_localized_queries.jpg'))
  
 save(fullfile(params.evaluation.dir,'correctly_localized_queries.mat'),'thr_t', 'scores', '-v7');
