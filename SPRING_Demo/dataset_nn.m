@@ -3,8 +3,8 @@ close all
 startup;
 
 %% set params 
-mode = "SPRING_Demo";
-% mode = "B315";
+% mode = "SPRING_Demo";
+mode = "B315";
 setenv("INLOC_EXPERIMENT_NAME",mode)
 setenv("INLOC_HW","GPU")
 [ params ] = setupParams(mode, true);
@@ -29,7 +29,7 @@ resized = false;
 
 load(params.input.qlist.path);
 
-for i = 1 : 10 %length(query_imgnames_all)
+for i = 1 : 10 : length(query_imgnames_all)
     output_dir = fullfile(output_path, mode, params.dataset.name, string(i));
     if ~exist(output_dir, 'dir')
         mkdir(output_dir)
@@ -91,7 +91,11 @@ for i = 1 : 10 %length(query_imgnames_all)
     %     new_pose.C = ref_pose.position';
         rFix = [0., 180., 180.];
         Rfix = rotationMatrix(deg2rad(rFix), 'XYZ');
-        new_pose.R =Rfix*ref_pose.R';
+        if strcmp(mode,"B315")
+            new_pose.R =Rfix*ref_pose.R;
+        else
+            new_pose.R =Rfix*ref_pose.R';
+        end
 
         query = struct();
         query.true_name = trueName;
@@ -152,13 +156,15 @@ for i = 1 : 10 %length(query_imgnames_all)
 
             [RGBpersp, XYZpersp, depth] = projectMesh(meshPath, fl, rot, trans, sensorSize, false, -1, params.input.projectMesh_py_path, -1);
             synth.synth_img = RGBpersp;
-    %     figure();
-    %     imshow(RGBpersp);
+%             imshow(RGBpersp.*0.5 + Iq.*0.5)
+%         figure();
+%         imshow([RGBpersp);
     %     figure();
     %     imshow(Iq);
     %     figure();
     %     imshow(mask);
         output_synth_file = fullfile(output_dir, ['synth',num2str(j),'.mat']);
+%         imwrite(synth.synth_img*0.5 + query.query_img*0.5, fullfile(output_dir, 'compare.jpg'))
         parsavesynth(output_synth_file, synth)
         end
         save(output_file, 'query');
